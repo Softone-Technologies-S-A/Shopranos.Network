@@ -1,0 +1,6881 @@
+﻿{
+  "Name": "Kitchenware",
+  "DisplayName": "Kitchenware Theme",
+  "Description": "Kitchenware",
+  "CompanyPrototypeData": "c8ed7ca9-73ad-4906-8f99-bd4a5c1f06b7",
+  "RomanianCompanyPrototypeData": "e86f52a4-e332-45fa-9bfe-9aea213df3c1",
+  "DevCompanyPrototypeData": "0ab5b0a4-1f09-456e-92d6-84acee23dca0",
+  "Version": "v4.42",
+  "Palette": {
+    "HeaderTextColor": "#ffffff",
+    "HeaderBackgroundColor": "#232c35",
+    "FooterTextColor": "#ffffff",
+    "FooterBackgroundColor": "#373f50",
+    "BreadcrumbTextColor": "#ffffff",
+    "BreadcrumbBackgroundColor": "#4e54c8",
+    "BodyPrimaryTextColor": "#000000",
+    "BodySecondaryTextColor": "#4e54c8",
+    "BodyBackgroundFirstColor": "#ffffff",
+    "BodyBackgroundSecondColor": "#f6f9fc",
+    "BodyBorderColor": "#e9e9e9",
+    "TopBarTextColor": "#ffffff",
+    "TopBarBackgroundColor": "#232c35",
+    "Danger": "#f34770",
+    "Warning": "#fea569",
+    "ThemeColor": "#ff9e1a",
+    "ThemeText": "#ffffff",
+    "Success": "#42d697"
+  },
+  "Pages": [
+    {
+      "Name": "Home",
+      "PageType": 0
+    }
+  ],
+  "Components": [
+    {
+      "Type": "SingleBlog",
+      "DisplayName": "SingleBlog",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Comments",
+          "Value": "Comments",
+          "Translation": {
+            "EL": "Σχόλια",
+            "EN": "Comments",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Nickname",
+          "Value": "Nickname",
+          "Translation": {
+            "EL": "Ψευδώνυμο",
+            "EN": "Nickname",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CommentDescription",
+          "Value": "CommentDescription",
+          "Translation": {
+            "EL": "Παρακαλώ πληκτρολογήστε το σχόλιο σας.",
+            "EN": "Please type your comment.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "NicknameInvalidMessage",
+          "Value": "NicknameInvalidMessage",
+          "Translation": {
+            "EL": "Το πεδίο 'ψευδώνυμο' δεν μπορεί να είναι άδειο.",
+            "EN": "Field 'Nickname' cannot be empty.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CommentInvalidMessage",
+          "Value": "CommentInvalidMessage",
+          "Translation": {
+            "EL": "Το πεδίο 'σχόλιο' δεν μπορεί να είναι άδειο.",
+            "EN": "Field 'comment' cannot be empty.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "PostComment",
+          "Value": "PostComment",
+          "Translation": {
+            "EL": "Ανάρτηση σχόλιου",
+            "EN": "Post comment",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CommentPublishedWaitingForAcceptMessage",
+          "Value": "CommentPublishedWaitingForAcceptMessage",
+          "Translation": {
+            "EL": "Σας ευχαριστούμε που δημοσιεύσατε το μήνυμά σας. Μόλις το σχόλιο σας εγκριθεί από τον συγγραφέα του blog, θα είναι ορατό σε αυτό το blog post.",
+            "EN": "Thank you for posting your message. Once your comment is reviewed by the blog's author, it will be visible in this blog post.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "Επόμενο",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "Prev",
+          "Value": "Prev",
+          "Translation": {
+            "EL": "Προηγούμενο",
+            "EN": "Prev",
+            "RO": "Anterior"
+          }
+        }
+
+      ]
+    },
+    {
+      "Type": "BlogList",
+      "DisplayName": "Blog List",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "ReadΜore",
+          "Value": "ReadΜore",
+          "Translation": {
+            "EL": "[Διαβάστε Περισσότερα]",
+            "EN": "[Read Μore]",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "Επόμενο",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "Prev",
+          "Value": "Prev",
+          "Translation": {
+            "EL": "Προηγούμενο",
+            "EN": "Prev",
+            "RO": "Anterior"
+          }
+        },
+        {
+          "Key": "EmptyListMessage",
+          "Value": "EmptyListMessageΜore",
+          "Translation": {
+            "EL": "Δεν μπορέσαμε να βρούμε άλλα blogs.",
+            "EN": "We could not find any blogs.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "ViewMore",
+          "Value": "ViewMore",
+          "Translation": {
+            "EL": "Δείτε περισσότερα",
+            "EN": "View more",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "BlogCategories",
+          "Value": "BlogCategories",
+          "Translation": {
+            "EL": "Κατηγορίες blog",
+            "EN": "Blog categories",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "BlogCategoryList",
+      "DisplayName": "BlogCategoryList",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": []
+    },
+    {
+      "Type": "Announcement",
+      "DisplayName": "Announcement",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": []
+    },
+    {
+      "Type": "CookieManager",
+      "DisplayName": "Cookie Manager",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "DomainPathDescription",
+          "Value": "DomainPathDescription",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για την αποθήκευση του domain path της εταιρείας.",
+            "EN": "This cookie is used to store the domain path of the company.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "RefreshTokenDescription",
+          "Value": "RefreshTokenDescription",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για την αποθήκευση βασικών πληροφοριών σχετικά με έναν συνδεδεμένο χρήστη. Μας βοηθά επίσης να διατηρήσουμε τον χρήστη συνδεδεμένο για μεγαλύτερο χρονικό διάστημα.",
+            "EN": "This cookie is used to store basic information about a logged in user. It also helps us keep the user logged in for longer.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "AccessTokenDescription",
+          "Value": "AccessTokenDescription",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για την αποθήκευση βασικών πληροφοριών σχετικά με έναν συνδεδεμένο χρήστη. Μας βοηθά επίσης να διατηρήσουμε τον χρήστη συνδεδεμένο για μεγαλύτερο χρονικό διάστημα.",
+            "EN": "This cookie is used to store basic information about a logged in user. It also helps us keep the user logged in for longer.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "AcceptAllText",
+          "Value": "AcceptAllText",
+          "Translation": {
+            "EL": "Αποδοχή όλων",
+            "EN": "Accept All",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "RejectAllText",
+          "Value": "RejectAllText",
+          "Translation": {
+            "EL": "Απόρριψη όλων",
+            "EN": "Reject All",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "ModalTitle",
+          "Value": "ModalTitle",
+          "Translation": {
+            "EL": "Ρυθμίσεις Cookies",
+            "EN": "Cookie settings",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "ModalDescription",
+          "Value": "ModalDescription",
+          "Translation": {
+            "EL": "Η ιστοσελίδα μας χρησιμοποιεί απαραίτητα cookies για να εξασφαλίσει τη σωστή της λειτουργία.",
+            "EN": "Our website uses essential cookies to ensure its proper operation.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "NecessaryCookieAccordionTitle",
+          "Value": "",
+          "Translation": {
+            "EL": "Απολύτως απαραίτητα cookies.",
+            "EN": "Strictly necessary cookies.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "NecessaryCookieAccordionDescription",
+          "Value": "NecessaryCookieAccordionDescription",
+          "Translation": {
+            "EL": "Αυτά τα cookies είναι απαραίτητα για τη σωστή λειτουργία της ιστοσελίδας. Σύμφωνα με το νόμο, δεν απαιτείται η συγκατάθεσή σας για αυτά.",
+            "EN": "These cookies are necessary for the website to function properly. According to the law, your consent is not required for these. ",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Name",
+          "Value": "Name",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "Name",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Domain",
+          "Value": "Domain",
+          "Translation": {
+            "EL": "Domain",
+            "EN": "Domain",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Usage",
+          "Value": "Usage",
+          "Translation": {
+            "EL": "Χρήση",
+            "EN": "Usage",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Expiration",
+          "Value": "Expiration",
+          "Translation": {
+            "EL": "Λήξη",
+            "EN": "Expiration",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "StagingCookieDescription",
+          "Value": "",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για να καθορίσει εάν η ιστοσελίδα βρίσκεται σε λειτουργία αποσφαλμάτωσης ή όχι.",
+            "EN": "This cookie is used to specify if the website is in debugging mode or not.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CurrencyCookieDescription",
+          "Value": "CurrencyCookieDescription",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για να καθορίσει το νόμισμα που χρησιμοποιεί η ιστοσελίδα.",
+            "EN": "This cookie is used to specify the currency that the website uses for the prices.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CultureCookieDescription",
+          "Value": "CultureCookieDescription",
+          "Translation": {
+            "EL": "Αυτό το cookie χρησιμοποιείται για να καθορίσει τη γλώσσα που χρησιμοποιεί η ιστοσελίδα.",
+            "EN": "This cookie is used to specify the language that the website uses.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Save",
+          "Value": "Save",
+          "Translation": {
+            "EL": "Αποθήκευση",
+            "EN": "Save",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Close",
+          "Value": "Close",
+          "Translation": {
+            "EL": "Κλείσιμο",
+            "EN": "Close",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CookieCardTitle",
+          "Value": "CookieCardTitle",
+          "Translation": {
+            "EL": "Χρησιμοποιούμε Cookies!",
+            "EN": "We use cookies!",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CookieSettingsPromptText",
+          "Value": "CookieSettingsPromptText",
+          "Translation": {
+            "EL": "Περισσότερες επιλογές",
+            "EN": "Let me choose",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "CookieCardDescription",
+          "Value": "CookieCardDescription",
+          "Translation": {
+            "EL": "Γεια σας, αυτή η ιστοσελίδα χρησιμοποιεί τα απαραίτητα cookies για να εξασφαλίσει τη σωστή της λειτουργία ορισμένα άλλα cookies για να κατανοήσει πώς αλληλεπιδράτε μαζί της. Τα τελευταία θα ενεργοποιηθούν μόνο μετά τη συγκατάθεση.",
+            "EN": "Hi, this website uses essential cookies to ensure its proper operation and some other cookies to understand how you interact with it. The latter will be set only after consent.",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "SubscribeNewsletter",
+      "DisplayName": "Subscribe newsletter",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "email",
+          "Value": "Email",
+          "Translation": {
+            "EL": "Email",
+            "EN": "Email",
+            "RO": "Email"
+          }
+        },
+        {
+          "Key": "emailValid",
+          "Value": "Your email was successfully added to our newsletter.",
+          "Translation": {
+            "EL": "Το email σας προστέθηκε με επιτυχία στο newsletter μας.",
+            "EN": "Your email was successfully added to our newsletter.",
+            "RO": "Adresa de email a fost salvată cu succes pentru newslleter."
+          }
+        },
+        {
+          "Key": "mailError",
+          "Value": "Please provide a properly formated email.",
+          "Translation": {
+            "EL": "Παρακαλώ συμπληρώστε ένα σωστά διαμορφωμένο email.",
+            "EN": "Please provide a properly formated email.",
+            "RO": "Formatul adresei de email este invalid."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Map",
+      "DisplayName": "Map",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Offer",
+      "DisplayName": "Offer",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        24
+      ],
+      "Translations": [
+        {
+          "Key": "All",
+          "Value": "All",
+          "Translation": {
+            "EL": "Όλα",
+            "EN": "All",
+            "RO": "Tot"
+          }
+        },
+        {
+          "Key": "ChooseExpirationDate",
+          "Value": "ChooseExpirationDate",
+          "Translation": {
+            "EL": "Επιλέξτε ημερομηνία λήξης",
+            "EN": "Choose expiration date",
+            "RO": "Alege data de expirare"
+          }
+        },
+        {
+          "Key": "Title",
+          "Value": "Title",
+          "Translation": {
+            "EL": "Τίτλος",
+            "EN": "Title",
+            "RO": "Titlu"
+          }
+        },
+        {
+          "Key": "SKU",
+          "Value": "SKU",
+          "Translation": {
+            "EL": "SKU",
+            "EN": "SKU",
+            "RO": "SKU"
+          }
+        },
+        {
+          "Key": "Generate",
+          "Value": "Generate",
+          "Translation": {
+            "EL": "Παραγωγή",
+            "EN": "Generate",
+            "RO": "Generează"
+          }
+        },
+        {
+          "Key": "InvalidFirstName",
+          "Value": "InvalidFirstName",
+          "Translation": {
+            "EL": "Το πεδίο Όνομα είναι υποχρεωτικό",
+            "EN": "First Name field is mandatory",
+            "RO": "Prenumele este obligatoriu"
+          }
+        },
+        {
+          "Key": "InvalidLastName",
+          "Value": "InvalidLastName",
+          "Translation": {
+            "EL": "Το πεδίο Επίθετο είναι υποχρεωτικό",
+            "EN": "Last Name field is mandatory",
+            "RO": "Numele este obligatoriu"
+          }
+        },
+        {
+          "Key": "Details",
+          "Value": "Details",
+          "Translation": {
+            "EL": "Λεπτομέρειες",
+            "EN": "Details",
+            "RO": "Detalii"
+          }
+        },
+        {
+          "Key": "FullName",
+          "Value": "FullName",
+          "Translation": {
+            "EL": "Ονοματεπώνυμο",
+            "EN": "Full Name",
+            "RO": "Nume complet"
+          }
+        },
+        {
+          "Key": "Edit",
+          "Value": "Edit",
+          "Translation": {
+            "EL": "Επεξεργασία",
+            "EN": "Edit",
+            "RO": "Editează"
+          }
+        },
+        {
+          "Key": "ConvertToNewOffer",
+          "Value": "ConvertToNewOffer",
+          "Translation": {
+            "EL": "Μετατροπή σε νέα προσφορά",
+            "EN": "Convert to new offer",
+            "RO": "Converteşte într-o nouă ofertă"
+          }
+        },
+        {
+          "Key": "ConvertToCart",
+          "Value": "ConvertToCart",
+          "Translation": {
+            "EL": "Μετατροπή σε καλάθι",
+            "EN": "Convert to cart",
+            "RO": "Convert to cart"
+          }
+        },
+        {
+          "Key": "OfferCancellationTitle",
+          "Value": "OfferCancellationTitle",
+          "Translation": {
+            "EL": "Ακύρωση προσφοράς",
+            "EN": "Offer Cancellation",
+            "RO": "Anulează oferta"
+          }
+        },
+        {
+          "Key": "OfferCancellationMessage",
+          "Value": "OfferCancellationMessage",
+          "Translation": {
+            "EL": "Αυτή η ενέργεια θα ακυρώσει αυτήν την προσφορά και θα την ορίσει ως Απορρίφθηκε. Θέλετε να συνεχίσετε;",
+            "EN": "This action will cancel this offer and set it as Rejected. Do you want to proceed?",
+            "RO": "Această acţiune va anula oferta şi îi va actuliza statusul în [Anulat]. Doriţi să continuaţi?"
+          }
+        },
+        {
+          "Key": "OfferCancelButton",
+          "Value": "OfferCancelButton",
+          "Translation": {
+            "EL": "Όχι, επιστροφή!",
+            "EN": "No, go back!",
+            "RO": "Nu"
+          }
+        },
+        {
+          "Key": "OfferAcceptButton",
+          "Value": "OfferAcceptButton",
+          "Translation": {
+            "EL": "Ναι, ακύρωση!",
+            "EN": "Yes, Cancel!",
+            "RO": "Da"
+          }
+        },
+        {
+          "Key": "OfferCancellationToastTitle",
+          "Value": "OfferCancellationToastTitle",
+          "Translation": {
+            "EL": "Ακύρωση προσφοράς!",
+            "EN": "Offer cancellation",
+            "RO": "Anulează oferta"
+          }
+        },
+        {
+          "Key": "MessageCancelOffer",
+          "Value": "MessageCancelOffer",
+          "Translation": {
+            "EL": "Η προσφορά ακυρώθηκε με επιτυχία!",
+            "EN": "The offer was cancelled succesfully!",
+            "RO": "Oferta a fost anulată cu succes!"
+          }
+        },
+        {
+          "Key": "Success",
+          "Value": "Success",
+          "Translation": {
+            "EL": "Επιτυχία",
+            "EN": "Success",
+            "RO": "Succes"
+          }
+        },
+        {
+          "Key": "Rejected",
+          "Value": "Rejected",
+          "Translation": {
+            "EL": "Απορρίφθηκε",
+            "EN": "Rejected",
+            "RO": "Anulat"
+          }
+        },
+        {
+          "Key": "Accepted",
+          "Value": "Accepted",
+          "Translation": {
+            "EL": "Εγκρίθηκε",
+            "EN": "Accepted",
+            "RO": "Acceptat"
+          }
+        },
+        {
+          "Key": "Open",
+          "Value": "Open",
+          "Translation": {
+            "EL": "Ανοικτή",
+            "EN": "Open",
+            "RO": "Deschide"
+          }
+        },
+        {
+          "Key": "Draft",
+          "Value": "Draft",
+          "Translation": {
+            "EL": "Σε προσχέδιο",
+            "EN": "Draft",
+            "RO": "Draft"
+          }
+        },
+        {
+          "Key": "Cancel",
+          "Value": "Cancel",
+          "Translation": {
+            "EL": "Ακύρωση",
+            "EN": "Cancel",
+            "RO": "Anulare"
+          }
+        },
+        {
+          "Key": "SuccessMessageSendOffer",
+          "Value": "SuccessMessageSendOffer",
+          "Translation": {
+            "EL": "Η προσφορά αποθηκεύτηκε με επιτυχία. Ένα email θα αποσταλεί στον παραλήπτη που επιλέξατε.",
+            "EN": "The offer was saved successfully. An email will be sent to the recipient you chose.",
+            "RO": "Oferta a fost salvată cu succes. Un email va fi trimis către destinatarul ales."
+          }
+        },
+        {
+          "Key": "SuccessMessageSaveOffer",
+          "Value": "SuccessMessageSaveOffer",
+          "Translation": {
+            "EL": "Η προσφορά αποθηκεύτηκε με επιτυχία.",
+            "EN": "The offer was saved successfully.",
+            "RO": "Oferta a fost salvată cu succes."
+          }
+        },
+        {
+          "Key": "Error",
+          "Value": "Error",
+          "Translation": {
+            "EL": "Σφάλμα",
+            "EN": "Error",
+            "RO": "Eroare"
+          }
+        },
+        {
+          "Key": "ProcessOfferErrorMessage",
+          "Value": "ProcessOfferErrorMessage",
+          "Translation": {
+            "EL": "Ωχ! Παρουσιάστηκε κάποιο πρόβλημα κατά την επεξεργασία του αιτήματός σας. Δοκιμάστε ξανά σε λίγο.",
+            "EN": "Oops! Something went wrong while processing your request. Please try again in a moment.",
+            "RO": "Au fost întâmpinate erori de procesare. Te rugăm sa reîncerci."
+          }
+        },
+        {
+          "Key": "Address",
+          "Value": "Address",
+          "Translation": {
+            "EL": "Διεύθυνση",
+            "EN": "Address",
+            "RO": "Adresă"
+          }
+        },
+        {
+          "Key": "Note",
+          "Value": "Note",
+          "Translation": {
+            "EL": "Σημείωση",
+            "EN": "Note",
+            "RO": "Notă"
+          }
+        },
+        {
+          "Key": "OfferDescription",
+          "Value": "OfferDescription",
+          "Translation": {
+            "EL": "Σχόλια προσφοράς",
+            "EN": "Offer description",
+            "RO": "Descrierea ofertei"
+          }
+        },
+        {
+          "Key": "SaveOffer",
+          "Value": "SaveOffer",
+          "Translation": {
+            "EL": "Αποθήκευση προσφοράς",
+            "EN": "Save offer",
+            "RO": "Salveză ofertă"
+          }
+        },
+        {
+          "Key": "SendOffer",
+          "Value": "SendOffer",
+          "Translation": {
+            "EL": "Αποστολή προσφοράς",
+            "EN": "Send offer",
+            "RO": "Trimite ofertă"
+          }
+        },
+        {
+          "Key": "Offer",
+          "Value": "Offer",
+          "Translation": {
+            "EL": "Προσφορά",
+            "EN": "Offer",
+            "RO": "Ofertă"
+          }
+        },
+        {
+          "Key": "OfferTitle",
+          "Value": "OfferTitle",
+          "Translation": {
+            "EL": "Τίτλος προσφοράς",
+            "EN": "Offer title",
+            "RO": "Titlu ofertă"
+          }
+        },
+        {
+          "Key": "FirstName",
+          "Value": "FirstName",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "First name",
+            "RO": "Prenume"
+          }
+        },
+        {
+          "Key": "LastName",
+          "Value": "LastName",
+          "Translation": {
+            "EL": "Επίθετο",
+            "EN": "Last name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "CustomerEmail",
+          "Value": "CustomerEmail",
+          "Translation": {
+            "EL": "Email",
+            "EN": "Email",
+            "RO": "Email"
+          }
+        },
+        {
+          "Key": "InvalidEmail",
+          "Value": "InvalidEmail",
+          "Translation": {
+            "EL": "Παρακαλώ συμπληρώστε ένα σωστό email",
+            "EN": "Please fill in a correct email",
+            "RO": "Te rugăm să introduci o adresă de email corectă"
+          }
+        },
+        {
+          "Key": "InvalidTitle",
+          "Value": "InvalidTitle",
+          "Translation": {
+            "EL": "Το πεδίο Τίτλος είναι υποχρεωτικό",
+            "EN": "Title field is mandatory",
+            "RO": "Titlul este obligatoriu"
+          }
+        },
+        {
+          "Key": "ExpirationDate",
+          "Value": "ExpirationDate",
+          "Translation": {
+            "EL": "Ημερομηνία λήξης",
+            "EN": "Expiration date",
+            "RO": "Dată de expirare"
+          }
+        },
+        {
+          "Key": "InvalidExpirationDate",
+          "Value": "InvalidExpirationDate",
+          "Translation": {
+            "EL": "Το πεδίο Ημερομηνία λήξης είναι υποχρεωτικό",
+            "EN": "Expiration Date field is mandatory",
+            "RO": "Data de expirare este oblogatorie"
+          }
+        },
+        {
+          "Key": "Margin",
+          "Value": "Margin",
+          "Translation": {
+            "EL": "Κέρδος",
+            "EN": "Margin",
+            "RO": "Marjă"
+          }
+        },
+        {
+          "Key": "Price",
+          "Value": "Price",
+          "Translation": {
+            "EL": "Τιμή",
+            "EN": "Price",
+            "RO": "Preţ"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "OfferDoesNotExist",
+          "Value": "OfferDoesNotExist",
+          "Translation": {
+            "EL": "Η προσφορά δεν υπάρχει",
+            "EN": "Offer does not exist",
+            "RO": "Oferta nu există"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προϊόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Remove",
+          "Value": "Remove",
+          "Translation": {
+            "EL": "Αφαίρεση",
+            "EN": "Remove",
+            "RO": "Elimină"
+          }
+        },
+        {
+          "Key": "Continue_shopping",
+          "Value": "Continue_shopping",
+          "Translation": {
+            "EL": "Συνεχίστε τις αγορές σας",
+            "EN": "Continue shopping",
+            "RO": "Continuă cumpărăturile"
+          }
+        },
+        {
+          "Key": "Net",
+          "Value": "Net",
+          "Translation": {
+            "EL": "Καθαρή Αξία",
+            "EN": "Net Value",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "VAT",
+          "Value": "VAT",
+          "Translation": {
+            "EL": "ΦΠΑ",
+            "EN": "VAT",
+            "RO": "TVA"
+          }
+        },
+        {
+          "Key": "SalePrice",
+          "Value": "SalePrice",
+          "Translation": {
+            "EL": "Τιμή Πώλησης",
+            "EN": "Sale Price",
+            "RO": "Preţ de vânzare"
+          }
+        },
+        {
+          "Key": "ProfitAmount",
+          "Value": "ProfitAmount",
+          "Translation": {
+            "EL": "Ποσό Κέρδους",
+            "EN": "Profit Amount",
+            "RO": "Valoare profit"
+          }
+        },
+        {
+          "Key": "PurchaseValue",
+          "Value": "PurchaseValue",
+          "Translation": {
+            "EL": "Αξία Αγοράς",
+            "EN": "Purchase Value",
+            "RO": "Preţ de achiziţie"
+          }
+        },
+        {
+          "Key": "NoProductsInTheOffer",
+          "Value": "NoProductsInTheOffer",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα στην σελίδα προσφοράς",
+            "EN": "No products in the offer page.",
+            "RO": "Nu a fost ales niciun produs în ofertă."
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "SearchForProducts",
+          "Value": "SearchForProducts",
+          "Translation": {
+            "EL": "Αναζήτηση προϊόντων",
+            "EN": "Search for products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "Quickly_add_product",
+          "Value": "Quickly_add_product",
+          "Translation": {
+            "EL": "Γρήγορη προσθήκη προϊόντος στην σελίδα προσφοράς.",
+            "EN": "Quickly add product to offer page.",
+            "RO": "Adaugă produse în ofertă."
+          }
+        },
+        {
+          "Key": "CreateOffer",
+          "Value": "CreateOffer",
+          "Translation": {
+            "EL": "Δημιουργία προσφοράς",
+            "EN": "Create offer",
+            "RO": "Creează ofertă"
+          }
+        },
+        {
+          "Key": "OfferTitle",
+          "Value": "OfferTitle",
+          "Translation": {
+            "EL": "Τίτλος προσφοράς",
+            "EN": "Offer title",
+            "RO": "Titlu ofertă"
+          }
+        },
+        {
+          "Key": "WriteOfferTitleHere",
+          "Value": "WriteOfferTitleHere",
+          "Translation": {
+            "EL": "Γράψτε τον τίτλο της προσφοράς εδώ",
+            "EN": "Write the offer title here",
+            "RO": "Introdu numele ofertei aici"
+          }
+        },
+        {
+          "Key": "Value",
+          "Value": "Value",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Value",
+            "RO": "Valoare"
+          }
+        },
+        {
+          "Key": "SubTotal",
+          "Value": "Sub total",
+          "Translation": {
+            "EL": "Μερικό σύνολο",
+            "EN": "Subtotal",
+            "RO": "Subtotal"
+          }
+        },
+        {
+          "Key": "InitialValue",
+          "Value": "InitialValue",
+          "Translation": {
+            "EL": "Αρχική τιμή",
+            "EN": "Initial value",
+            "RO": "Valoare iniţială"
+          }
+        },
+        {
+          "Key": "LineValue",
+          "Value": "LineValue",
+          "Translation": {
+            "EL": "Τιμή προιόντος",
+            "EN": "Line value",
+            "RO": "Valoare linie"
+          }
+        },
+        {
+          "Key": "ProfitPercentage",
+          "Value": "ProfitPercentage",
+          "Translation": {
+            "EL": "Ποσοστό κέρδους",
+            "EN": "Profit percentage",
+            "RO": "Procentaj profit"
+          }
+        },
+        {
+          "Key": "ServiceAmount",
+          "Value": "ServiceAmount",
+          "Translation": {
+            "EL": "Ποσό υπηρεσίας",
+            "EN": "Service amount",
+            "RO": "Valoare servicii"
+          }
+        },
+        {
+          "Key": "OfferService",
+          "Value": "OfferService",
+          "Translation": {
+            "EL": "Υπηρεσία προσφοράς",
+            "EN": "Offer service",
+            "RO": "Oferă servicii"
+          }
+        },
+        {
+          "Key": "OfferText",
+          "Value": "OfferText",
+          "Translation": {
+            "EL": "Κείμενο υπηρεσίας",
+            "EN": "Offer text",
+            "RO": "Informaţii suplimentare"
+          }
+        },
+        {
+          "Key": "Writetexthere",
+          "Value": "Writetexthere",
+          "Translation": {
+            "EL": "Πληκτρολογήστε το κείμενο σας εδώ.",
+            "EN": "Write your text here.",
+            "RO": "Introduceţi text aici"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "TextWithImage",
+      "DisplayName": "Text with image",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "TopBar",
+      "DisplayName": "Top bar",
+      "Views": [
+        "Default",
+        "Alternative"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "VideoBlock",
+      "DisplayName": "Video",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "LastVisited",
+          "Value": "LastVisited",
+          "Translation": {
+            "EL": "Είδατε πρόσφατα",
+            "EN": "Last Visited",
+            "RO": "Ultima vizită"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductModal",
+      "DisplayName": "Product Modal",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Unit",
+          "Value": "Unit",
+          "Translation": {
+            "EL": "τεμάχιο",
+            "EN": "unit",
+            "RO": "unitate"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "Add_to_cart",
+          "Value": "Add_to_cart",
+          "Translation": {
+            "EL": "Προσθήκη στο καλάθι",
+            "EN": "Add to cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "Description",
+          "Value": "Description",
+          "Translation": {
+            "EL": "Περιγραφή",
+            "EN": "Description",
+            "RO": "Descriere"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Breadcrumb",
+      "DisplayName": "Breadcrumb",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Blog",
+          "Value": "Blog",
+          "Translation": {
+            "EL": "Blog",
+            "EN": "Blog",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "BlogCategories",
+          "Value": "BlogCategories",
+          "Translation": {
+            "EL": "Κατηγορίες Blog",
+            "EN": "Blog Categories",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "BlogPosts",
+          "Value": "BlogPosts",
+          "Translation": {
+            "EL": "Δημοσιεύσεις Blog",
+            "EN": "Blog Posts",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Home",
+          "Value": "Home",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "Home",
+            "RO": "Pagina principală"
+          }
+        },
+        {
+          "Key": "Categories",
+          "Value": "Categories",
+          "Translation": {
+            "EL": "Κατηγορίες",
+            "EN": "Categories",
+            "RO": "Categorii"
+          }
+        },
+        {
+          "Key": "Collections",
+          "Value": "Collections",
+          "Translation": {
+            "EL": "Συλλογές",
+            "EN": "Collections",
+            "RO": "Colecţii"
+          }
+        },
+        {
+          "Key": "Brands",
+          "Value": "Brands",
+          "Translation": {
+            "EL": "Brands",
+            "EN": "Brands",
+            "RO": "Mărci"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Form",
+      "DisplayName": "Form",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        2
+      ],
+      "Translations": [
+        {
+          "Key": "invalidFileType",
+          "Value": "invalidFileType",
+          "Translation": {
+            "EL": "Μη έγκυρος τύπος αρχείου",
+            "EN": "Not valid file type"
+          }
+        },
+        {
+          "Key": "invalidEmailAddress",
+          "Value": "invalidEmailAddress",
+          "Translation": {
+            "EL": "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
+            "EN": "Not valid email address"
+          }
+        },
+        {
+          "Key": "CaptchaValidationMessage",
+          "Value": "CaptchaValidationMessage",
+          "Translation": {
+            "EL": "Παρακαλώ επιβεβαιώστε ότι δεν είστε ρομπότ!",
+            "EN": "Please verify you are not a robot!",
+            "RO": "Confirmă că nu eşti robot!"
+          }
+        },
+        {
+          "Key": "oops",
+          "Value": "oops",
+          "Translation": {
+            "EL": "Ωχ! Κάτι πήγε στραβά!",
+            "EN": "Oops! Something went wrong.",
+            "RO": "Ceva nu a funcţionat bine."
+          }
+        },
+        {
+          "Key": "toastError",
+          "Value": "toastError",
+          "Translation": {
+            "EL": "Δεν μπορέσαμε να παραλάβουμε το μήνυμα σας! Παρακαλώ προσπαθήστε ξανά σε λίγο.",
+            "EN": "We could not receive your message! Please try again later.",
+            "RO": "Mesajul nu a fost primit. Reîncearcă mai târziu."
+          }
+        },
+        {
+          "Key": "Enteryourname",
+          "Value": "Enteryourname",
+          "Translation": {
+            "EL": "Εισάγετε το όνομα σας",
+            "EN": "Enter your name",
+            "RO": "Introduce numele"
+          }
+        },
+        {
+          "Key": "Enteryouremail",
+          "Value": "Enteryouremail",
+          "Translation": {
+            "EL": "Εισάγετε το email σας",
+            "EN": "Enter your email",
+            "RO": "Introdu adresa de email"
+          }
+        },
+        {
+          "Key": "Name",
+          "Value": "Name",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "Name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "E-mail",
+          "Value": "E-mail",
+          "Translation": {
+            "EL": "Εmail",
+            "EN": "Email",
+            "RO": "Email"
+          }
+        },
+        {
+          "Key": "Subject",
+          "Value": "Subject",
+          "Translation": {
+            "EL": "Θέμα",
+            "EN": "Subject",
+            "RO": "Subiect"
+          }
+        },
+        {
+          "Key": "Message",
+          "Value": "Message",
+          "Translation": {
+            "EL": "Μήνυμα",
+            "EN": "Message",
+            "RO": "Mesaj"
+          }
+        },
+        {
+          "Key": "Clear",
+          "Value": "Clear",
+          "Translation": {
+            "EL": "Καθαρισμός",
+            "EN": "Clear",
+            "RO": "Şterge"
+          }
+        },
+        {
+          "Key": "Entersubject",
+          "Value": "Entersubject",
+          "Translation": {
+            "EL": "Εισάγετε το θέμα",
+            "EN": "Subject",
+            "RO": "Subiect"
+          }
+        },
+        {
+          "Key": "Pleasedescribeindetailyourrequest",
+          "Value": "Pleasedescribeindetailyourrequest",
+          "Translation": {
+            "EL": "Παρακαλώ περιγράψτε με λεπτομέρεια το αίτημα σας",
+            "EN": "Please describe in detail your request",
+            "RO": "Te rugăm să descrii în detaliu solicitarea."
+          }
+        },
+        {
+          "Key": "Thank_you_for_contacting_us",
+          "Value": "Thank_you_for_contacting_us",
+          "Translation": {
+            "EL": "Σας ευχαριστούμε που επικοινωνήσατε μαζί μας",
+            "EN": "Thank you for contacting us",
+            "RO": "Îţi mulţumim că ne-ai contactat."
+          }
+        },
+        {
+          "Key": "Great",
+          "Value": "Great",
+          "Translation": {
+            "EL": "",
+            "EN": "Great",
+            "RO": "Great"
+          }
+        },
+        {
+          "Key": "nameError",
+          "Value": "nameError",
+          "Translation": {
+            "EL": "Εισαγάγετε ένα όνομα μεταξύ 2 και 24 χαρακτήρων",
+            "EN": "Please input a name with 2 to 24 characters",
+            "RO": "Te rugăm să introduci un nume care să cuprindă între 2 şi 24 caractere."
+          }
+        },
+        {
+          "Key": "mailError",
+          "Value": "EmailError",
+          "Translation": {
+            "EL": "Εισαγάγετε ένα έγκυρο email.",
+            "EN": "Please input a valid email.",
+            "RO": "Te rugăm să introduci o adresă de email corectă"
+          }
+        },
+        {
+          "Key": "messageError",
+          "Value": "MessageError",
+          "Translation": {
+            "EL": "Εισαγάγετε ένα μήνυμα μεταξύ 5 και 1200 χαρακτήρων",
+            "EN": "Please input a message with  2 to 1200 characters",
+            "RO": "Te rugăm să introduci un mesaj care să cuprindă între 2 şi 1200 caractere"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductDocumentation",
+      "DisplayName": "Product Documentation",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        5
+      ],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductExpected",
+      "DisplayName": "Product Expected",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        5
+      ],
+      "Translations": [
+        {
+          "Key": "Expected",
+          "Value": "Expected",
+          "Translation": {
+            "EL": "Αναμενόμενο Απόθεμα",
+            "EN": "Expected Inventory",
+            "RO": "Stoc în aşteptare"
+          }
+        },
+        {
+          "Key": "deliveryDate",
+          "Value": "Delivery Date",
+          "Translation": {
+            "EL": "Ημερ/νία παράδοσης",
+            "EN": "Delivery Date",
+            "RO": "Data de livrare"
+          }
+        },
+        {
+          "Key": "expectedQuantity",
+          "Value": "Expected Quantity",
+          "Translation": {
+            "EL": "Αναμενόμενη Ποσότητα",
+            "EN": "Expected Quantity",
+            "RO": "Cantitate în aşteptare"
+          }
+        },
+        {
+          "Key": "NoExpected",
+          "Value": "NoExpected",
+          "Translation": {
+            "EL": "Δεν υπάρχουν αναμενόμενα",
+            "EN": "There is no expected inventory",
+            "RO": "Nu există stoc în aşteptare"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductAttachments",
+      "DisplayName": "Product Attachments",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        5
+      ],
+      "Translations": [
+        {
+          "Key": "Attachments",
+          "Value": "Attachments",
+          "Translation": {
+            "EL": "Συνημμένα",
+            "EN": "Attachments",
+            "RO": "Ataşamente"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductAttributes",
+      "DisplayName": "Product Attributes",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        5
+      ],
+      "Translations": [
+        {
+          "Key": "Attributes",
+          "Value": "Attributes",
+          "Translation": {
+            "EL": "Τεχνικά Χαρακτηριστικά",
+            "EN": "Attributes",
+            "RO": "Caracteristici"
+          }
+        },
+        {
+          "Key": "Sale",
+          "Value": "Sale",
+          "Translation": {
+            "EL": "Προσφορά",
+            "EN": "Sale",
+            "RO": "Ofertă"
+          }
+        },
+        {
+          "Key": "AdditionalAttributes",
+          "Value": "AdditionalAttributes",
+          "Translation": {
+            "EL": "Επιπλέον Χαρακτηριστικά",
+            "EN": "Additional Attributes",
+            "RO": "Caracteristici suplimentare"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Quote",
+      "DisplayName": "Quote",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        25
+      ],
+      "Translations": [
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προϊόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Quickly_add_product",
+          "Value": "Quickly_add_product",
+          "Translation": {
+            "EL": "Γρήγορη προσθήκη προϊόντος",
+            "EN": "Quickly add product",
+            "RO": "Adaugă produs"
+          }
+        },
+        {
+          "Key": "Negotiations",
+          "Value": "Negotiations",
+          "Translation": {
+            "EL": "Διαπραγματεύσεις",
+            "EN": "Negotiations",
+            "RO": "Negocieri"
+          }
+        },
+        {
+          "Key": "Admin",
+          "Value": "Admin",
+          "Translation": {
+            "EL": "Διαχειριστής",
+            "EN": "Admin",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Negotiation_History",
+          "Value": "Negotiation_History",
+          "Translation": {
+            "EL": "Ιστορικό διαπραγματεύσεων",
+            "EN": "Negotiation history",
+            "RO": "Istoric negocieri"
+          }
+        },
+        {
+          "Key": "SendQuote",
+          "Value": "SendQuote",
+          "Translation": {
+            "EL": "Αποστολή quote",
+            "EN": "Send Quote",
+            "RO": "Trimite ofertă"
+          }
+        },
+        {
+          "Key": "SearchForProducts",
+          "Value": "SearchForProducts",
+          "Translation": {
+            "EL": "Αναζήτηση προϊόντων",
+            "EN": "Search for products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "NoProductsInTheQuote",
+          "Value": "NoProductsInTheQuote",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα στο quote",
+            "EN": "There are not products in the quote",
+            "RO": "Nu există produse în ofertă"
+          }
+        },
+        {
+          "Key": "NetValue",
+          "Value": "NetValue",
+          "Translation": {
+            "EL": "Καθαρή αξία",
+            "EN": "Net value",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "NewNet",
+          "Value": "NewNet",
+          "Translation": {
+            "EL": "Νέα καθαρή αξία",
+            "EN": "New net value",
+            "RO": "Valoarea nouă netă"
+          }
+        },
+        {
+          "Key": "Accept",
+          "Value": "Accept",
+          "Translation": {
+            "EL": "Αποδοχή",
+            "EN": "Accept",
+            "RO": "Acceptă"
+          }
+        },
+        {
+          "Key": "Decline",
+          "Value": "Decline",
+          "Translation": {
+            "EL": "Απόρριψη",
+            "EN": "Decline",
+            "RO": "Refuză"
+          }
+        },
+        {
+          "Key": "Quote",
+          "Value": "Quote",
+          "Translation": {
+            "EL": "Quote",
+            "EN": "Quote",
+            "RO": "Ofertă"
+          }
+        },
+        {
+          "Key": "QuoteTitle",
+          "Value": "QuoteTitle",
+          "Translation": {
+            "EL": "Τίτλος quote",
+            "EN": "Quote title",
+            "RO": "Titlu ofertă"
+          }
+        },
+        {
+          "Key": "QuoteDescription",
+          "Value": "QuoteDescription",
+          "Translation": {
+            "EL": "Σχόλια",
+            "EN": "Notes",
+            "RO": "Observaţii"
+          }
+        },
+        {
+          "Key": "Writetexthere",
+          "Value": "Write text here",
+          "Translation": {
+            "EL": "Γράψτε κείμενο εδώ",
+            "EN": "Write text here",
+            "RO": "Introduceţi textul aici"
+          }
+        },
+        {
+          "Key": "SubTotal",
+          "Value": "Subtotal",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Net",
+            "RO": "Subtotal"
+          }
+        },
+        {
+          "Key": "RequestAmount",
+          "Value": "RequestAmount",
+          "Translation": {
+            "EL": "Πρόταση αξίας",
+            "EN": "Request net",
+            "RO": "Valoare propusă"
+          }
+        },
+        {
+          "Key": "Continue_shopping",
+          "Value": "Continue shopping",
+          "Translation": {
+            "EL": "Συνεχίστε τις αγορές",
+            "EN": "Continue shopping",
+            "RO": "Continuaţi cumpărăturile"
+          }
+        },
+        {
+          "Key": "UpdatedFrom",
+          "Value": "Updated from",
+          "Translation": {
+            "EL": "Ενημερώθηκε από",
+            "EN": "Updated from",
+            "RO": "Actualizat din"
+          }
+        },
+        {
+          "Key": "by",
+          "Value": "by",
+          "Translation": {
+            "EL": "από",
+            "EN": "by",
+            "RO": "de către"
+          }
+        },
+        {
+          "Key": "Updatedat",
+          "Value": "Updated at",
+          "Translation": {
+            "EL": "Ενημερώθηκε στις",
+            "EN": "Updated at",
+            "RO": "Actualizat la"
+          }
+        },
+        {
+          "Key": "You",
+          "Value": "You",
+          "Translation": {
+            "EL": "Εσάς",
+            "EN": "You",
+            "RO": "Tu"
+          }
+        },
+        {
+          "Key": "QuoteService",
+          "Value": "Quote Service",
+          "Translation": {
+            "EL": "Quote Service",
+            "EN": "Quote Service",
+            "RO": "Ofertă de servicii"
+          }
+        },
+        {
+          "Key": "SuccessMessageSaveQuote",
+          "Value": "Success Save Quote",
+          "Translation": {
+            "EL": "Το quote στάλθηκε επιτυχώς",
+            "EN": "Quote successfully sent",
+            "RO": "Ofertă trimisă cu succes"
+          }
+        },
+        {
+          "Key": "ProcessQuoteErrorMessage",
+          "Value": "Process quote error",
+          "Translation": {
+            "EL": "Παρουσιάστηκε κάποιο σφάλμα",
+            "EN": "Something went wrong",
+            "RO": "Ceva nu a funcţionat corect."
+          }
+        },
+        {
+          "Key": "NotYourTurn",
+          "Value": "Not your turn",
+          "Translation": {
+            "EL": "Πρέπει να περιμένετε τη σειρά σας!",
+            "EN": "You have to wait for your turn!",
+            "RO": "Aşteaptă rândul tău"
+          }
+        },
+        {
+          "Key": "Expired",
+          "Value": "Expired",
+          "Translation": {
+            "EL": "Αυτό το quote έχει λήξει",
+            "EN": "This quote has expired",
+            "RO": "Această ofertă a expirat"
+          }
+        },
+        {
+          "Key": "QuoteAlreadyOrdered",
+          "Value": "Quote Already Ordered",
+          "Translation": {
+            "EL": "Αυτό το quote έχει γίνει ήδη παραγγελία",
+            "EN": "This quote is already ordered",
+            "RO": "Această ofertă este deja comandată"
+          }
+        },
+        {
+          "Key": "OrderCreated",
+          "Value": "Ordered created",
+          "Translation": {
+            "EL": "Η παραγγελία δημιουργήθηκε επιτυχώς",
+            "EN": "Order is successfully created",
+            "RO": "Oferta este creată cu succes"
+          }
+        },
+        {
+          "Key": "Error",
+          "Value": "Error",
+          "Translation": {
+            "EL": "Σφάλμα",
+            "EN": "Error",
+            "RO": "Eroare"
+          }
+        },
+        {
+          "Key": "Success",
+          "Value": "Success",
+          "Translation": {
+            "EL": "Επιτυχία",
+            "EN": "Success",
+            "RO": "Succes"
+          }
+        },
+        {
+          "Key": "ProvideNetAmount",
+          "Value": "ProvideNetAmount",
+          "Translation": {
+            "EL": "Ο ορισμός της καθαρής αξίας είναι υποχρεωτικός",
+            "EN": "You have to define net value",
+            "RO": "Valoarea netă este obligatorie"
+          }
+        },
+        {
+          "Key": "ProvideLines",
+          "Value": "ProvideLines",
+          "Translation": {
+            "EL": "Πρέπει να επιλεχθούν προϊόντα",
+            "EN": "You have to add products",
+            "RO": "Trebuie să adaugi produse"
+          }
+        },
+        {
+          "Key": "Order",
+          "Value": "Order",
+          "Translation": {
+            "EL": "Παραγγελία",
+            "EN": "Order",
+            "RO": "Ofertă"
+          }
+        },
+        {
+          "Key": "AreYouSure?",
+          "Value": "AreYouSure?",
+          "Translation": {
+            "EL": "Είστε σιγούροι ότι θέλετε να προχωρήσετε με την παραγγελία;",
+            "EN": "Are you sure you want to proceed with the order?",
+            "RO": "Sunteţi sigur că doriţi să continuaţi cu această ofertă?"
+          }
+        },
+        {
+          "Key": "Checkout",
+          "Value": "Checkout",
+          "Translation": {
+            "EL": "Ολοκλήρωση αγοράς",
+            "EN": "Checkout"
+          }
+        }
+      ]
+    },
+
+    {
+      "Type": "Profile",
+      "DisplayName": "Profile",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        16
+      ],
+      "Translations": [
+        {
+          "Key": "Blog",
+          "Value": "Blog",
+          "Translation": {
+            "EL": "Blog",
+            "EN": "Blog",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "BlogCategories",
+          "Value": "BlogCategories",
+          "Translation": {
+            "EL": "Κατηγορίες Blog",
+            "EN": "Blog Categories",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Announcements",
+          "Value": "Announcements",
+          "Translation": {
+            "EL": "Ανακοινώσεις",
+            "EN": "Announcements",
+            "RO": "Anunturi"
+          }
+        },
+        {
+          "Key": "Description",
+          "Value": "Description",
+          "Translation": {
+            "EL": "Περιγραφή",
+            "EN": "Description",
+            "RO": "Descriere"
+          }
+        },
+        {
+          "Key": "User",
+          "Value": "User",
+          "Translation": {
+            "EL": "Χρήστης",
+            "EN": "User",
+            "RO": "Utilizator"
+          }
+        },
+        {
+          "Key": "Addresses",
+          "Value": "Addresses",
+          "Translation": {
+            "EL": "Διευθύνσεις",
+            "EN": "Addresses",
+            "RO": "Adrese"
+          }
+        },
+        {
+          "Key": "ChooseLogo",
+          "Value": "ChooseLogo",
+          "Translation": {
+            "EL": "Επιλέξτε logo",
+            "EN": "Choose logo",
+            "RO": "Alege logo"
+          }
+        },
+        {
+          "Key": "ChooseAnother",
+          "Value": "ChooseAnother",
+          "Translation": {
+            "EL": "Επιλέξτε άλλο",
+            "EN": "Choose another",
+            "RO": "Alege altceva"
+          }
+        },
+        {
+          "Key": "Upload",
+          "Value": "Upload",
+          "Translation": {
+            "EL": "Ανέβασμα",
+            "EN": "Upload",
+            "RO": "Încărcaţi"
+          }
+        },
+        {
+          "Key": "All",
+          "Value": "All",
+          "Translation": {
+            "EL": "Όλα",
+            "EN": "All",
+            "RO": "Tot"
+          }
+        },
+        {
+          "Key": "CustomerName",
+          "Value": "CustomerName",
+          "Translation": {
+            "EL": "Όνομα Πελάτη",
+            "EN": "Customer Name",
+            "RO": "Nume client"
+          }
+        },
+        {
+          "Key": "ExpirationDate",
+          "Value": "ExpirationDate",
+          "Translation": {
+            "EL": "Ημερομηνία Λήξης",
+            "EN": "Expiration Date",
+            "RO": "Dată de expirare"
+          }
+        },
+        {
+          "Key": "UpdateDate",
+          "Value": "UpdateDate",
+          "Translation": {
+            "EL": "Ημερομηνία Ενημέρωσης",
+            "EN": "Update Date",
+            "RO": "Dată actulizare"
+          }
+        },
+        {
+          "Key": "Sort",
+          "Value": "Sort",
+          "Translation": {
+            "EL": "Ταξινόμηση",
+            "EN": "Sort",
+            "RO": "Sortare"
+          }
+        },
+        {
+          "Key": "Open",
+          "Value": "Open",
+          "Translation": {
+            "EL": "Ανοικτή",
+            "EN": "Open",
+            "RO": "Deschide"
+          }
+        },
+        {
+          "Key": "Rejected",
+          "Value": "Rejected",
+          "Translation": {
+            "EL": "Απορρίφθηκε",
+            "EN": "Rejected",
+            "RO": "Respins"
+          }
+        },
+        {
+          "Key": "Accepted",
+          "Value": "Accepted",
+          "Translation": {
+            "EL": "Εγκρίθηκε",
+            "EN": "Accepted",
+            "RO": "Acceptat"
+          }
+        },
+        {
+          "Key": "Dashboard",
+          "Value": "Dashboard",
+          "Translation": {
+            "EL": "Ταμπλό",
+            "EN": "Dashboard",
+            "RO": "Tablou de bord"
+          }
+        },
+        {
+          "Key": "Offers",
+          "Value": "Offers",
+          "Translation": {
+            "EL": "Προσφορές",
+            "EN": "Offers",
+            "RO": "Oferte"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προιόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Delete_from_list",
+          "Value": "Delete from list",
+          "Translation": {
+            "EL": "Διαγραφή από την λίστα",
+            "EN": "Delete from list",
+            "RO": "Şterge din listă"
+          }
+        },
+        {
+          "Key": "Add_to_cart",
+          "Value": "Add to cart",
+          "Translation": {
+            "EL": "Προσθήκη στο καλάθι",
+            "EN": "Add to cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "View",
+          "Value": "View",
+          "Translation": {
+            "EL": "Εμφάνιση",
+            "EN": "View",
+            "RO": "Vizualizare"
+          }
+        },
+        {
+          "Key": "GiveName",
+          "Value": "Give a name",
+          "Translation": {
+            "EL": "Δώστε ένα όνομα",
+            "EN": "Give a name",
+            "RO": "Denumeşte"
+          }
+        },
+        {
+          "Key": "PaymentDate",
+          "Value": "Payment Date",
+          "Translation": {
+            "EL": "Ημερομηνία Πληρωμής",
+            "EN": "Payment Date",
+            "RO": "Data plăţii"
+          }
+        },
+        {
+          "Key": "SKU",
+          "Value": "Sku",
+          "Translation": {
+            "EL": "SKU",
+            "EN": "SKU",
+            "RO": "SKU"
+          }
+        },
+        {
+          "Key": "Price",
+          "Value": "Price",
+          "Translation": {
+            "EL": "Τιμή",
+            "EN": "Price",
+            "RO": "Preţ"
+          }
+        },
+        {
+          "Key": "Back_to_Shopping_Lists",
+          "Value": "Back",
+          "Translation": {
+            "EL": "Πίσω",
+            "EN": "Back",
+            "RO": "Înapoi"
+          }
+        },
+        {
+          "Key": "Create_Cart",
+          "Value": "Create Cart",
+          "Translation": {
+            "EL": "Δημιουργείστε Καλάθι",
+            "EN": "Create Cart",
+            "RO": "Creează coş"
+          }
+        },
+        {
+          "Key": "Add_All",
+          "Value": "Add All",
+          "Translation": {
+            "EL": "Προσθήκη Όλων",
+            "EN": "Add All",
+            "RO": "Adaugă tot"
+          }
+        },
+        {
+          "Key": "ShoppingLists",
+          "Value": "Shopping Lists",
+          "Translation": {
+            "EL": "Λίστες",
+            "EN": "Shopping Lists",
+            "RO": "Lista de cumpărături"
+          }
+        },
+        {
+          "Key": "Product",
+          "Value": "Product",
+          "Translation": {
+            "EL": "Προϊόν",
+            "EN": "Product",
+            "RO": "Produs"
+          }
+        },
+        {
+          "Key": "Writeatitletocreateanewshoppinglist",
+          "Value": "Writeatitletocreateanewshoppinglist",
+          "Translation": {
+            "EL": "Γράψε ένα τίτλο για να δημιουργήσεις μια νεα λίστα",
+            "EN": "Write a title to create a new shoppinglist",
+            "RO": "Denumeşte lista de cumpărături"
+          }
+        },
+        {
+          "Key": "Create_List",
+          "Value": "Create List",
+          "Translation": {
+            "EL": "Δημιουργήστε Λίστα",
+            "EN": "Create List",
+            "RO": "Creeză lista"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προιόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Actions",
+          "Value": "Actions",
+          "Translation": {
+            "EL": "Ενέργειες",
+            "EN": "Actions",
+            "RO": "Acţiuni"
+          }
+        },
+        {
+          "Key": "List_Deleted",
+          "Value": "List Deleted",
+          "Translation": {
+            "EL": "Η Λίστα Διαγράφτηκε",
+            "EN": "List Deleted",
+            "RO": "Lista a fost ştearsă"
+          }
+        },
+        {
+          "Key": "Update_Name",
+          "Value": "Rename",
+          "Translation": {
+            "EL": "Μετανομασία",
+            "EN": "Rename",
+            "RO": "Redenumeşte"
+          }
+        },
+        {
+          "Key": "Add_All_to_Cart",
+          "Value": "Add All to Cart",
+          "Translation": {
+            "EL": "Προσθήκη όλων στο καλάθι",
+            "EN": "Add All to Cart",
+            "RO": "Adaugă tot în coş"
+          }
+        },
+        {
+          "Key": "Empty_List",
+          "Value": "Empty List",
+          "Translation": {
+            "EL": "Άδειασε την λίστα",
+            "EN": "Empty List",
+            "RO": "Goleşte lista"
+          }
+        },
+        {
+          "Key": "Delete_List",
+          "Value": "Delete",
+          "Translation": {
+            "EL": "Διαγραφή",
+            "EN": "Delete",
+            "RO": "Şterge"
+          }
+        },
+        {
+          "Key": "If_you_want_to_create_a_new_Shopping_List_go_to_Shopping_Lists_page.",
+          "Value": "If you want to create a new Shopping List go to Shopping Lists page.",
+          "Translation": {
+            "EL": "Εάν θέλετε να δημιουργήσετε μια νέα λίστα αγορών, μεταβείτε στη σελίδα Λίστες Αγορών.",
+            "EN": "If you want to create a new Shopping List go to Shopping Lists page.",
+            "RO": "Pentru a crea o nouă listă de cumărături trebuie să mergeţi la pagina Liste de Cumpărături."
+          }
+        },
+        {
+          "Key": "Back_to_Home_Page",
+          "Value": "Back to Home Page",
+          "Translation": {
+            "EL": "Πίσω στην Αρχική Σελίδα",
+            "EN": "Back to Home Page",
+            "RO": "Înapoi la pagina principală."
+          }
+        },
+        {
+          "Key": "This_Shopping_List_has_no_products",
+          "Value": "This Shopping List has no products",
+          "Translation": {
+            "EL": "Αυτή η Λίστα Αγορών δεν έχει προϊόντα",
+            "EN": "This Shopping List has no products",
+            "RO": "Această listă de cumpărături nu conţine produse."
+          }
+        },
+        {
+          "Key": "QuickView",
+          "Value": "Quick View",
+          "Translation": {
+            "EL": "Γρήγορη Προβολή",
+            "EN": "Quick View",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "AddtoCart",
+          "Value": "Add to Cart",
+          "Translation": {
+            "EL": "Προσθήκη",
+            "EN": "Add to Cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "Delete",
+          "Value": "Delete",
+          "Translation": {
+            "EL": "Διαγραφή",
+            "EN": "Delete",
+            "RO": "Şterge"
+          }
+        },
+        {
+          "Key": "Back",
+          "Value": "Back",
+          "Translation": {
+            "EL": "Πίσω",
+            "EN": "Back",
+            "RO": "Înapoi"
+          }
+        },
+        {
+          "Key": "Number",
+          "Value": "Number",
+          "Translation": {
+            "EL": "Αριθμός",
+            "EN": "Number",
+            "RO": "Număr"
+          }
+        },
+        {
+          "Key": "AccountSettings",
+          "Value": "AccountSettings",
+          "Translation": {
+            "EL": "Διαχείριση Λογαριασμού",
+            "EN": "Account Settings",
+            "RO": "Setări cont"
+          }
+        },
+        {
+          "Key": "Status",
+          "Value": "Status",
+          "Translation": {
+            "EL": "Κατάσταση",
+            "EN": "Status",
+            "RO": "Status"
+          }
+        },
+        {
+          "Key": "HomePage",
+          "Value": "Homepage",
+          "Translation": {
+            "EL": "Αρχική σελίδα",
+            "EN": "Homepage",
+            "RO": "Acasă"
+          }
+        },
+        {
+          "Key": "Account",
+          "Value": "Account",
+          "Translation": {
+            "EL": "Λογαριασμός",
+            "EN": "Account",
+            "RO": "Cont"
+          }
+        },
+        {
+          "Key": "ProfileInfo",
+          "Value": "Profile info",
+          "Translation": {
+            "EL": "Πληροφορίες Προφίλ",
+            "EN": "Profile info",
+            "RO": "Informaţii profil"
+          }
+        },
+        {
+          "Key": "AccountMenu",
+          "Value": "Account menu",
+          "Translation": {
+            "EL": "Μενού λογαριασμού",
+            "EN": "Account menu",
+            "RO": "Meniu cont"
+          }
+        },
+        {
+          "Key": "Orders",
+          "Value": "Orders",
+          "Translation": {
+            "EL": "Παραγγελίες",
+            "EN": "Orders",
+            "RO": "Comenzi"
+          }
+        },
+        {
+          "Key": "Balance",
+          "Value": "Balance",
+          "Translation": {
+            "EL": "Υπόλοιπο",
+            "EN": "Balance",
+            "RO": "Balanţă"
+          }
+        },
+        {
+          "Key": "Transactions",
+          "Value": "Transactions",
+          "Translation": {
+            "EL": "Καρτέλα",
+            "EN": "Transactions",
+            "RO": "Tranzacţii"
+          }
+        },
+        {
+          "Key": "OpenDocuments",
+          "Value": "Open documents",
+          "Translation": {
+            "EL": "Ανεξόφλητα Παραστατικά",
+            "EN": "Open documents",
+            "RO": "Documente restante"
+          }
+        },
+        {
+          "Key": "PendingOffers",
+          "Value": "Pending offers",
+          "Translation": {
+            "EL": "Εκκρεμείς Προσφορές",
+            "EN": "Pending offers",
+            "RO": "Oferte în aşteptare"
+          }
+        },
+        {
+          "Key": "PendingOrders",
+          "Value": "Pending orders",
+          "Translation": {
+            "EL": "Εκκρεμείς Παραγγελίες",
+            "EN": "Pending orders",
+            "RO": "Comenzi în aşteptare"
+          }
+        },
+        {
+          "Key": "PendingShippingInvoices",
+          "Value": "Pending shipping invoices",
+          "Translation": {
+            "EL": "Εκκρεμή Δελτία",
+            "EN": "Pending shipping invoices",
+            "RO": "Facturi de vânzare în aşteptare"
+          }
+        },
+        {
+          "Key": "PendingCheques",
+          "Value": "Pending cheques",
+          "Translation": {
+            "EL": "Εκκρεμή Αξιόγραφα",
+            "EN": "Pending cheques",
+            "RO": "Cecuri în aşteptare"
+          }
+        },
+        {
+          "Key": "Company",
+          "Value": "Company",
+          "Translation": {
+            "EL": "Εταιρία",
+            "EN": "Company",
+            "RO": "Companie"
+          }
+        },
+        {
+          "Key": "SignOut",
+          "Value": "Sign out",
+          "Translation": {
+            "EL": "Αποσύνδεση",
+            "EN": "Sign out",
+            "RO": "Deconectare"
+          }
+        },
+        {
+          "Key": "FirstName",
+          "Value": "First name",
+          "Translation": {
+            "EL": "Ονομα",
+            "EN": "First name",
+            "RO": "Prenume"
+          }
+        },
+        {
+          "Key": "LastName",
+          "Value": "Last name",
+          "Translation": {
+            "EL": "Επίθετο",
+            "EN": "Last name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "Email",
+          "Value": "Email",
+          "Translation": {
+            "EL": "Email",
+            "EN": "Email",
+            "RO": "Email"
+          }
+        },
+        {
+          "Key": "OldPassword",
+          "Value": "Old password",
+          "Translation": {
+            "EL": "Παλιός κωδικός",
+            "EN": "Old password",
+            "RO": "Parola veche"
+          }
+        },
+        {
+          "Key": "NewPassword",
+          "Value": "New password",
+          "Translation": {
+            "EL": "Νέος κωδικός",
+            "EN": "New password",
+            "RO": "Parola nouă"
+          }
+        },
+        {
+          "Key": "ChangePassword",
+          "Value": "Change password",
+          "Translation": {
+            "EL": "Αλλαγή κωδικού",
+            "EN": "Change password",
+            "RO": "Schimbă parola"
+          }
+        },
+        {
+          "Key": "Phone",
+          "Value": "Phone",
+          "Translation": {
+            "EL": "Τηλέφωνο",
+            "EN": "Phone",
+            "RO": "Telefon"
+          }
+        },
+        {
+          "Key": "VatType",
+          "Value": "Vat type",
+          "Translation": {
+            "EL": "Τύπος Φ.Π.Α.",
+            "EN": "Vat type",
+            "RO": "TVA"
+          }
+        },
+        {
+          "Key": "TaxOffice",
+          "Value": "Tax office",
+          "Translation": {
+            "EL": "Εφορία",
+            "EN": "Tax office",
+            "RO": "Nr. Reg. Comert"
+          }
+        },
+        {
+          "Key": "Name",
+          "Value": "Name",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "Name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "Actions",
+          "Value": "Actions",
+          "Translation": {
+            "EL": "Ενέργειες",
+            "EN": "Actions",
+            "RO": "Acţiuni"
+          }
+        },
+        {
+          "Key": "Balance",
+          "Value": "Balance",
+          "Translation": {
+            "EL": "Υπόλοιπο",
+            "EN": "Balance",
+            "RO": "Sold"
+          }
+        },
+        {
+          "Key": "Credit",
+          "Value": "Credit",
+          "Translation": {
+            "EL": "Πίστωση",
+            "EN": "Credit",
+            "RO": "Credit"
+          }
+        },
+        {
+          "Key": "Debit",
+          "Value": "Debit",
+          "Translation": {
+            "EL": "Χρέωση",
+            "EN": "Debit",
+            "RO": "Debit"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Loading",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "TransactionDate",
+          "Value": "Transaction date",
+          "Translation": {
+            "EL": "Ημ/νία Συναλλαγής",
+            "EN": "Transaction date",
+            "RO": "Data tranzacţiei"
+          }
+        },
+        {
+          "Key": "Title",
+          "Value": "Title",
+          "Translation": {
+            "EL": "Τίτλος",
+            "EN": "Title",
+            "RO": "Titlu"
+          }
+        },
+        {
+          "Key": "Code",
+          "Value": "Code",
+          "Translation": {
+            "EL": "Κωδικός",
+            "EN": "Code",
+            "RO": "Cod"
+          }
+        },
+        {
+          "Key": "Credit",
+          "Value": "Credit",
+          "Translation": {
+            "EL": "Πίστωση",
+            "EN": "Credit",
+            "RO": "Credit"
+          }
+        },
+        {
+          "Key": "NoResults",
+          "Value": "No results",
+          "Translation": {
+            "EL": "Δεν βρέθηκαν αποτελέσματα",
+            "EN": "No results",
+            "RO": "Niciun rezultat"
+          }
+        },
+        {
+          "Key": "Prev",
+          "Value": "Prev",
+          "Translation": {
+            "EL": "",
+            "EN": "Prev",
+            "RO": "Anterior"
+          }
+        },
+        {
+          "Key": "Favorites",
+          "Value": "Favorites",
+          "Translation": {
+            "EL": "Αγαπημένα",
+            "EN": "Favorites",
+            "RO": "Favorite"
+          }
+        },
+        {
+          "Key": "AllOrders",
+          "Value": "All orders",
+          "Translation": {
+            "EL": "Όλες οι παραγγελίες",
+            "EN": "All orders",
+            "RO": "Toate comenzile"
+          }
+        },
+        {
+          "Key": "Favorite",
+          "Value": "Favorite",
+          "Translation": {
+            "EL": "Αγαπημένα",
+            "EN": "Favorite",
+            "RO": "Favorite"
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "OpenAmount",
+          "Value": "Open amount",
+          "Translation": {
+            "EL": "Ανοιχτό Ποσό",
+            "EN": "Open amount",
+            "RO": "Sumă deschisă"
+          }
+        },
+        {
+          "Key": "TotalAmount",
+          "Value": "Total amount",
+          "Translation": {
+            "EL": "Συνολικό Ποσό",
+            "EN": "Total amount",
+            "RO": "Sumă totală"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "PendingQuantity",
+          "Value": "Pending quantity",
+          "Translation": {
+            "EL": "Εκκρεμή Ποσότητα",
+            "EN": "Pending quantity",
+            "RO": "Cantitate în aşteptare"
+          }
+        },
+        {
+          "Key": "DueDate",
+          "Value": "Due date",
+          "Translation": {
+            "EL": "Ημερομηνία Λήξης",
+            "EN": "Due date",
+            "RO": "Dată scadentă"
+          }
+        },
+        {
+          "Key": "Value",
+          "Value": "Value",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Value",
+            "RO": "Valoare"
+          }
+        },
+        {
+          "Key": "Expenses",
+          "Value": "Expenses",
+          "Translation": {
+            "EL": "Έξοδα",
+            "EN": "Expenses",
+            "RO": "Cheltuieli"
+          }
+        },
+        {
+          "Key": "Total",
+          "Value": "Total",
+          "Translation": {
+            "EL": "Σύνολο",
+            "EN": "Total",
+            "RO": "Total"
+          }
+        },
+        {
+          "Key": "Net",
+          "Value": "Net",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Net",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "Vat",
+          "Value": "Vat",
+          "Translation": {
+            "EL": "Φ.Π.Α.",
+            "EN": "Vat",
+            "RO": "TVA"
+          }
+        },
+        {
+          "Key": "AddToCart",
+          "Value": "Add to cart",
+          "Translation": {
+            "EL": "Προσθήκη στο καλάθι",
+            "EN": "Add to cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "Add_to_cart_and_proceed_to_checkout",
+          "Value": "Add to cart and proceed to checkout",
+          "Translation": {
+            "EL": "Προσθήκη στο καλάθι και ολοκλήρωση αγοράς",
+            "EN": "Add to cart and proceed to checkout",
+            "RO": "Adaugă în coş şi finalizează comanda"
+          }
+        },
+        {
+          "Key": "OrderNumber",
+          "Value": "Order Number",
+          "Translation": {
+            "EL": "Αριθμός Παραγγελίας",
+            "EN": "Order Number",
+            "RO": "Număr comandă"
+          }
+        },
+        {
+          "Key": "View",
+          "Value": "View",
+          "Translation": {
+            "EL": "Εμφάνιση",
+            "EN": "View",
+            "RO": "Vizualizare"
+          }
+        },
+        {
+          "Key": "InviteUser",
+          "Value": "InviteUser",
+          "Translation": {
+            "EL": "Πρόσκληση χρήστη",
+            "EN": "Invite user",
+            "RO": "Invitaţi utilizator"
+          }
+        },
+        {
+          "Key": "SelectRole",
+          "Value": "SelectRole",
+          "Translation": {
+            "EL": "Επιλογή ρόλου",
+            "EN": "Select role",
+            "RO": "Selectează rol"
+          }
+        },
+        {
+          "Key": "Invite",
+          "Value": "Invite",
+          "Translation": {
+            "EL": "Προσκάλεσε",
+            "EN": "Invite",
+            "RO": "Invită"
+          }
+        },
+        {
+          "Key": "Role",
+          "Value": "Role",
+          "Translation": {
+            "EL": "Ρόλος",
+            "EN": "Role",
+            "RO": "Rol"
+          }
+        },
+        {
+          "Key": "EditRole",
+          "Value": "EditRole",
+          "Translation": {
+            "EL": "Αλλαγή ρόλου",
+            "EN": "Edit role",
+            "RO": "Editează rol"
+          }
+        },
+        {
+          "Key": "ManageUsers",
+          "Value": "ManageUsers",
+          "Translation": {
+            "EL": "Διαχείριση χρηστών",
+            "EN": "Manage users",
+            "RO": "Gestionează utilizatori"
+          }
+        },
+        {
+          "Key": "Admin",
+          "Value": "Admin",
+          "Translation": {
+            "EL": "Διαχειριστής",
+            "EN": "Admin",
+            "RO": "Admministrator"
+          }
+        },
+        {
+          "Key": "Save",
+          "Value": "Save",
+          "Translation": {
+            "EL": "Αποθήκευση",
+            "EN": "Save",
+            "RO": "Salvează"
+          }
+        },
+        {
+          "Key": "Cancel",
+          "Value": "Cancel",
+          "Translation": {
+            "EL": "Ακύρωση",
+            "EN": "Cancel",
+            "RO": "Anulează"
+          }
+        },
+        {
+          "Key": "ConfirmUserDelete",
+          "Value": "ConfirmUserDelete",
+          "Translation": {
+            "EL": "Επιβεβαιώστε την διαγραφή του χρήστη",
+            "EN": "Confirm user deletion",
+            "RO": "Confirmă ştergerea utilizatorului"
+          }
+        },
+        {
+          "Key": "AreYouSureYouWantToDeleteUser",
+          "Value": "AreYouSureYouWantToDeleteUser",
+          "Translation": {
+            "EL": "Είστε σίγουροι ότι θέλετε να διαγράψετε τον χρήστη;",
+            "EN": "Are you sure you want to delete user?",
+            "RO": "Eşti sigur că doreşti ştergerea utilizatorului"
+          }
+        },
+        {
+          "Key": "EmailIsNotValid",
+          "Value": "EmailIsNotValid",
+          "Translation": {
+            "EL": "Το email δεν είναι σωστό",
+            "EN": "This is not a valid email",
+            "RO": "Această adresă de email nu este validă"
+          }
+        },
+        {
+          "Key": "UserExists",
+          "Value": "UserExists",
+          "Translation": {
+            "EL": "Ο χρήστης υπάρχει ήδη",
+            "EN": "User already exists",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "From",
+          "Value": "From",
+          "Translation": {
+            "EL": "Από",
+            "EN": "From",
+            "RO": "De la"
+          }
+        },
+        {
+          "Key": "To",
+          "Value": "To",
+          "Translation": {
+            "EL": "Έως",
+            "EN": "To",
+            "RO": "Către"
+          }
+        },
+        {
+          "Key": "Date_Range",
+          "Value": "Date Range",
+          "Translation": {
+            "EL": "Επιλέξτε εύρος ημερομηνιών",
+            "EN": "Select date range",
+            "RO": "Selectează perioada"
+          }
+        },
+        {
+          "Key": "Notes",
+          "Value": "Notes",
+          "Translation": {
+            "EL": "Σημειώσεις",
+            "EN": "Notes",
+            "RO": "Observaţii"
+          }
+        },
+        {
+          "Key": "ProgressiveBalance",
+          "Value": "ProgressiveBalance",
+          "Translation": {
+            "EL": "Προοδευτικό Υπόλοιπο",
+            "EN": "Progressive Balance",
+            "RO": "Sold progresiv"
+          }
+        },
+        {
+          "Key": "AccountBalanceTransfer",
+          "Value": "AccountBalanceTransfer",
+          "Translation": {
+            "EL": "Εκ Μεταφοράς Υπόλοιπο",
+            "EN": "Account Balance Transfer",
+            "RO": "Balanţa transferată"
+          }
+        },
+        {
+          "Key": "MonthlyTransactions",
+          "Value": "MonthlyTransactions",
+          "Translation": {
+            "EL": "Μηνιαία Κίνηση",
+            "EN": "Monthly Transactions",
+            "RO": "Tranzacţii lunare"
+          }
+        },
+        {
+          "Key": "FiscalYear",
+          "Value": "FiscalYear",
+          "Translation": {
+            "EL": "Οικονομικό Έτος",
+            "EN": "Fiscal Year",
+            "RO": "An fiscal"
+          }
+        },
+        {
+          "Key": "Period",
+          "Value": "Period",
+          "Translation": {
+            "EL": "Περίοδος",
+            "EN": "Period",
+            "RO": "Perioadă"
+          }
+        },
+        {
+          "Key": "Turnover",
+          "Value": "Turnover",
+          "Translation": {
+            "EL": "Τζίρος",
+            "EN": "Turnover",
+            "RO": "Cifra de afaceri"
+          }
+        },
+        {
+          "Key": "Totals",
+          "Value": "Totals",
+          "Translation": {
+            "EL": "Σύνολα",
+            "EN": "Totals",
+            "RO": "Totaluri"
+          }
+        },
+        {
+          "Key": "TotalBalance",
+          "Value": "TotalBalance",
+          "Translation": {
+            "EL": "Συνολικό Υπόλοιπο",
+            "EN": "Total Balance",
+            "RO": "Sold total"
+          }
+        },
+        {
+          "Key": "GlobalMargin",
+          "Value": "GlobalMargin",
+          "Translation": {
+            "EL": "Γενικό περιθώριο κέρδους",
+            "EN": "Global margin",
+            "RO": "Marjă generală de profit"
+          }
+        },
+        {
+          "Key": "SelectCategory",
+          "Value": "SelectCategory",
+          "Translation": {
+            "EL": "Διάλεξε κατηγορία",
+            "EN": "Select Category",
+            "RO": "Alege o categorie"
+          }
+        },
+        {
+          "Key": "AddOrEditMargin",
+          "Value": "AddOrEditMargin",
+          "Translation": {
+            "EL": "Πρόσθεσε ή άλλαξε περιθώριο",
+            "EN": "Add or edit margin",
+            "RO": "Adaugă sau modifcă marja"
+          }
+        },
+        {
+          "Key": "Update",
+          "Value": "Update",
+          "Translation": {
+            "EL": "Ενημέρωση",
+            "EN": "Update",
+            "RO": "Actualizare"
+          }
+        },
+        {
+          "Key": "Create",
+          "Value": "Create",
+          "Translation": {
+            "EL": "Δημιουργία",
+            "EN": "Create",
+            "RO": "Creează"
+          }
+        },
+        {
+          "Key": "Category",
+          "Value": "Category",
+          "Translation": {
+            "EL": "Κατηγορία",
+            "EN": "Category",
+            "RO": "Categorie"
+          }
+        },
+        {
+          "Key": "Margin",
+          "Value": "Margin",
+          "Translation": {
+            "EL": "Περιθώριο",
+            "EN": "Category",
+            "RO": "Marjă"
+          }
+        },
+        {
+          "Key": "Margins",
+          "Value": "Margins",
+          "Translation": {
+            "EL": "Περιθώρια κέρδους",
+            "EN": "Profit Margins",
+            "RO": "Marje de profit"
+          }
+        },
+        {
+          "Key": "SelectBranch",
+          "Value": "Select Branch",
+          "Translation": {
+            "EL": "Επιλέξτε καταστήματα",
+            "EN": "Select branches",
+            "RO": "Selectează filială"
+          }
+        },
+        {
+          "Key": "ErrorSelectBranch",
+          "Value": "Error Select Branch",
+          "Translation": {
+            "EL": "Επιλέξτε ένα ή περισσότερα καταστήματα",
+            "EN": "Please select one or more branches",
+            "RO": "Selectează una sau mai multe filiale"
+          }
+        },
+        {
+          "Key": "OperationNotPermitted",
+          "Value": "Operation Not Permitted",
+          "Translation": {
+            "EL": "Δεν έχετε το δικαίωμα για αυτή την ενέργεια",
+            "EN": "You are not permitted to perform this action",
+            "RO": "Nu eşti autorizat pentru această acţiune"
+          }
+        },
+        {
+          "Key": "BulkOrderEntry",
+          "Value": "Bulk Order Entry",
+          "Translation": {
+            "EL": "Εισαγωγή παραγγελίας από excel",
+            "EN": "Import comenzi în masă",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Invoice",
+          "Value": "Invoice",
+          "Translation": {
+            "EL": "Παραστατικό",
+            "EN": "Invoice",
+            "RO": "Factură"
+          }
+        },
+        {
+          "Key": "Placed",
+          "Value": "Placed",
+          "Translation": {
+            "EL": "Καταχωρήθηκε",
+            "EN": "Placed",
+            "RO": "Înregistrat"
+          }
+        },
+        {
+          "Key": "Draft",
+          "Value": "Draft",
+          "Translation": {
+            "EL": "Σε προσχέδιο",
+            "EN": "Draft",
+            "RO": "Draft"
+          }
+        },
+        {
+          "Key": "Cancelled",
+          "Value": "Cancelled",
+          "Translation": {
+            "EL": "Ακυρώθηκε",
+            "EN": "Cancelled",
+            "RO": "Anulat"
+          }
+        },
+        {
+          "Key": "Processing",
+          "Value": "Processing",
+          "Translation": {
+            "EL": "Σε επεξεργασία",
+            "EN": "Processing",
+            "RO": "În curs de procesare"
+          }
+        },
+        {
+          "Key": "Processing",
+          "Value": "Processing",
+          "Translation": {
+            "EL": "Σε επεξεργασία",
+            "EN": "Processing",
+            "RO": "În curs de procesare"
+          }
+        },
+        {
+          "Key": "ToBeShipped",
+          "Value": "ToBeShipped",
+          "Translation": {
+            "EL": "Προς αποστολή",
+            "EN": "ToBeShipped",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Shipped",
+          "Value": "Shipped",
+          "Translation": {
+            "EL": "Έχει αποσταλεί",
+            "EN": "Shipped",
+            "RO": "De livrat"
+          }
+        },
+        {
+          "Key": "PartialDelivery",
+          "Value": "PartialDelivery",
+          "Translation": {
+            "EL": "Παραδόθηκε εν μέρει",
+            "EN": "PartialDelivery",
+            "RO": "Livrare parţială"
+          }
+        },
+        {
+          "Key": "FailedToDeliver",
+          "Value": "FailedToDeliver",
+          "Translation": {
+            "EL": "Αποτυχημένη παράδοση",
+            "EN": "FailedToDeliver",
+            "RO": "Livrare eşuată"
+          }
+        },
+        {
+          "Key": "Delivered",
+          "Value": "Delivered",
+          "Translation": {
+            "EL": "Έχει παραδοθεί",
+            "EN": "Delivered",
+            "RO": "Livrat"
+          }
+        },
+        {
+          "Key": "Rejected",
+          "Value": "Rejected",
+          "Translation": {
+            "EL": "Απορριφθείσα",
+            "EN": "Rejected",
+            "RO": "Respins"
+          }
+        },
+        {
+          "Key": "Completed",
+          "Value": "Completed",
+          "Translation": {
+            "EL": "Ολοκληρώθηκε",
+            "EN": "Completed",
+            "RO": "Finalizat"
+          }
+        },
+        {
+          "Key": "Quoted",
+          "Value": "Quoted",
+          "Translation": {
+            "EL": "Quoted",
+            "EN": "Quoted",
+            "RO": "Observaţie"
+          }
+        },
+        {
+          "Key": "Declined",
+          "Value": "Declined",
+          "Translation": {
+            "EL": "Απορρίφθηκε",
+            "EN": "Declined",
+            "RO": "Anulat"
+          }
+        },
+        {
+          "Key": "ExpirationDate",
+          "Value": "ExpirationDate",
+          "Translation": {
+            "EL": "Ημερομηνία λήξης",
+            "EN": "Expiration date",
+            "RO": "Data de expirare"
+          }
+        },
+        {
+          "Key": "NewQuote",
+          "Value": "NewQuote",
+          "Translation": {
+            "EL": "Νέο quote",
+            "EN": "New quote",
+            "RO": "Ofertă nouă"
+          }
+        },
+        {
+          "Key": "Quotes",
+          "Value": "Quotes",
+          "Translation": {
+            "EL": "Quotes",
+            "EN": "Quotes",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "LastVisitedProducts",
+      "DisplayName": "Last Visited Products",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "LastVisited",
+          "Value": "LastVisited",
+          "Translation": {
+            "EL": "Προϊόντα που είδατε πρόσφατα",
+            "EN": "Last visited products",
+            "RO": "Ultimele produse vizualizate"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "NavBar",
+      "DisplayName": "Nav Bar",
+      "Views": [
+        "Default",
+        "Alternative",
+        "Fixed"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "TotalAmount",
+          "Value": "Total amount",
+          "Translation": {
+            "EL": "Συνολικό Ποσό",
+            "EN": "Total amount",
+            "RO": "Sumă totală"
+          }
+        },
+        {
+          "Key": "EmailAddress",
+          "Value": "Email Address",
+          "Translation": {
+            "EL": "Διέυθυνση email",
+            "EN": "Email address",
+            "RO": "Adresă email"
+          }
+        },
+        {
+          "Key": "Register",
+          "Value": "Register",
+          "Translation": {
+            "EL": "Εγγραφή",
+            "EN": "Register",
+            "RO": "Înregistrare"
+          }
+        },
+        {
+          "Key": "ExpandMenu",
+          "Value": "Expand Menu",
+          "Translation": {
+            "EL": "Ανάπτυξη Μενού",
+            "EN": "Expand Menu",
+            "RO": "Deschide meniul"
+          }
+        },
+        {
+          "Key": "PasswordCorrectText",
+          "Value": "PasswordCorrectText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι σωστός",
+            "EN": "Password is Correct",
+            "RO": "Parola este corectă"
+          }
+        },
+        {
+          "Key": "RetypePassword",
+          "Value": "Retype your Password",
+          "Translation": {
+            "EL": "Επαναλάβετε τον κωδικό πρόσβασής σας",
+            "EN": "Retype your Password",
+            "RO": "Repeta parola"
+          }
+        },
+        {
+          "Key": "UserAlreadyExists",
+          "Value": "UserAlreadyExists",
+          "Translation": {
+            "EL": "Αυτός ο χρήστης υπάρχει ήδη",
+            "EN": "User Already Exists",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "HelloText",
+          "Value": "Hello",
+          "Translation": {
+            "EL": "Γειά σου",
+            "EN": "Hello",
+            "RO": "Bine ai venit"
+          }
+        },
+        {
+          "Key": "Favorites Lists ",
+          "Value": "Favorites Lists",
+          "Translation": {
+            "EL": "Λίστες Αγαπημένών",
+            "EN": "Favorites Lists",
+            "RO": "Lista produselor favorite"
+          }
+        },
+        {
+          "Key": "No Product",
+          "Value": "No Product",
+          "Translation": {
+            "EL": "Κανένα Προϊον",
+            "EN": "No Product",
+            "RO": "Niciun produs"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προϊόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Missingalphanumericcharactersandnonalphanumeric",
+          "Value": "Missingalphanumericcharactersandnonalphanumeric",
+          "Translation": {
+            "EL": "Βεβαιωθείτε ότι ο κωδικός πρόσβασής σας περιέχει, γράμματα, αριθμούς και τουλάχιστον έναν ειδικό χαρακτήρα. Αν σας λείπει κάποιο από αυτά, προσθέστε τα τώρα για να δημιουργήσετε έναν ολοκληρωμένο και ασφαλή κωδικό πρόσβασης.",
+            "EN": "Make sure your password contains letters, numbers and at least one special character. If you're missing any of these, add them now to create a complete and secure password.",
+            "RO": "Asigurați-vă că parola conține litere, numere și cel puțin un caracter special. Dacă vă lipsește vreunul dintre acestea, adăugați-l acum pentru a crea o parolă completă și sigură."
+          }
+        },
+        {
+          "Key": "PasswordMismatchText",
+          "Value": "PasswordMismatchText",
+          "Translation": {
+            "EL": "Οι κωδικοί δεν ταιριάζουν",
+            "EN": "Passwords do not match",
+            "RO": "Parolele nu coincid"
+          }
+        },
+        {
+          "Key": "No favorite list found.",
+          "Value": "No favorite list found.",
+          "Translation": {
+            "EL": "Δεν βρέθηκε λίστα αγαπημένων.",
+            "EN": "No favorite list found",
+            "RO": "Lista [Favorite] nu a  fost găsită"
+          }
+        },
+        {
+          "Key": "FirstName",
+          "Value": "FirstName",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "First name",
+            "RO": "Prenume"
+          }
+        },
+        {
+          "Key": "LastName",
+          "Value": "LastName",
+          "Translation": {
+            "EL": "Επίθετο",
+            "EN": "Last name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "MyAccount",
+          "Value": "My Account",
+          "Translation": {
+            "EL": "Ο λογαριασμός μου",
+            "EN": "My Account",
+            "RO": "Contul meu"
+          }
+        },
+        {
+          "Key": "Profile",
+          "Value": "Profile",
+          "Translation": {
+            "EL": "Προφίλ",
+            "EN": "Profile",
+            "RO": "Profil"
+          }
+        },
+        {
+          "Key": "Orders",
+          "Value": "Orders",
+          "Translation": {
+            "EL": "Παραγγελίες",
+            "EN": "Orders",
+            "RO": "Comenzi"
+          }
+        },
+        {
+          "Key": "LogOut",
+          "Value": "Log Out",
+          "Translation": {
+            "EL": "Αποσύνδεση",
+            "EN": "Log Out",
+            "RO": "Delogare"
+          }
+        },
+        {
+          "Key": "SignIn",
+          "Value": "Sign In",
+          "Translation": {
+            "EL": "Είσοδος",
+            "EN": "Sign In",
+            "RO": "Logare"
+          }
+        },
+        {
+          "Key": "SignUp",
+          "Value": "Sign Up",
+          "Translation": {
+            "EL": "Εγγραφή",
+            "EN": "Sign Up",
+            "RO": "înscrieți-vă"
+          }
+        },
+        {
+          "Key": "Gifts",
+          "Value": "Gifts",
+          "Translation": {
+            "EL": "Δώρα",
+            "EN": "Gifts",
+            "RO": "Cadouri"
+          }
+        },
+        {
+          "Key": "Net",
+          "Value": "Net",
+          "Translation": {
+            "EL": "Καθαρή",
+            "EN": "Net",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "ExpandCart",
+          "Value": "Expand Cart",
+          "Translation": {
+            "EL": "Ανάπτυξη καλαθιού",
+            "EN": "Expand Cart",
+            "RO": "Deschide coşul de cumpărături"
+          }
+        },
+        {
+          "Key": "CartError",
+          "Value": "There was a problem calculating prices for your cart. No worries! It will be calculated automatically when the service becomes avaliable. Feel free to place your order!",
+          "Translation": {
+            "EL": "Παρουσιάστηκε πρόβλημα με τον υπολογισμό των τιμών για το καλάθι σας. Μην ανησυχείτε! Θα υπολογιστεί αυτόματα όταν η υπηρεσία γίνει διαθέσιμη. Μη διστάσετε να κάνετε την παραγγελία σας!",
+            "EN": "There was a problem calculating prices for your cart. No worries! It will be calculated automatically when the service becomes avaliable. Feel free to place your order!",
+            "RO": "A fost întâmpinată o eroare la calculul preţurilor din coşul de cumpărături. Nu-ţi face griji, acestea vor fi calculate automat când serviciul Web revine. Puteţi plasa comanda în siguranţă."
+          }
+        },
+        {
+          "Key": "Checkout",
+          "Value": "Checkout",
+          "Translation": {
+            "EL": "Ολοκλήρωση αγοράς",
+            "EN": "Checkout",
+            "RO": "Finalizarea comenzii"
+          }
+        },
+        {
+          "Key": "No_products_in_the_cart",
+          "Value": "No products in the cart.",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα στο καλάθι.",
+            "EN": "No products in the cart.",
+            "RO": "Nu există produse în coş."
+          }
+        },
+        {
+          "Key": "EmailΑddress",
+          "Value": "Email Αddress",
+          "Translation": {
+            "EL": "Διέυθυνση email",
+            "EN": "Email address",
+            "RO": "Adresă email"
+          }
+        },
+        {
+          "Key": "Password",
+          "Value": "Password",
+          "Translation": {
+            "EL": "Κωδικός",
+            "EN": "Password",
+            "RO": "Parolă"
+          }
+        },
+        {
+          "Key": "RetypePassword",
+          "Value": "Retype your Password",
+          "Translation": {
+            "EL": "Επαναλάβετε τον κωδικό πρόσβασής σας",
+            "EN": "Retype your Password",
+            "RO": "Repeta parola"
+          }
+        },
+        {
+          "Key": "forgotPasswordText",
+          "Value": "Forgot password ?",
+          "Translation": {
+            "EL": "Ξέχασες τον κωδικό ;",
+            "EN": "Forgot password ?",
+            "RO": "Ai uitat parola?"
+          }
+        },
+        {
+          "Key": "Filters",
+          "Value": "Filters",
+          "Translation": {
+            "EL": "Φίλτρα",
+            "EN": "Filters",
+            "RO": "Filtre"
+          }
+        },
+        {
+          "Key": "Menu",
+          "Value": "Menu",
+          "Translation": {
+            "EL": "Μενού",
+            "EN": "Menu",
+            "RO": "Meniu"
+          }
+        },
+        {
+          "Key": "Cart",
+          "Value": "Cart",
+          "Translation": {
+            "EL": "Καλάθι",
+            "EN": "Cart",
+            "RO": "Coş de cumpărături"
+          }
+        },
+        {
+          "Key": "SearchForProducts",
+          "Value": "Search for products",
+          "Translation": {
+            "EL": "Αναζήτηση προϊόντων",
+            "EN": "Search for products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "passwordError",
+          "Value": "Password Error",
+          "Translation": {
+            "EL": "Λάθος κωδικός ή όνομα χρήστη",
+            "EN": "Wrong password or username",
+            "RO": "Parolă sau utilizator greşite."
+          }
+        },
+        {
+          "Key": "userLocked",
+          "Value": "User Locked Error",
+          "Translation": {
+            "EL": "Ο λογαριασμός κλειδώθηκε προσωρινά. Περιμένετε 15 λεπτά πριν επιχειρήσετε να συνδεθείτε ξανά.",
+            "EN": "Account temporarily locked. Please wait for 15 minutes before attempting to login again.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "emailError",
+          "Value": "Email Error",
+          "Translation": {
+            "EL": "Το email δεν είναι σωστό",
+            "EN": "The email is not correct",
+            "RO": "Această adresa de email nu este corectă"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Invitation",
+      "DisplayName": "Invitation",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        19
+      ],
+      "Translations": [
+        {
+          "Key": "Invitation",
+          "Value": "Invitation",
+          "Translation": {
+            "EL": "Πρόσκληση",
+            "EN": "Invitation",
+            "RO": "Invitaţie"
+          }
+        },
+        {
+          "Key": "EmptyFirstName",
+          "Value": "EmptyFirstName",
+          "Translation": {
+            "EL": "Το όνομα είναι υποχρεωτικό πεδίο",
+            "EN": "First Name is required",
+            "RO": "Prenumele este obligatoriu"
+          }
+        },
+        {
+          "Key": "EmptyLastName",
+          "Value": "EmptyLastName",
+          "Translation": {
+            "EL": "Το επώνυμο είναι υποχρεωτικό πεδίο",
+            "EN": "Last Name is required",
+            "RO": "Numele este obligatoriu"
+          }
+        },
+        {
+          "Key": "LastNameText",
+          "Value": "LastNameText",
+          "Translation": {
+            "EL": "Επώνυμο",
+            "EN": "Last Name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "FirstNameText",
+          "Value": "FirstNameText",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "First Name",
+            "RO": "Prenume"
+          }
+        },
+        {
+          "Key": "NewPasswordText",
+          "Value": "NewPasswordText",
+          "Translation": {
+            "EL": "Νέος κωδικός πρόσβασης",
+            "EN": "New Password",
+            "RO": "Noua parolă"
+          }
+        },
+        {
+          "Key": "ConfirmPasswordText",
+          "Value": "ConfirmPasswordText",
+          "Translation": {
+            "EL": "Επιβεβαίωση κωδικού πρόσβασης ",
+            "EN": "Confirm Password",
+            "RO": "Confirmă parolă"
+          }
+        },
+        {
+          "Key": "EmptyPasswordText",
+          "Value": "EmptyPasswordText",
+          "Translation": {
+            "EL": "O κωδικός πρόσβασης είναι υποχρεωτικό πεδίο",
+            "EN": "Password is required",
+            "RO": "Parola este obligatorie"
+          }
+        },
+        {
+          "Key": "MismatchPasswordText",
+          "Value": "MismatchPasswordText",
+          "Translation": {
+            "EL": "Αναντιστοιχία κωδικών πρόσβασης",
+            "EN": "Passwords do not match",
+            "RO": "Parolele nu corespund"
+          }
+        },
+        {
+          "Key": "PasswordPolicyText",
+          "Value": "PasswordPolicyText",
+          "Translation": {
+            "EL": "<ul><li>Το μήκος πρέπει να είναι τουλάχιστον 8 χαρακτήρες</li><li>Πρέπει να περιέχει τουλάχιστον εναν από:</li><ul><li>Ειδικούς χαρακτήρες π.χ. !,@,#</li><li>Αριθμούς</li><li>Γράμματα</li></ul></ul>",
+            "EN": "<ul><li>Length must be at least 8 characters long</li><li>It should contain at least one of the following </li><ul>\t<li>Special characters e.g. !,@,#</li>\t<li>Numbers</li><li>Letters</li></ul></li></ul>",
+            "RO": "<ul><li>Parola trebuie sa aibă cel puţin 8 caractere.</li><li>Trebuie să conţină cel putţin une din următoarele criterii: </li><ul>\t<li>Caractere speciale precum !,@,#</li>\t<li>Numere</li><li>Litere</li></ul></li></ul>"
+          }
+        },
+        {
+          "Key": "UserAlreadyExist",
+          "Value": "UserAlreadyExist",
+          "Translation": {
+            "EL": "Ο χρήστης υπάρχει ήδη",
+            "EN": "The user already exist",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "RequestError",
+          "Value": "RequestError",
+          "Translation": {
+            "EL": "Παρουσιάστηκε σφάλμα, δοκιμάστε ξανά αργότερα",
+            "EN": "An error has occured please try again later",
+            "RO": "A intervenit o problemă, te rugăm să încerci mai târziu"
+          }
+        },
+        {
+          "Key": "InvalidToken",
+          "Value": "InvalidToken",
+          "Translation": {
+            "EL": "Μη έγκυρο διακριτικό",
+            "EN": "Invalid Token",
+            "RO": "Caracter invalid"
+          }
+        },
+        {
+          "Key": "ButtonText",
+          "Value": "ButtonText",
+          "Translation": {
+            "EL": "Συνέχεια",
+            "EN": "Continue",
+            "RO": "Continuă"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Register",
+      "DisplayName": "Register",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Password",
+          "Value": "Password",
+          "Translation": {
+            "EL": "Κωδικός πρόσβασης",
+            "EN": "Password",
+            "RO": "Parola"
+          }
+        },
+        {
+          "Key": "FirstName",
+          "Value": "FirstName",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "First name",
+            "RO": "Prenume"
+          }
+        },
+        {
+          "Key": "LastName",
+          "Value": "LastName",
+          "Translation": {
+            "EL": "Επίθετο",
+            "EN": "Last name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "RetypePassword",
+          "Value": "Retype your Password",
+          "Translation": {
+            "EL": "Επαναλάβετε τον κωδικό πρόσβασής σας",
+            "EN": "Retype your Password",
+            "RO": "Repeta parola"
+          }
+        },
+        {
+          "Key": "EmptyPasswordText",
+          "Value": "EmptyPasswordText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι υποχρεωτικός",
+            "EN": "Password is required",
+            "RO": "Parola este obligatorie"
+          }
+        },
+        {
+          "Key": "Passwordistooshort",
+          "Value": "Passwordistooshort",
+          "Translation": {
+            "EL": "Ο κωδικός πρόσβασης είναι πολύ σύντομος",
+            "EN": "Password is too short",
+            "RO": "Parola este prea scurtă"
+          }
+        },
+        {
+          "Key": "PasswordMismatchText",
+          "Value": "PasswordMismatchText",
+          "Translation": {
+            "EL": "Οι κωδικοί δεν ταιριάζουν",
+            "EN": "Passwords do not match",
+            "RO": "Parolele nu coincid"
+          }
+        },
+        {
+          "Key": "PasswordCorrectText",
+          "Value": "PasswordCorrectText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι σωστός",
+            "EN": "Password is correct",
+            "RO": "Parola este corectă"
+          }
+        },
+        {
+          "Key": "Missingalphanumericcharactersandnonalphanumeric",
+          "Value": "Missingalphanumericcharactersandnonalphanumeric",
+          "Translation": {
+            "EL": "Βεβαιωθείτε ότι ο κωδικός πρόσβασής σας περιέχει, γράμματα, αριθμούς και τουλάχιστον έναν ειδικό χαρακτήρα. Αν σας λείπει κάποιο από αυτά, προσθέστε τα τώρα για να δημιουργήσετε έναν ολοκληρωμένο και ασφαλή κωδικό πρόσβασης.",
+            "EN": "Make sure your password contains letters, numbers and at least one special character. If you're missing any of these, add them now to create a complete and secure password.",
+            "RO": "Asigurați-vă că parola conține litere, numere și cel puțin un caracter special. Dacă vă lipsește vreunul dintre acestea, adăugați-l acum pentru a crea o parolă completă și sigură."
+          }
+        },
+        {
+          "Key": "Register",
+          "Value": "Register",
+          "Translation": {
+            "EL": "Εγγραφή",
+            "EN": "Register",
+            "RO": "Înregistrare"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "InvalidEmailText",
+          "Value": "InvalidEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email δεν είναι σωστή",
+            "EN": "The value is not a valid email address",
+            "RO": "Adresa de email nu este validă"
+          }
+        },
+        {
+          "Key": "EmptyEmailText",
+          "Value": "EmptyEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email είναι υποχρεωτική",
+            "EN": "Email address is required",
+            "RO": "Adresa de email este obligatorie"
+          }
+        },
+        {
+          "Key": "UserAlreadyExists",
+          "Value": "UserAlreadyExists",
+          "Translation": {
+            "EL": "Αυτός ο χρήστης υπάρχει ήδη",
+            "EN": "User Already Exists",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "UserAlreadyExists",
+          "Value": "UserAlreadyExists",
+          "Translation": {
+            "EL": "Αυτός ο χρήστης υπάρχει ήδη",
+            "EN": "User Already Exists",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "EmptyFirstNameText",
+          "Value": "EmptyFirstNameText",
+          "Translation": {
+            "EL": "Το επώνυμο είναι υποχρεωτικό",
+            "EN": "First Name is required",
+            "RO": "Primul nume este obligatoriu"
+          }
+        },
+        {
+          "Key": "EmptyLastNameText",
+          "Value": "EmptyLastNameText",
+          "Translation": {
+            "EL": "Το επώνυμο είναι υποχρεωτικό",
+            "EN": "Last Name is required",
+            "RO": "Numele de familie este obligatoriu"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Login",
+      "DisplayName": "Login",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        18
+      ],
+      "Translations": [
+        {
+          "Key": "userLocked",
+          "Value": "User Locked Error",
+          "Translation": {
+            "EL": "Ο λογαριασμός κλειδώθηκε προσωρινά. Περιμένετε 15 λεπτά πριν επιχειρήσετε να συνδεθείτε ξανά.",
+            "EN": "Account temporarily locked. Please wait for 15 minutes before attempting to login again.",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "InvalidEmailText",
+          "Value": "InvalidEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email δεν είναι σωστή",
+            "EN": "The value is not a valid email address",
+            "RO": "Adresa de email nu este validă"
+          }
+        },
+        {
+          "Key": "PasswordCorrectText",
+          "Value": "PasswordCorrectText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι σωστός",
+            "EN": "Password is Correct",
+            "RO": "Parola este corectă"
+          }
+        },
+        {
+          "Key": "UserAlreadyExists",
+          "Value": "UserAlreadyExists",
+          "Translation": {
+            "EL": "Αυτός ο χρήστης υπάρχει ήδη",
+            "EN": "User Already Exists",
+            "RO": "Utilizatorul există deja"
+          }
+        },
+        {
+          "Key": "Login",
+          "Value": "Login",
+          "Translation": {
+            "EL": "Είσοδος",
+            "EN": "Login",
+            "RO": "Intră în cont"
+          }
+        },
+        {
+          "Key": "Register",
+          "Value": "Register",
+          "Translation": {
+            "EL": "Εγγραφή",
+            "EN": "Register",
+            "RO": "Înregistrare"
+          }
+        },
+        {
+          "Key": "EmptyEmailText",
+          "Value": "EmptyEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email είναι υποχρεωτική",
+            "EN": "Email address is required",
+            "RO": "Adresa de email este obligatorie"
+          }
+        },
+        {
+          "Key": "EmptyPasswordText",
+          "Value": "EmptyPasswordText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι υποχρεωτικός",
+            "EN": "Password is required",
+            "RO": "Parola este obligatorie"
+          }
+        },
+        {
+          "Key": "PasswordMismatchText",
+          "Value": "PasswordMismatchText",
+          "Translation": {
+            "EL": "Ο κωδικός είναι υποχρεωτικός",
+            "EN": "Password is required",
+            "RO": "Parola este obligatorie"
+          }
+        },
+        {
+          "Key": "Missingnonalphanumericcharacter",
+          "Value": "Missingnonalphanumericcharacter",
+          "Translation": {
+            "EL": "Συμπεριλάβετε τουλάχιστον έναν ειδικό χαρακτήρα στον κωδικό πρόσβασής σας για μεγαλύτερη ασφάλεια. Αν δεν έχετε προσθέσει έναν ακόμα, παρακαλούμε να το κάνετε τώρα.",
+            "EN": "Include at least one special character in your password for increased security. If you haven't added one yet, please do so now",
+            "RO": "Includeți cel puțin un caracter special în parola dvs. pentru o securitate sporită. Dacă nu ați adăugat încă unul, vă rugăm să o faceți acum."
+          }
+        },
+        {
+          "Key": "Missingalphanumericcharactersandnonalphanumeric",
+          "Value": "Missingalphanumericcharactersandnonalphanumeric",
+          "Translation": {
+            "EL": "Βεβαιωθείτε ότι ο κωδικός πρόσβασής σας περιέχει, γράμματα, αριθμούς και τουλάχιστον έναν ειδικό χαρακτήρα. Αν σας λείπει κάποιο από αυτά, προσθέστε τα τώρα για να δημιουργήσετε έναν ολοκληρωμένο και ασφαλή κωδικό πρόσβασης.",
+            "EN": "Make sure your password contains letters, numbers and at least one special character. If you're missing any of these, add them now to create a complete and secure password.",
+            "RO": "Asigurați-vă că parola conține litere, numere și cel puțin un caracter special. Dacă vă lipsește vreunul dintre acestea, adăugați-l acum pentru a crea o parolă completă și sigură."
+          }
+        },
+        {
+          "Key": "EmptyFirstNameText",
+          "Value": "EmptyFirstNameText",
+          "Translation": {
+            "EL": "Ουπς! Οι κωδικοί πρόσβασης που εισήχθησαν δεν ταιριάζουν. Παρακαλώ δοκιμάστε ξανά.",
+            "EN": "Oops! The passwords entered do not match. Please try again.",
+            "RO": "Oops! Parolele introduse nu se potrivesc. Vă rugăm să încercați din nou."
+          }
+        },
+        {
+          "Key": "EmptyLastNameText",
+          "Value": "EmptyLastNameText",
+          "Translation": {
+            "EL": "Το επώνυμο είναι υποχρεωτικό",
+            "EN": "Last Name is required",
+            "RO": "Numele de familie este obligatoriu"
+          }
+        },
+        {
+          "Key": "InvalidLoginText",
+          "Value": "InvalidLoginText",
+          "Translation": {
+            "EL": "Λάθος κωδικός ή διεύθυνση email",
+            "EN": "Invalid email or password",
+            "RO": "Adresa de email sau parolă invalide"
+          }
+        },
+        {
+          "Key": "ForgotPassword",
+          "Value": "ForgotPassword",
+          "Translation": {
+            "EL": "Ξέχασες τον κωδικό;",
+            "EN": "Forgot password?",
+            "RO": "Ai uitat parola?"
+          }
+        },
+        {
+          "Key": "Password",
+          "Value": "Password",
+          "Translation": {
+            "EL": "Κωδικός πρόσβασης",
+            "EN": "Password",
+            "RO": "Parola"
+          }
+        },
+        {
+          "Key": "ButtonText",
+          "Value": "ButtonText",
+          "Translation": {
+            "EL": "Συνέχεια",
+            "EN": "Continue",
+            "RO": "Continuă"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "userLocked",
+          "Value": "User Locked Error",
+          "Translation": {
+            "EL": "Ο λογαριασμός κλειδώθηκε προσωρινά. Περιμένετε 15 λεπτά πριν επιχειρήσετε να συνδεθείτε ξανά.",
+            "EN": "Account temporarily locked. Please wait for 15 minutes before attempting to login again.",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Cart",
+      "DisplayName": "Cart",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        3
+      ],
+      "Translations": [
+        {
+          "Key": "Home",
+          "Value": "Home",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "Home",
+            "RO": "Acasă"
+          }
+        },
+        {
+          "Key": "OutOfStock",
+          "Value": "OutOfStock",
+          "Translation": {
+            "EL": "Αυτό το προϊόν έχει εξαντληθεί και δεν μπορεί να προστεθεί στο καλάθι.",
+            "EN": "This product is out of stock and cannot be added to the cart.",
+            "RO": "Acest produs nu mai este în stoc și nu poate fi adăugat în coș."
+          }
+        },
+        {
+          "Key": "Close",
+          "Value": "Close",
+          "Translation": {
+            "EL": "Κλείσιμο",
+            "EN": "Close",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Error",
+          "Value": "Error",
+          "Translation": {
+            "EL": "Σφάλμα",
+            "EN": "Error",
+            "RO": "Eroare"
+          }
+        },
+        {
+          "Key": "ConvertToOffer",
+          "Value": "ConvertToOffer",
+          "Translation": {
+            "EL": "Μετατρέψτε αυτό το καλάθι σε προσφορά.",
+            "EN": "Convert this cart to offer",
+            "RO": "Converteşte acest coş de cumpărături într-o ofertă "
+          }
+        },
+        {
+          "Key": "Your_Cart",
+          "Value": "Your_Cart",
+          "Translation": {
+            "EL": "Το καλάθι σας",
+            "EN": "Your Cart",
+            "RO": "Coşul tău de cumpărături"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προϊόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Remove",
+          "Value": "Remove",
+          "Translation": {
+            "EL": "Αφαίρεση",
+            "EN": "Remove",
+            "RO": "Elimină"
+          }
+        },
+        {
+          "Key": "Order_summary",
+          "Value": "Order_summary",
+          "Translation": {
+            "EL": "Σύνοψη παραγγελίας",
+            "EN": "Order summary",
+            "RO": "Sumar comandă"
+          }
+        },
+        {
+          "Key": "Checkout",
+          "Value": "Checkout",
+          "Translation": {
+            "EL": "Ολοκλήρωση αγοράς",
+            "EN": "Checkout",
+            "RO": "Finalizare"
+          }
+        },
+        {
+          "Key": "Continue_shopping",
+          "Value": "Continue_shopping",
+          "Translation": {
+            "EL": "Συνεχίστε τις αγορές σας",
+            "EN": "Continue shopping",
+            "RO": "Contuniuă cumpărăturile"
+          }
+        },
+        {
+          "Key": "Net",
+          "Value": "Net",
+          "Translation": {
+            "EL": "Καθαρή Αξία",
+            "EN": "Net Value",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "VAT",
+          "Value": "VAT",
+          "Translation": {
+            "EL": "ΦΠΑ",
+            "EN": "VAT",
+            "RO": "TVA"
+          }
+        },
+        {
+          "Key": "NoProductsInTheCart",
+          "Value": "NoProductsInTheCart",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα στο καλάθι",
+            "EN": "No Products In The Cart",
+            "RO": "Nu există produse în coşul de cumpărături"
+          }
+        },
+        {
+          "Key": "Gifts",
+          "Value": "Gifts",
+          "Translation": {
+            "EL": "Δώρα",
+            "EN": "Gifts",
+            "RO": "Cadouri"
+          }
+        },
+        {
+          "Key": "Discount",
+          "Value": "Discount",
+          "Translation": {
+            "EL": "'Εκπτωση",
+            "EN": "Discount",
+            "RO": "Reducere"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "Noproducts",
+          "Value": "Noproducts",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα",
+            "EN": "No products",
+            "RO": "Niciun produs"
+          }
+        },
+        {
+          "Key": "SearchForProducts",
+          "Value": "SearchForProducts",
+          "Translation": {
+            "EL": "Αναζήτηση προϊόντων",
+            "EN": "Search for products",
+            "RO": "Căutare produse"
+          }
+        },
+        {
+          "Key": "Quickly_add_product",
+          "Value": "Quickly_add_product",
+          "Translation": {
+            "EL": "Γρήγορη προσθήκη προϊόντος στο καλάθι",
+            "EN": "Quickly add product to cart",
+            "RO": "Adăugare rapidă în coş"
+          }
+        },
+        {
+          "Key": "Value",
+          "Value": "Value",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Value",
+            "RO": "Valoare"
+          }
+        },
+        {
+          "Key": "SubTotal",
+          "Value": "Sub total",
+          "Translation": {
+            "EL": "Μερικό σύνολο",
+            "EN": "Subtotal",
+            "RO": "Subtotal"
+          }
+        },
+        {
+          "Key": "Expenses",
+          "Value": "Expenses",
+          "Translation": {
+            "EL": "Έξοδα",
+            "EN": "Expenses",
+            "RO": "Cheltuieli"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Checkout",
+      "DisplayName": "Checkout",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        6
+      ],
+      "Translations": [
+        {
+          "Key": "Addresses",
+          "Value": "Addresses",
+          "Translation": {
+            "EL": "Διευθύνσεις",
+            "EN": "Addresses",
+            "RO": "Adrese"
+          }
+        },
+        {
+          "Key": "Home",
+          "Value": "SortBy",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "SortBy",
+            "RO": "Sortare după"
+          }
+        },
+        {
+          "Key": "ProceedCheckout",
+          "Value": "ProceedCheckout",
+          "Translation": {
+            "EL": "Πριν ολοκληρώσετε την αγορά σας",
+            "EN": "Before Proceeding to Checkout"
+
+          }
+        },
+        {
+          "Key": "ReturnCart",
+          "Value": "ReturnCart",
+          "Translation": {
+            "EL": "Επιστροφή στο Καλάθι",
+            "EN": "Return to Cart"
+
+          }
+        },
+        {
+          "Key": "GuestCheckout",
+          "Value": "GuestCheckout",
+          "Translation": {
+            "EL": "Συνέχεια ως Επισκέπτης",
+            "EN": "Continue as Guest"
+
+          }
+        },
+        {
+          "Key": "LoginRegister",
+          "Value": "LoginRegister",
+          "Translation": {
+            "EL": "Σύνδεση/Εγγραφή",
+            "EN": "Login/Register"
+
+          }
+        },
+        {
+          "Key": "Noproducts",
+          "Value": "Noproducts",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα",
+            "EN": "No products",
+            "RO": "Niciun produs"
+          }
+        },
+        {
+          "Key": "UnExpectedError",
+          "Value": "Oups, something went wrong",
+          "Translation": {
+            "EL": "Ουπς, αναπάντεχο σφάλμα",
+            "EN": "oops something went wrong",
+            "RO": "A intervenit o eroare."
+          }
+        },
+        {
+          "Key": "ServiceUnavailable",
+          "Value": "Service Unavailable",
+          "Translation": {
+            "EL": "Υπηρεσία μη διαθέσιμη",
+            "EN": "Service Unavailable",
+            "RO": "Serviciu indisponibil"
+          }
+        },
+        {
+          "Key": "QuantityNotAvailableException",
+          "Value": "Quantity not available in products",
+          "Translation": {
+            "EL": "Δεν υπάρχει διαθέσιμη ποσότητα στα προϊόντα",
+            "EN": "Quantity not available in products",
+            "RO": "Cantitatea este nulă"
+          }
+        },
+        {
+          "Key": "BadRequest",
+          "Value": "Invalid request",
+          "Translation": {
+            "EL": "Μη έγκυρο αίτημα",
+            "EN": "Invalid request",
+            "RO": "Solcitare invalidă"
+          }
+        },
+        {
+          "Key": "NotAuthorized",
+          "Value": "Not Authorized",
+          "Translation": {
+            "EL": "Δεν έχετε δικαίωμα να προβείτε σε αυτή την ενέργεια",
+            "EN": "You are not authorized to perform this action",
+            "RO": "Nu sunteţi autorizat pentru această acţiune"
+          }
+        },
+        {
+          "Key": "Checkout",
+          "Value": "Checkout",
+          "Translation": {
+            "EL": "Ολοκλήρωση αγοράς",
+            "EN": "Checkout",
+            "RO": "Finalizare"
+          }
+        },
+        {
+          "Key": "Cart",
+          "Value": "Cart",
+          "Translation": {
+            "EL": "Καλάθι",
+            "EN": "Cart",
+            "RO": "Coş de cumpărături"
+          }
+        },
+        {
+          "Key": "Carriers",
+          "Value": "Carriers",
+          "Translation": {
+            "EL": "Μεταφορικά",
+            "EN": "Carriers",
+            "RO": "Curieri"
+          }
+        },
+        {
+          "Key": "Billing_to",
+          "Value": "Billing_to",
+          "Translation": {
+            "EL": "Χρέωση σε",
+            "EN": "Billing to",
+            "RO": "Cumpărător"
+          }
+        },
+        {
+          "Key": "Shipping_to",
+          "Value": "Shipping_to",
+          "Translation": {
+            "EL": "Αποστολή προς",
+            "EN": "Shipping to",
+            "RO": "Livrat către"
+          }
+        },
+        {
+          "Key": "Details",
+          "Value": "Details",
+          "Translation": {
+            "EL": "Λεπτομέρειες",
+            "EN": "Details",
+            "RO": "Detalii"
+          }
+        },
+        {
+          "Key": "ShippingConfiguration",
+          "Value": "ShippingConfiguration",
+          "Translation": {
+            "EL": "Μεταφορικά",
+            "EN": "Shipping",
+            "RO": "Confirmare de livrare"
+          }
+        },
+        {
+          "Key": "PaymentConfiguration",
+          "Value": "PaymentConfiguration",
+          "Translation": {
+            "EL": "Αντικαταβολή",
+            "EN": "Pay on delivery",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Proceed_to_Review",
+          "Value": "Proceed_to_Review",
+          "Translation": {
+            "EL": "Μεταφορικά",
+            "EN": "Proceed to the review",
+            "RO": "Continuaţi spre verificarea comenzii"
+          }
+        },
+        {
+          "Key": "Review",
+          "Value": "Review",
+          "Translation": {
+            "EL": "Ανασκόπηση",
+            "EN": "Review",
+            "RO": "Verificare"
+          }
+        },
+        {
+          "Key": "Billing_address",
+          "Value": "Billing_address",
+          "Translation": {
+            "EL": "Διεύθυνση χρέωσης",
+            "EN": "Billing address",
+            "RO": "Adresa de facturare"
+          }
+        },
+        {
+          "Key": "Billing",
+          "Value": "Billing",
+          "Translation": {
+            "EL": "Χρέωση",
+            "EN": "Billing",
+            "RO": "Furnizor"
+          }
+        },
+        {
+          "Key": "Shipping_address",
+          "Value": "Shipping_address",
+          "Translation": {
+            "EL": "Διεύθυνση αποστολής",
+            "EN": "Shipping address",
+            "RO": "Adresa de livrare"
+          }
+        },
+        {
+          "Key": "Branch",
+          "Value": "Branch",
+          "Translation": {
+            "EL": "Yποκατάστημα",
+            "EN": "Branch",
+            "RO": "Filială"
+          }
+        },
+        {
+          "Key": "Street_name_and_building_number",
+          "Value": "Street_name_and_building_number",
+          "Translation": {
+            "EL": "Όνομα οδού και αριθμός κτιρίου",
+            "EN": "Street name and building number",
+            "RO": "Stradă şi număr"
+          }
+        },
+        {
+          "Key": "Head_office",
+          "Value": "Head_office",
+          "Translation": {
+            "EL": "Κεντρικά γραφεία",
+            "EN": "Head office",
+            "RO": "Sediu social"
+          }
+        },
+        {
+          "Key": "Address1",
+          "Value": "Address1",
+          "Translation": {
+            "EL": "Διεύθυνση 1",
+            "EN": "Address 1",
+            "RO": "Adresa 1"
+          }
+        },
+        {
+          "Key": "ErrorEmptyField",
+          "Value": "ErrorEmptyField",
+          "Translation": {
+            "EL": "To πεδίο αυτό είναι υποχρεωτικό",
+            "EN": "This field is required",
+            "RO": "Acest câmp este obligatoriu"
+          }
+        },
+        {
+          "Key": "ErrorInputSize",
+          "Value": "ErrorInputSize",
+          "Translation": {
+            "EL": "Εισαγάγετε μια έγκυρη τιμή στο πεδίο",
+            "EN": "Input a valid value to the field",
+            "RO": "Introduceţi o valoare validă"
+          }
+        },
+        {
+          "Key": "Address2",
+          "Value": "Address2",
+          "Translation": {
+            "EL": "Διεύθυνση 2",
+            "EN": "Address 2",
+            "RO": "Adresa 2"
+          }
+        },
+        {
+          "Key": "Second_street_name",
+          "Value": "Second_street_name",
+          "Translation": {
+            "EL": "Όνομα δεύτερης οδού",
+            "EN": "Second street name",
+            "RO": "Stradă şi număr"
+          }
+        },
+        {
+          "Key": "Town_City",
+          "Value": "Town_City",
+          "Translation": {
+            "EL": "Πόλη",
+            "EN": "Town City",
+            "RO": "Oraş"
+          }
+        },
+        {
+          "Key": "State",
+          "Value": "State",
+          "Translation": {
+            "EL": "Περιφερειακή Ενότητα",
+            "EN": "State",
+            "RO": "Judeţ"
+          }
+        },
+        {
+          "Key": "Country",
+          "Value": "Country",
+          "Translation": {
+            "EL": "Χώρα",
+            "EN": "Country",
+            "RO": "Ţară"
+          }
+        },
+        {
+          "Key": "Postcode_ZIP",
+          "Value": "Postcode_ZIP",
+          "Translation": {
+            "EL": "Ταχυδρομικός κώδικας / ΤΚ",
+            "EN": "Postcode / ZIP",
+            "RO": "Cod poştal"
+          }
+        },
+        {
+          "Key": "Different_address",
+          "Value": "Different_address",
+          "Translation": {
+            "EL": "Διαφορετική διεύθυνση αποστολής",
+            "EN": "Ship to different address",
+            "RO": "Livrare la o adresă diferită"
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "Επόμενο",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "Back_to_Cart",
+          "Value": "Back_to_Cart",
+          "Translation": {
+            "EL": "Επιστροφή στο Καλάθι",
+            "EN": "Back to Cart",
+            "RO": "Înapoi la coşul de cumpărături"
+          }
+        },
+        {
+          "Key": "Back_to_Billing",
+          "Value": "Back_to_Billing",
+          "Translation": {
+            "EL": "Επιστροφή στη Χρέωση",
+            "EN": "Back to Billing",
+            "RO": "Înapoi la facturare"
+          }
+        },
+        {
+          "Key": "Back",
+          "Value": "Back",
+          "Translation": {
+            "EL": "Επιστροφή",
+            "EN": "Back",
+            "RO": "Înapoi"
+          }
+        },
+        {
+          "Key": "Back",
+          "Value": "Back",
+          "Translation": {
+            "EL": "Επιστροφή",
+            "EN": "Back",
+            "RO": "Înapoi"
+          }
+        },
+        {
+          "Key": "Order_summary",
+          "Value": "Order_summary",
+          "Translation": {
+            "EL": "Σύνοψη παραγγελίας",
+            "EN": "Order summary",
+            "RO": "Sumar comandă"
+          }
+        },
+        {
+          "Key": "Gifts",
+          "Value": "Gifts",
+          "Translation": {
+            "EL": "Δώρα",
+            "EN": "Gifts",
+            "RO": "Cadouri"
+          }
+        },
+        {
+          "Key": "Discount",
+          "Value": "Discount",
+          "Translation": {
+            "EL": "Έκπτωση",
+            "EN": "Discount",
+            "RO": "Reducere"
+          }
+        },
+        {
+          "Key": "Net",
+          "Value": "Net",
+          "Translation": {
+            "EL": "Καθαρή Αξία",
+            "EN": "Net Value",
+            "RO": "Valoare netă"
+          }
+        },
+        {
+          "Key": "VAT",
+          "Value": "VAT",
+          "Translation": {
+            "EL": "Φ.Π.Α.",
+            "EN": "VAT",
+            "RO": "TVA"
+          }
+        },
+        {
+          "Key": "Additional_comments",
+          "Value": "Additional_comments",
+          "Translation": {
+            "EL": "Επιπλέον Σχόλια",
+            "EN": "Additional comments",
+            "RO": "Comentarii suplimentare"
+          }
+        },
+        {
+          "Key": "Note",
+          "Value": "Note",
+          "Translation": {
+            "EL": "Σημείωση",
+            "EN": "Note",
+            "RO": "Observaţii"
+          }
+        },
+        {
+          "Key": "Back",
+          "Value": "Back",
+          "Translation": {
+            "EL": "Επιστροφή",
+            "EN": "Back",
+            "RO": "Înapoi"
+          }
+        },
+        {
+          "Key": "Review_your_order",
+          "Value": "Review_your_order",
+          "Translation": {
+            "EL": "Ανασκόπηση της παραγγελίας σας",
+            "EN": "Review your order",
+            "RO": "Verificare comandă"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Client",
+          "Value": "Client",
+          "Translation": {
+            "EL": "Πελάτης",
+            "EN": "Client",
+            "RO": "Client"
+          }
+        },
+        {
+          "Key": "Address",
+          "Value": "Address",
+          "Translation": {
+            "EL": "Διεύθυνση",
+            "EN": "Address",
+            "RO": "Adresă"
+          }
+        },
+        {
+          "Key": "Name",
+          "Value": "Name",
+          "Translation": {
+            "EL": "Όνομα",
+            "EN": "Name",
+            "RO": "Nume"
+          }
+        },
+        {
+          "Key": "TransitTime",
+          "Value": "TransitTime",
+          "Translation": {
+            "EL": "Χρόνος παράδοσης",
+            "EN": "Transit time",
+            "RO": "Timp de livrare"
+          }
+        },
+        {
+          "Key": "Complete_Order",
+          "Value": "Complete_Order",
+          "Translation": {
+            "EL": "Ολοκληρωση παραγγελίας",
+            "EN": "Complete Order",
+            "RO": "Finalizare comandă"
+          }
+        },
+        {
+          "Key": "Complete",
+          "Value": "Complete",
+          "Translation": {
+            "EL": "Ολοκλήρωση",
+            "EN": "Complete",
+            "RO": "Finalizare"
+          }
+        },
+        {
+          "Key": "Placing_Order",
+          "Value": "Placing_Order",
+          "Translation": {
+            "EL": "Τοποθέτηση Παραγγελίας",
+            "EN": "Placing Order",
+            "RO": "Plasare comandă"
+          }
+        },
+        {
+          "Key": "Thank_you_for_your_order",
+          "Value": "Thank_you_for_your_order",
+          "Translation": {
+            "EL": "Σας ευχαριστούμε για την παραγγελία σας",
+            "EN": "Thank you for your order",
+            "RO": "Îţi mulţumim pentru comandă"
+          }
+        },
+        {
+          "Key": "Your_order_has_been_placed_and_will_be_processed_as_soon_as_possible",
+          "Value": "Your_order_has_been_placed_and_will_be_processed_as_soon_as_possible",
+          "Translation": {
+            "EL": "Η παραγγελία σας έχει γίνει και θα την επεξεργαστούμε το συντομότερο δυνατό",
+            "EN": "Your order has been placed and will be processed as soon as possible",
+            "RO": "Comanda ta a fost plasată şi va fi procesată în cel mai scurt timp"
+          }
+        },
+        {
+          "Key": "Make_sure_you_make_note_of_your_order_number_which_is",
+          "Value": "Make_sure_you_make_note_of_your_order_number_which_is",
+          "Translation": {
+            "EL": "Παρακαλώ σημειώστε τον κωδικό της παραγγελίας, ο οποίος είναι",
+            "EN": "Make sure you make note of your order number which is",
+            "RO": "Te rugăm să salvezi numărul de comandă"
+          }
+        },
+        {
+          "Key": "You_will_be_receiving_an_email_shortly_with_confirmation_of_your_order",
+          "Value": "You_will_be_receiving_an_email_shortly_with_confirmation_of_your_order",
+          "Translation": {
+            "EL": "Θα λάβετε σύντομα ένα επιβεβαιωτικό email με την παραγγελία σας",
+            "EN": "You will be receiving an email shortly with confirmation of your order",
+            "RO": "Vei primi un mail de confirmare a comenzii"
+          }
+        },
+        {
+          "Key": "Go_back_shopping",
+          "Value": "Go_back_shopping",
+          "Translation": {
+            "EL": "Επιστροφή",
+            "EN": "Go back shopping",
+            "RO": "Înapoi la cumărături"
+          }
+        },
+        {
+          "Key": "Head_office",
+          "Value": "Head_office",
+          "Translation": {
+            "EL": "Κεντρικά γραφεία",
+            "EN": "Head office",
+            "RO": "Sediu social"
+          }
+        },
+        {
+          "Key": "Second_street_name",
+          "Value": "Second_street_name",
+          "Translation": {
+            "EL": "Ονομασία δεύτερης οδού",
+            "EN": "Second street name",
+            "RO": "Stradă"
+          }
+        },
+        {
+          "Key": "Noproducts",
+          "Value": "Noproducts",
+          "Translation": {
+            "EL": "Δεν υπάρχουν προϊόντα",
+            "EN": "No products",
+            "RO": "Niciun produs"
+          }
+        },
+        {
+          "Key": "Choose_shipping_method",
+          "Value": "Choose_shipping_method",
+          "Translation": {
+            "EL": "Διάλεξε τρόπο αποστολής",
+            "EN": "Choose shipping method",
+            "RO": "Alege metoda de livrare"
+          }
+        },
+        {
+          "Key": "Shipping_method",
+          "Value": "Shipping_method",
+          "Translation": {
+            "EL": "Μέθοδος αποστολής",
+            "EN": "Shipping method",
+            "RO": "Metoda de livrare"
+          }
+        },
+        {
+          "Key": "Delivery_time",
+          "Value": "Delivery_time",
+          "Translation": {
+            "EL": "Χρόνος αποστολής",
+            "EN": "Delivery time",
+            "RO": "Timp de livrare"
+          }
+        },
+        {
+          "Key": "Handling_fee",
+          "Value": "Handling_fee",
+          "Translation": {
+            "EL": "Έξοδα αποστολής",
+            "EN": "Handling fee",
+            "RO": "Comision de procesare"
+          }
+        },
+        {
+          "Key": "Loading",
+          "Value": "Loading",
+          "Translation": {
+            "EL": "Φόρτωση",
+            "EN": "Loading",
+            "RO": "Încărcare"
+          }
+        },
+        {
+          "Key": "Reference_Code",
+          "Value": "Reference Code",
+          "Translation": {
+            "EL": "Κωδικός αναφοράς",
+            "EN": "Reference Code",
+            "RO": "Cod de referinţă"
+          }
+        },
+        {
+          "Key": "Expenses",
+          "Value": "Expenses",
+          "Translation": {
+            "EL": "Έξοδα",
+            "EN": "Expenses",
+            "RO": "Cheltuieli"
+          }
+        },
+        {
+          "Key": "Value",
+          "Value": "Value",
+          "Translation": {
+            "EL": "Αξία",
+            "EN": "Value",
+            "RO": "Valoare"
+          }
+        },
+        {
+          "Key": "Choose_payment_method",
+          "Value": "Choose_payment_method",
+          "Translation": {
+            "EL": "Διάλεξε μέθοδο πληρωμής",
+            "EN": "Choose payment method",
+            "RO": "Alege metoda de plată"
+          }
+        },
+        {
+          "Key": "payment",
+          "Value": "payment",
+          "Translation": {
+            "EL": "Πληρωμή",
+            "EN": "Payment",
+            "RO": "Plată"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ForgotPassword",
+      "DisplayName": "Forgot Password",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        20
+      ],
+      "Translations": [
+        {
+          "Key": "ForgotPassword",
+          "Value": "ForgotPassword",
+          "Translation": {
+            "EL": "Ξεχάσατε τον κωδικό",
+            "EN": "Forgot Password",
+            "RO": "Am uitat parola"
+          }
+        },
+        {
+          "Key": "Change_your_password_in_three_easy_steps_This_helps_to_keep_your_new_password_secure",
+          "Value": "Change_your_password_in_three_easy_steps_This_helps_to_keep_your_new_password_secure",
+          "Translation": {
+            "EL": "Αλλάξτε τον κωδικό σας με 3 εύκολα βήματα. Αυτό θα σας βοηθήσει να κρατήσετε τον νέο σας κωδικό ασφαλή.",
+            "EN": "Change your password in three easy steps. This helps to keep your new password secure",
+            "RO": "Schimbă parola în 3 paşi. Acest lucru ajută la securizarea parolei."
+          }
+        },
+        {
+          "Key": "Fill_in_your_email_address_below",
+          "Value": "Fill_in_your_email_address_below",
+          "Translation": {
+            "EL": "Συμπληρώστε την διεύθυνση του email σας παρακάτω",
+            "EN": "Fill in your email address below",
+            "RO": "Introdu adresa de email mai jos"
+          }
+        },
+        {
+          "Key": "We_ll_email_you_a_temporary_link",
+          "Value": "We_ll_email_you_a_temporary_link",
+          "Translation": {
+            "EL": "Θα σας στείλουμε έναν προσωρινό σύνδεσμο ",
+            "EN": "We will email you a temporary link",
+            "RO": "Vei primi pe adresa ta un email cu un link temporar"
+          }
+        },
+        {
+          "Key": "Use_the_link_to_change_your_password",
+          "Value": "Use_the_link_to_change_your_password",
+          "Translation": {
+            "EL": "Χρησιμοποιήστε αυτό τον σύνδεσμο για να αλλάξετε τον κωδικό σας",
+            "EN": "Use the link to change your password",
+            "RO": "Utilizează link-ul pentru schimbarea parolei"
+          }
+        },
+        {
+          "Key": "Enter_your_email_address",
+          "Value": "Enter_your_email_address",
+          "Translation": {
+            "EL": "Εισάγετε την διεύθυνση του email σας",
+            "EN": "Enter your email address",
+            "RO": "Introdu adresa de email"
+          }
+        },
+        {
+          "Key": "InvalidEmailText",
+          "Value": "InvalidEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email δεν είναι σωστή",
+            "EN": "The value is not a valid email address",
+            "RO": "Nu ai introdus o adresă de email validă"
+          }
+        },
+        {
+          "Key": "EmptyEmailText",
+          "Value": "EmptyEmailText",
+          "Translation": {
+            "EL": "Η διεύθυνση email είναι υποχρεωτική",
+            "EN": "Email address is required",
+            "RO": "Adresa de email este obligatorie"
+          }
+        },
+        {
+          "Key": "RequestError",
+          "Value": "RequestError",
+          "Translation": {
+            "EL": "An error has occured please try again later",
+            "EN": "Παρουσιάστηκε σφάλμα, δοκιμάστε ξανά αργότερα",
+            "RO": "A intervenit o eroare. Te rugăm să reîncerci mai târziu"
+          }
+        },
+        {
+          "Key": "InvalidRequest",
+          "Value": "InvalidRequest",
+          "Translation": {
+            "EL": "Παρουσιάστηκε σφάλμα, δοκιμάστε ξανά αργότερα",
+            "EN": "An error has occured please try again later",
+            "RO": "A intervenit o eroare. Te rugăm să reîncerci mai târziu"
+          }
+        },
+        {
+          "Key": "ButtonText",
+          "Value": "ButtonText",
+          "Translation": {
+            "EL": "Συνέχεια",
+            "EN": "Continue",
+            "RO": "Continuă"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "HeroCarousel",
+      "DisplayName": "Hero Carousel",
+      "Views": [
+        "Default",
+        "FullImage"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "BannerCarousel",
+      "DisplayName": "Banner Carousel",
+      "Views": [
+        "Default",
+        "FullImage"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "IconBlock",
+      "DisplayName": "Icon Block",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductsCarousel",
+      "DisplayName": "Products Carousel",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductsBlock",
+      "DisplayName": "Products Block",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "QuickView",
+          "Value": "QuickView",
+          "Translation": {
+            "EL": "Γρήγορο προβολή",
+            "EN": "Quick view",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "BannerWithProductsCarousel",
+      "DisplayName": "Banner With Products Carousel",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "QuickView",
+          "Value": "QuickView",
+          "Translation": {
+            "EL": "Γρήγορο προβολή",
+            "EN": "Quick view",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "BrandsCarousel",
+      "DisplayName": "Brands Carousel",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "BrandList",
+      "DisplayName": "Brands List",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "CategoriesList",
+      "DisplayName": "Categories List",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        22
+      ],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Footer",
+      "DisplayName": "Footer",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "emailValid",
+          "Value": "Your email was successfully added to our newsletter.",
+          "Translation": {
+            "EL": "Το email σας προστέθηκε με επιτυχία στο newsletter μας.",
+            "EN": "Your email was successfully added to our newsletter.",
+            "RO": "Adresa de email a fost salvată pentru newsletter"
+          }
+        },
+        {
+          "Key": "mailError",
+          "Value": "Please provide a properly formated email.",
+          "Translation": {
+            "EL": "Παρακαλώ συμπληρώστε ένα σωστά διαμορφωμένο email.",
+            "EN": "Please provide a properly formated email.",
+            "RO": "Te rugăm să introduci o adresă de email cu un format corect."
+          }
+        },
+        {
+          "Key": "Subscribe_to_our_newsletter",
+          "Value": "Subscribe_to_our_newsletter",
+          "Translation": {
+            "EL": "Εγγραφείτε στο newsletter μας",
+            "EN": "Subscribe to our newsletter",
+            "RO": "Înregistreză-te la newsletter"
+          }
+        },
+        {
+          "Key": "Subscribe",
+          "Value": "Subscribe",
+          "Translation": {
+            "EL": "Εγγραφή",
+            "EN": "Subscribe",
+            "RO": "Înregistrare"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "RelatedProducts",
+      "DisplayName": "Related Products",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "Related_Products",
+          "Value": "Related Products",
+          "Translation": {
+            "EL": "Σχετικά Προϊόντα",
+            "EN": "Related Products",
+            "RO": "Produse similare"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "FilterList",
+      "DisplayName": "Filter list",
+      "Views": [
+        "Default",
+        "FastEntry"
+      ],
+      "Hooks": [
+        11
+      ],
+      "Translations": [
+        {
+          "Key": "Title",
+          "Value": "Title",
+          "Translation": {
+            "EL": "Τίτλος",
+            "EN": "Title",
+            "RO": "Titlu"
+          }
+        },
+        {
+          "Key": "SKU",
+          "Value": "SKU",
+          "Translation": {
+            "EL": "SKU",
+            "EN": "SKU",
+            "RO": "SKU"
+          }
+        },
+        {
+          "Key": "Home",
+          "Value": "Home",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "Home",
+            "RO": "Acasă"
+          }
+        },
+        {
+          "Key": "clear",
+          "Value": "clear",
+          "Translation": {
+            "EL": "Καθαρισμός",
+            "EN": "Clear",
+            "RO": "Şterge"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        },
+        {
+          "Key": "Collections",
+          "Value": "Collections",
+          "Translation": {
+            "EL": "Συλλογές",
+            "EN": "Collections",
+            "RO": "Colecţii"
+          }
+        },
+        {
+          "Key": "Collections",
+          "Value": "Collections",
+          "Translation": {
+            "EL": "Συλλογές",
+            "EN": "Collections",
+            "RO": "Colecţii"
+          }
+        },
+        {
+          "Key": "Categories",
+          "Value": "Categories",
+          "Translation": {
+            "EL": "Κατηγορίες",
+            "EN": "Categories",
+            "RO": "Categorii"
+          }
+        },
+        {
+          "Key": "Filters",
+          "Value": "Filters",
+          "Translation": {
+            "EL": "Φίλτρα",
+            "EN": "Filters",
+            "RO": "Filtre"
+          }
+        },
+        {
+          "Key": "SearchTitle",
+          "Value": "Search Title",
+          "Translation": {
+            "EL": "Αναζήτηση Τίτλου",
+            "EN": "Search Title",
+            "RO": "Caută titlu"
+          }
+        },
+        {
+          "Key": "Search",
+          "Value": "Search...",
+          "Translation": {
+            "EL": "Αναζήτηση...",
+            "EN": "Search...",
+            "RO": "Caută..."
+          }
+        },
+        {
+          "Key": "Price",
+          "Value": "Price",
+          "Translation": {
+            "EL": "Τιμή",
+            "EN": "Price",
+            "RO": "Preţ"
+          }
+        },
+        {
+          "Key": "SortBy",
+          "Value": "SortBy",
+          "Translation": {
+            "EL": "Ταξινόμηση με",
+            "EN": "Sort By",
+            "RO": "Sortează"
+          }
+        },
+        {
+          "Key": "Newest",
+          "Value": "Newest",
+          "Translation": {
+            "EL": "Νεότερο",
+            "EN": "Newest",
+            "RO": "Cel mai nou"
+          }
+        },
+        {
+          "Key": "HighLowPrice",
+          "Value": "High Low Price",
+          "Translation": {
+            "EL": "Φθίνουσα Τιμή",
+            "EN": "High Low Price",
+            "RO": "Preţ(de la mare la mic)"
+          }
+        },
+        {
+          "Key": "LowHighPrice",
+          "Value": "Low High Price",
+          "Translation": {
+            "EL": "Αύξουσα Τιμή",
+            "EN": "Low High Price",
+            "RO": "Preţ(de la mic la mare)"
+          }
+        },
+        {
+          "Key": "of",
+          "Value": "of",
+          "Translation": {
+            "EL": "από",
+            "EN": "of",
+            "RO": "din"
+          }
+        },
+        {
+          "Key": "products",
+          "Value": "products",
+          "Translation": {
+            "EL": "προϊόντα",
+            "EN": "products",
+            "RO": "produse"
+          }
+        },
+        {
+          "Key": "NoproductsSelection",
+          "Value": "No products were found matching your selection.",
+          "Translation": {
+            "EL": "Δεν βρέθηκαν προϊόντα. Προσπάθησε να αφαιρέσεις το τελευταίο σου φίλτρο.",
+            "EN": "No products were found matching your selection.",
+            "RO": "Nu au fost găsite produse asociate selecţiei"
+          }
+        },
+        {
+          "Key": "Browseproducts",
+          "Value": "Browse products",
+          "Translation": {
+            "EL": "Δες όλα τα προϊόντα",
+            "EN": "Browse products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "OutOfStock",
+          "Value": "Out Of Stock",
+          "Translation": {
+            "EL": "Δες όλα τα προϊόντα",
+            "EN": "Out Of Stock",
+            "RO": "Stoc epuizat"
+          }
+        },
+        {
+          "Key": "Sale",
+          "Value": "Sale",
+          "Translation": {
+            "EL": "Προσφορά",
+            "EN": "Sale",
+            "RO": "Oferte speciale"
+          }
+        },
+        {
+          "Key": "New",
+          "Value": "Νέο",
+          "Translation": {
+            "EL": "Νέο",
+            "EN": "New",
+            "RO": "Nou"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "AddtoCart",
+          "Value": "Add to Cart",
+          "Translation": {
+            "EL": "Προσθήκη",
+            "EN": "Add to Cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "QuickView",
+          "Value": "Quick View",
+          "Translation": {
+            "EL": "Γρήγορη προβολή",
+            "EN": "Quick view",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Prev",
+          "Value": "Prev",
+          "Translation": {
+            "EL": "Προηγούμενο",
+            "EN": "Prev",
+            "RO": "Anterior"
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "Επόμενο",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "Brands",
+          "Value": "Brands",
+          "Translation": {
+            "EL": "Κατασκευαστές",
+            "EN": "Brands",
+            "RO": "Mărci"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Unit",
+          "Value": "Unit",
+          "Translation": {
+            "EL": "τεμάχιο",
+            "EN": "unit",
+            "RO": "unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "PriceAsc",
+          "Value": "PriceAsc",
+          "Translation": {
+            "EL": "Χαμηλότερη σε υψηλότερη τιμή",
+            "EN": "Lower to Higher Price",
+            "RO": "Oferte speciale"
+          }
+        },
+        {
+          "Key": "PriceDesc",
+          "Value": "PriceDesc",
+          "Translation": {
+            "EL": "Υψηλότερη σε χαμηλότερη τιμή",
+            "EN": "Higher to Lower Price",
+            "RO": "Preţ(de la mare la mic)"
+          }
+        },
+        {
+          "Key": "PriorityAsc",
+          "Value": "PriorityAsc",
+          "Translation": {
+            "EL": "Χαμηλότερη σε υψηλότερη προτεραιότητα",
+            "EN": "Lower to Higher Priority",
+            "RO": "Prioritate(de la mic la mare)"
+          }
+        },
+        {
+          "Key": "PriorityDesc",
+          "Value": "PriorityDesc",
+          "Translation": {
+            "EL": "Υψηλότερη σε χαμηλότερη προτεραιότητα",
+            "EN": "Higher to Lower Priority",
+            "RO": "Prioritate(de la mare la mic)"
+          }
+        },
+        {
+          "Key": "TitleDesc",
+          "Value": "TitleDesc",
+          "Translation": {
+            "EL": "Αλφαβητικά Ω-Α",
+            "EN": "Alphabetically Z-A",
+            "RO": "Alfabetic Z-A"
+          }
+        },
+        {
+          "Key": "TitleAsc",
+          "Value": "TitleAsc",
+          "Translation": {
+            "EL": "Αλφαβητικά Α-Ω",
+            "EN": "Alphabetically A-Z",
+            "RO": "Alfabetic A-Z"
+          }
+        },
+        {
+          "Key": "SortDateAsc",
+          "Value": "SortDateAsc",
+          "Translation": {
+            "EL": "Παλαιότερο σε νεότερο",
+            "EN": "Oldest to newest",
+            "RO": "De la vechi la nou"
+          }
+        },
+        {
+          "Key": "SortDateDesc",
+          "Value": "SortDateDesc",
+          "Translation": {
+            "EL": "Νεότερο σε παλαιότερο",
+            "EN": "Newest to oldest",
+            "RO": "De la nou la vechi"
+          }
+        },
+        {
+          "Key": "SelectOption",
+          "Value": "SelectOption",
+          "Translation": {
+            "EL": "Επιλέξτε",
+            "EN": "Select Option",
+            "RO": "Seletează opţiune"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ProductSingle",
+      "DisplayName": "Product Single",
+      "Views": [
+        "Default",
+        "Variable",
+        "WithRelated"
+      ],
+      "Hooks": [
+        5
+      ],
+      "Translations": [
+        {
+          "Key": "save",
+          "Value": "save",
+          "Translation": {
+            "EL": "Αποθήκευση",
+            "EN": "Save",
+            "RO": "Salvează"
+          }
+        },
+        {
+          "Key": "newlistname",
+          "Value": "newlistname",
+          "Translation": {
+            "EL": "Όνομα νέας λίστας",
+            "EN": "New list name",
+            "RO": "Nume listă nouă"
+          }
+        },
+        {
+          "Key": "added",
+          "Value": "added",
+          "Translation": {
+            "EL": "Προστέθηκε",
+            "EN": "Added",
+            "RO": "Adăugat"
+          }
+        },
+        {
+          "Key": "removed",
+          "Value": "removed",
+          "Translation": {
+            "EL": "Αφαιρέθηκε",
+            "EN": "Removed",
+            "RO": "Şters"
+          }
+        },
+        {
+          "Key": "AddToList",
+          "Value": "AddToList",
+          "Translation": {
+            "EL": "Προσθήκη σε λίστα",
+            "EN": "Add to list",
+            "RO": "Adaugă în listă"
+          }
+        },
+        {
+          "Key": "Out_of_Stock",
+          "Value": "Out_of_Stock",
+          "Translation": {
+            "EL": "Εκτός αποθέματος",
+            "EN": "Out of Stock",
+            "RO": "Stoc epuizat"
+          }
+        },
+        {
+          "Key": "New",
+          "Value": "New",
+          "Translation": {
+            "EL": "Νέο",
+            "EN": "New",
+            "RO": "Nou"
+          }
+        },
+        {
+          "Key": "Products",
+          "Value": "Products",
+          "Translation": {
+            "EL": "Προϊόντα",
+            "EN": "Products",
+            "RO": "Produse"
+          }
+        },
+        {
+          "Key": "Sale",
+          "Value": "Sale",
+          "Translation": {
+            "EL": "Προσφορά",
+            "EN": "Sale",
+            "RO": "Ofertă specială"
+          }
+        },
+        {
+          "Key": "Quick_View",
+          "Value": "Quick_View",
+          "Translation": {
+            "EL": "Προβολή προϊόντος ",
+            "EN": "Quick View",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Add_to_cart",
+          "Value": "Add_to_cart",
+          "Translation": {
+            "EL": "Προσθήκη στο καλάθι",
+            "EN": "Add to cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add Το...",
+            "RO": "Adaugă la..."
+          }
+        },
+        {
+          "Key": "Add_New_List",
+          "Value": "Add_New_List",
+          "Translation": {
+            "EL": "Νέα Λίστα",
+            "EN": "New List",
+            "RO": "Listă nouă"
+          }
+        },
+        {
+          "Key": "More_products",
+          "Value": "More_products",
+          "Translation": {
+            "EL": "Περισσότερα προϊόντα",
+            "EN": "More products",
+            "RO": "Mai multe produse"
+          }
+        },
+        {
+          "Key": "Product_Available",
+          "Value": "Product_Available",
+          "Translation": {
+            "EL": "Διαθέσιμο προϊόν",
+            "EN": "Product Available",
+            "RO": "Produs disponibil"
+          }
+        },
+        {
+          "Key": "Total_price",
+          "Value": "Total_price",
+          "Translation": {
+            "EL": "Συνολική τιμή",
+            "EN": "Total price",
+            "RO": "Preţ total"
+          }
+        },
+        {
+          "Key": "Price",
+          "Value": "Price",
+          "Translation": {
+            "EL": "Τιμή",
+            "EN": "Price",
+            "RO": "Preţ"
+          }
+        },
+        {
+          "Key": "Size",
+          "Value": "Size",
+          "Translation": {
+            "EL": "Μέγεθος",
+            "EN": "Size",
+            "RO": "Mărime"
+          }
+        },
+        {
+          "Key": "Pattern",
+          "Value": "Pattern",
+          "Translation": {
+            "EL": "Μοτίβο",
+            "EN": "Pattern",
+            "RO": "Tipar"
+          }
+        },
+        {
+          "Key": "Material",
+          "Value": "Material",
+          "Translation": {
+            "EL": "Υλικό",
+            "EN": "Material",
+            "RO": "Material"
+          }
+        },
+        {
+          "Key": "Color",
+          "Value": "Color",
+          "Translation": {
+            "EL": "Χρώμα",
+            "EN": "Color",
+            "RO": "Culoare"
+          }
+        },
+        {
+          "Key": "productVariants",
+          "Value": "ProductVariants",
+          "Translation": {
+            "EL": "Διαστάσεις",
+            "EN": "Dimensions",
+            "RO": "Dimensiuni"
+          }
+        },
+        {
+          "Key": "Description",
+          "Value": "Description",
+          "Translation": {
+            "EL": "Περιγραφή",
+            "EN": "Description",
+            "RO": "Descriere"
+          }
+        },
+        {
+          "Key": "Home",
+          "Value": "Home",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "Home",
+            "RO": "Acasă"
+          }
+        },
+        {
+          "Key": "General",
+          "Value": "General",
+          "Translation": {
+            "EL": "Γενικά",
+            "EN": "General",
+            "RO": "General"
+          }
+        },
+        {
+          "Key": "Info",
+          "Value": "Info",
+          "Translation": {
+            "EL": "Πληροφορίες",
+            "EN": "Info",
+            "RO": "Detalii"
+          }
+        },
+        {
+          "Key": "Specs",
+          "Value": "Specs",
+          "Translation": {
+            "EL": "Χαρακτηριστικά",
+            "EN": "Specs",
+            "RO": "Specificaţii"
+          }
+        },
+        {
+          "Key": "Product_info",
+          "Value": "Product_info",
+          "Translation": {
+            "EL": "Πληροφορίες προϊόντος",
+            "EN": "Product_info",
+            "RO": "Informaţie produs"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "Attributes",
+          "Value": "Attributes",
+          "Translation": {
+            "EL": "Χαρακτηριστικά",
+            "EN": "Attributes",
+            "RO": "Atribute"
+          }
+        },
+        {
+          "Key": "Product_Details",
+          "Value": "Product_Details",
+          "Translation": {
+            "EL": "Λεπτομέρειες προιόντος",
+            "EN": "Product Details",
+            "RO": "Detali produs"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        },
+        {
+          "Key": "Title",
+          "Value": "Title",
+          "Translation": {
+            "EL": "Τίτλος",
+            "EN": "Title",
+            "RO": "Titlu"
+          }
+        },
+        {
+          "Key": "Unit",
+          "Value": "Unit",
+          "Translation": {
+            "EL": "Μονάδα",
+            "EN": "Unit",
+            "RO": "Unitate"
+          }
+        },
+        {
+          "Key": "Related_Products",
+          "Value": "Related_Products",
+          "Translation": {
+            "EL": "Σχετιζόμενα Είδη",
+            "EN": "Related Products",
+            "RO": "Produse similare"
+          }
+        },
+        {
+          "Key": "SKU",
+          "Value": "SKU",
+          "Translation": {
+            "EL": "Κωδικός",
+            "EN": "SKU",
+            "RO": "SKU"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "CallToAction",
+      "DisplayName": "Call To Action",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Layout",
+      "DisplayName": "Layout",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "ChangePassword",
+      "DisplayName": "Change Password",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [
+        21
+      ],
+      "Translations": [
+        {
+          "Key": "newPasswordText",
+          "Value": "newPasswordText",
+          "Translation": {
+            "EL": "Νέος κωδικός πρόσβασης",
+            "EN": "New Password",
+            "RO": "Parolă nouă"
+          }
+        },
+        {
+          "Key": "ChangePassword",
+          "Value": "ChangePassword",
+          "Translation": {
+            "EL": "Αλλαγή κωδικού πρόσβασης",
+            "EN": "Change Password",
+            "RO": "Schimbă parola"
+          }
+        },
+        {
+          "Key": "confirmPasswordText",
+          "Value": "confirmPasswordText",
+          "Translation": {
+            "EL": "Επιβεβαίωση κωδικού πρόσβασης",
+            "EN": "Confirm Password",
+            "RO": "Confirmă parola"
+          }
+        },
+        {
+          "Key": "EmptyPasswordText",
+          "Value": "EmptyPasswordText",
+          "Translation": {
+            "EL": "O κωδικός πρόσβασης είναι υποχρεωτικό πεδίο",
+            "EN": "Password is required",
+            "RO": "Parola este obligatorie"
+          }
+        },
+        {
+          "Key": "MismatchPasswordText",
+          "Value": "MismatchPasswordText",
+          "Translation": {
+            "EL": "Αναντιστοιχία κωδικών πρόσβασης",
+            "EN": "Passwords do not match",
+            "RO": "Parolele nu corespund"
+          }
+        },
+        {
+          "Key": "PasswordPolicyText",
+          "Value": "PasswordPolicyText",
+          "Translation": {
+            "EL": "<ul><li>Το μήκος πρέπει να είναι τουλάχιστον 8 χαρακτήρες</li><li>Πρέπει να περιέχει τουλάχιστον εναν από:</li><ul><li>Ειδικούς χαρακτήρες π.χ. !,@,#</li><li>Αριθμούς</li><li>Γράμματα</li></ul></ul>",
+            "EN": "<ul><li>Length must be at least 8 characters long</li><li>It should contain at least one of the following </li><ul>\t<li>Special characters e.g. !,@,#</li>\t<li>Numbers</li><li>Letters</li></ul></li></ul>",
+            "RO": "<ul><li>Lungimea trebuie să conţină minim 8 carcatere.</li><li>Trebuie să includă cel puţin unul din următoarele criterii:</li><ul>\t<li>Caractere speciale !,@,#</li>\t<li>Numere</li><li>Litere</li></ul></li></ul>"
+          }
+        },
+        {
+          "Key": "ButtonText",
+          "Value": "ButtonText",
+          "Translation": {
+            "EL": "Συνέχεια",
+            "EN": "Continue",
+            "RO": "Continuă"
+          }
+        },
+        {
+          "Key": "RequestError",
+          "Value": "RequestError",
+          "Translation": {
+            "EL": "Παρουσιάστηκε σφάλμα, δοκιμάστε ξανά αργότερα",
+            "EN": "An error has occured please try again later",
+            "RO": "A intervenit o eroare. Te rugăm să reîncerci mai târziu."
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Stores",
+      "DisplayName": "Stores",
+      "Views": [
+        "Default"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "",
+          "Value": "",
+          "Translation": {
+            "EL": "",
+            "EN": "",
+            "RO": ""
+          }
+        }
+      ]
+    },
+    {
+      "Type": "Search",
+      "DisplayName": "Search",
+      "Views": [
+        "Default",
+        "WithFilters"
+      ],
+      "Hooks": [],
+      "Translations": [
+        {
+          "Key": "SearchFor",
+          "Value": "SearchFor",
+          "Translation": {
+            "EL": "Αναζητήστε προϊόντα",
+            "EN": "Search for products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "Search",
+          "Value": "Search",
+          "Translation": {
+            "EL": "Αναζήτησε",
+            "EN": "Search",
+            "RO": "Caută"
+          }
+        },
+        {
+          "Key": "NoResults",
+          "Value": "NoResults",
+          "Translation": {
+            "EL": "Δεν βρέθηκαν αποτελέσματα",
+            "EN": "No results found",
+            "RO": "Nu au fost găsite rezultate"
+          }
+        },
+        {
+          "Key": "Home",
+          "Value": "Home",
+          "Translation": {
+            "EL": "Αρχική",
+            "EN": "Home",
+            "RO": "Acasă"
+          }
+        },
+        {
+          "Key": "clear",
+          "Value": "clear",
+          "Translation": {
+            "EL": "Καθαρισμός",
+            "EN": "Clear",
+            "RO": "Şterge"
+          }
+        },
+        {
+          "Key": "Add_To...",
+          "Value": "Add To...",
+          "Translation": {
+            "EL": "Προσθήκη σε...",
+            "EN": "Add To...",
+            "RO": "Adaugă la..."
+          }
+        },
+        {
+          "Key": "Collections",
+          "Value": "Collections",
+          "Translation": {
+            "EL": "Συλλογές",
+            "EN": "Collections",
+            "RO": "Colecţii"
+          }
+        },
+        {
+          "Key": "Collections",
+          "Value": "Collections",
+          "Translation": {
+            "EL": "Συλλογές",
+            "EN": "Collections",
+            "RO": "Colecţii"
+          }
+        },
+        {
+          "Key": "Categories",
+          "Value": "Categories",
+          "Translation": {
+            "EL": "Κατηγορίες",
+            "EN": "Categories",
+            "RO": "Categorii"
+          }
+        },
+        {
+          "Key": "Filters",
+          "Value": "Filters",
+          "Translation": {
+            "EL": "Φίλτρα",
+            "EN": "Filters",
+            "RO": "Filtre"
+          }
+        },
+        {
+          "Key": "SearchTitle",
+          "Value": "Search Title",
+          "Translation": {
+            "EL": "Αναζήτηση Τίτλου",
+            "EN": "Search Title",
+            "RO": "Caută titlu"
+          }
+        },
+        {
+          "Key": "Search",
+          "Value": "Search...",
+          "Translation": {
+            "EL": "Αναζήτηση...",
+            "EN": "Search...",
+            "RO": "Caută..."
+          }
+        },
+        {
+          "Key": "Price",
+          "Value": "Price",
+          "Translation": {
+            "EL": "Τιμή",
+            "EN": "Price",
+            "RO": "Preţ"
+          }
+        },
+        {
+          "Key": "SortBy",
+          "Value": "SortBy",
+          "Translation": {
+            "EL": "Ταξινόμηση με",
+            "EN": "SortBy",
+            "RO": "Sortează după"
+          }
+        },
+        {
+          "Key": "Newest",
+          "Value": "Newest",
+          "Translation": {
+            "EL": "Νεότερο",
+            "EN": "Newest",
+            "RO": "Cel mai nou"
+          }
+        },
+        {
+          "Key": "HighLowPrice",
+          "Value": "High Low Price",
+          "Translation": {
+            "EL": "Φθίνουσα Τιμή",
+            "EN": "High Low Price",
+            "RO": "Preţ(de la mare la mic)"
+          }
+        },
+        {
+          "Key": "LowHighPrice",
+          "Value": "Low High Price",
+          "Translation": {
+            "EL": "Αύξουσα Τιμή",
+            "EN": "Low High Price",
+            "RO": "Preţ(de la mic la mare)"
+          }
+        },
+        {
+          "Key": "of",
+          "Value": "of",
+          "Translation": {
+            "EL": "από",
+            "EN": "of",
+            "RO": "din"
+          }
+        },
+        {
+          "Key": "products",
+          "Value": "products",
+          "Translation": {
+            "EL": "προϊόντα",
+            "EN": "products",
+            "RO": "produse"
+          }
+        },
+        {
+          "Key": "NoproductsSelection",
+          "Value": "No products were found matching your selection.",
+          "Translation": {
+            "EL": "Δεν βρέθηκαν προϊόντα. Προσπάθησε να αφαιρέσεις το τελευταίο σου φίλτρο.",
+            "EN": "No products were found matching your selection.",
+            "RO": "Nu au fost găsite produse asociate selecţiei"
+          }
+        },
+        {
+          "Key": "Browseproducts",
+          "Value": "Browse products",
+          "Translation": {
+            "EL": "Δες όλα τα προϊόντα",
+            "EN": "Browse products",
+            "RO": "Caută produse"
+          }
+        },
+        {
+          "Key": "OutOfStock",
+          "Value": "Out Of Stock",
+          "Translation": {
+            "EL": "Δες όλα τα προϊόντα",
+            "EN": "Out Of Stock",
+            "RO": "Stoc epuizat"
+          }
+        },
+        {
+          "Key": "Sale",
+          "Value": "Sale",
+          "Translation": {
+            "EL": "Προσφορά",
+            "EN": "Sale",
+            "RO": "Ofertă specială"
+          }
+        },
+        {
+          "Key": "New",
+          "Value": "Νέο",
+          "Translation": {
+            "EL": "Νέο",
+            "EN": "New",
+            "RO": "Nou"
+          }
+        },
+        {
+          "Key": "Quantity",
+          "Value": "Quantity",
+          "Translation": {
+            "EL": "Ποσότητα",
+            "EN": "Quantity",
+            "RO": "Cantitate"
+          }
+        },
+        {
+          "Key": "AddtoCart",
+          "Value": "Add to Cart",
+          "Translation": {
+            "EL": "Προσθήκη",
+            "EN": "Add to Cart",
+            "RO": "Adaugă în coş"
+          }
+        },
+        {
+          "Key": "QuickView",
+          "Value": "Quick View",
+          "Translation": {
+            "EL": "Γρήγορη προβολή",
+            "EN": "Quick view",
+            "RO": "Vizualizare rapidă"
+          }
+        },
+        {
+          "Key": "Prev",
+          "Value": "Prev",
+          "Translation": {
+            "EL": "Προηγούμενο",
+            "EN": "Prev",
+            "RO": "Anterior"
+          }
+        },
+        {
+          "Key": "Next",
+          "Value": "Next",
+          "Translation": {
+            "EL": "Επόμενο",
+            "EN": "Next",
+            "RO": "Următorul"
+          }
+        },
+        {
+          "Key": "Brands",
+          "Value": "Brands",
+          "Translation": {
+            "EL": "Κατασκευαστές",
+            "EN": "Brands",
+            "RO": "Mărci"
+          }
+        },
+        {
+          "Key": "Per_Unit",
+          "Value": "Per_Unit",
+          "Translation": {
+            "EL": "ανά τεμάχιο",
+            "EN": "per unit",
+            "RO": "per unitate"
+          }
+        },
+        {
+          "Key": "Per",
+          "Value": "Per",
+          "Translation": {
+            "EL": "ανά",
+            "EN": "per",
+            "RO": "per"
+          }
+        }
+      ]
+    }
+  ],
+  "PreviewImages": [
+    "https://shopranos.azureedge.net/admin/assets/media/themes/kitchenware-thumbnail.png"
+  ],
+  "PreviewUrl": "https://kitchenware.shopranos.eu",
+  "Status": 0,
+  "CompanyPrototypeData": "c8ed7ca9-73ad-4906-8f99-bd4a5c1f06b7",
+  "RomanianCompanyPrototypeData": "e86f52a4-e332-45fa-9bfe-9aea213df3c1",
+  "DevCompanyPrototypeData": "0ab5b0a4-1f09-456e-92d6-84acee23dca0"
+}

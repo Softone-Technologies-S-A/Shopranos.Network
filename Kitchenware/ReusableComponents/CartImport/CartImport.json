@@ -1,0 +1,90 @@
+[
+  {
+    "Key": "Add_file",
+    "Value": "Add file",
+    "Translation": {
+      "EL": "Εισαγωγή αρχείου",
+      "EN": "Add file"
+    }
+  },
+  {
+    "Key": "Please_provide_a_valid_file",
+    "Value": "Please provide a valid file",
+    "Translation": {
+      "EL": "Παρακαλώ διαλέξτε ένα σωστό αρχείο",
+      "EN": "Please provide a valid file"
+    }
+  },
+  {
+    "Key": "Upload",
+    "Value": "Upload",
+    "Translation": {
+      "EL": "Αποστολή",
+      "EN": "Upload"
+    }
+  },
+  {
+    "Key": "Confirm_Bulk_Order",
+    "Value": "Confirm Bulk Order",
+    "Translation": {
+      "EL": "Επιβεβαίωση εισαγωγής παραγγελίας",
+      "EN": "Confirm Bulk Order"
+    }
+  },
+  {
+    "Key": "You_have_items_in_your_cart",
+    "Value": "You have items in your cart",
+    "Translation": {
+      "EL": "Έχετε ήδη αντικείμενα στο καλάθι",
+      "EN": "You have items in your cart"
+    }
+  },
+  {
+    "Key": "Are_you_sure_you_want_to_proceed_?",
+    "Value": "Are you sure you want to proceed ?",
+    "Translation": {
+      "EL": "Είστε σίγουροι ότι θέλετε να συνεχίσετε;",
+      "EN": "Are you sure you want to proceed ?"
+    }
+  },
+  {
+    "Key": "Cancel",
+    "Value": "Cancel",
+    "Translation": {
+      "EL": "Ακύρωση",
+      "EN": "Cancel"
+    }
+  },
+  {
+    "Key": "Ok",
+    "Value": "Ok",
+    "Translation": {
+      "EL": "Οκ",
+      "EN": "Ok"
+    }
+  },
+  {
+    "Key": "Import_Errors",
+    "Value": "Import Errors",
+    "Translation": {
+      "EL": "Σφάλματα Εισαγωγής",
+      "EN": "Import Errors"
+    }
+  },
+  {
+    "Key": "The_below_products_were_not_found",
+    "Value": "The below products were not found",
+    "Translation": {
+      "EL": "Τα παρακάτω προϊόντα δεν βρέθηκαν",
+      "EN": "The below products were not found"
+    }
+  },
+  {
+    "Key": "products_added_to_cart",
+    "Value": "products added to cart",
+    "Translation": {
+      "EL": "προϊόντα προστέθηκαν στο καλάθι",
+      "EN": "products added to cart"
+    }
+  }
+]

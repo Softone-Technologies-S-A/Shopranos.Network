@@ -1,0 +1,290 @@
+﻿[
+  {
+    "Key": "TransactionDate",
+    "Value": "Transaction date",
+    "Translation": {
+      "EL": "Ημ/νία Συναλλαγής",
+      "EN": "Transaction date",
+      "RO": "Data tranzacţiei"
+    }
+  },
+  {
+    "Key": "Code",
+    "Value": "Code",
+    "Translation": {
+      "EL": "Κωδικός",
+      "EN": "Code",
+      "RO": "Cod"
+    }
+  },
+  {
+    "Key": "Shipping",
+    "Value": "Shipping",
+    "Translation": {
+      "EL": "Μεταφορικά",
+      "EN": "Shipping",
+      "RO": "Status"
+    }
+  },
+  {
+    "Key": "Payment",
+    "Value": "Payment",
+    "Translation": {
+      "EL": "Αντικαταβολή",
+      "EN": "Payment",
+      "RO": "Status"
+    }
+  },{
+    "Key": "Status",
+    "Value": "Status",
+    "Translation": {
+      "EL": "Κατάσταση",
+      "EN": "Status",
+      "RO": "Status"
+    }
+  },
+  {
+    "Key": "Actions",
+    "Value": "Actions",
+    "Translation": {
+      "EL": "Ενέργειες",
+      "EN": "Actions",
+      "RO": "Acţiuni"
+    }
+  },
+  {
+    "Key": "Placed",
+    "Value": "Placed",
+    "Translation": {
+      "EL": "Καταχωρήθηκε",
+      "EN": "Placed",
+      "RO": "Înregistrat"
+    }
+  },
+  {
+    "Key": "Draft",
+    "Value": "Draft",
+    "Translation": {
+      "EL": "Σε προσχέδιο",
+      "EN": "Draft",
+      "RO": "Draft"
+    }
+  },
+  {
+    "Key": "Cancelled",
+    "Value": "Cancelled",
+    "Translation": {
+      "EL": "Ακυρώθηκε",
+      "EN": "Cancelled",
+      "RO": "Anulat"
+    }
+  },
+  {
+    "Key": "Processing",
+    "Value": "Processing",
+    "Translation": {
+      "EL": "Σε επεξεργασία",
+      "EN": "Processing",
+      "RO": "În curs de procesare"
+    }
+  },
+  {
+    "Key": "Processing",
+    "Value": "Processing",
+    "Translation": {
+      "EL": "Σε επεξεργασία",
+      "EN": "Processing",
+      "RO": "În curs de procesare"
+    }
+  },
+  {
+    "Key": "ToBeShipped",
+    "Value": "ToBeShipped",
+    "Translation": {
+      "EL": "Προς αποστολή",
+      "EN": "ToBeShipped",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Shipped",
+    "Value": "Shipped",
+    "Translation": {
+      "EL": "Έχει αποσταλεί",
+      "EN": "Shipped",
+      "RO": "De livrat"
+    }
+  },
+  {
+    "Key": "PartialDelivery",
+    "Value": "PartialDelivery",
+    "Translation": {
+      "EL": "Παραδόθηκε εν μέρει",
+      "EN": "PartialDelivery",
+      "RO": "Livrare parţială"
+    }
+  },
+  {
+    "Key": "FailedToDeliver",
+    "Value": "FailedToDeliver",
+    "Translation": {
+      "EL": "Αποτυχημένη παράδοση",
+      "EN": "FailedToDeliver",
+      "RO": "Livrare eşuată"
+    }
+  },
+  {
+    "Key": "Delivered",
+    "Value": "Delivered",
+    "Translation": {
+      "EL": "Έχει παραδοθεί",
+      "EN": "Delivered",
+      "RO": "Livrat"
+    }
+  },
+  {
+    "Key": "Rejected",
+    "Value": "Rejected",
+    "Translation": {
+      "EL": "Απορριφθείσα",
+      "EN": "Rejected",
+      "RO": "Respins"
+    }
+  },
+  {
+    "Key": "Completed",
+    "Value": "Completed",
+    "Translation": {
+      "EL": "Ολοκληρώθηκε",
+      "EN": "Completed",
+      "RO": "Finalizat"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Φόρτωση",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "No results",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results",
+      "RO": "Niciun rezultat"
+    }
+  },
+  {
+    "Key": "Prev",
+    "Value": "Prev",
+    "Translation": {
+      "EL": "",
+      "EN": "Prev",
+      "RO": "Anterior"
+    }
+  },
+  {
+    "Key": "Next",
+    "Value": "Next",
+    "Translation": {
+      "EL": "",
+      "EN": "Next",
+      "RO": "Următorul"
+    }
+  },
+  {
+    "Key": "OrderNumber",
+    "Value": "Order Number",
+    "Translation": {
+      "EL": "Αριθμός Παραγγελίας",
+      "EN": "Order Number",
+      "RO": "Număr comandă"
+    }
+  },
+  {
+    "Key": "Quantity",
+    "Value": "Quantity",
+    "Translation": {
+      "EL": "Ποσότητα",
+      "EN": "Quantity",
+      "RO": "Cantitate"
+    }
+  },
+  {
+    "Key": "Net",
+    "Value": "Net",
+    "Translation": {
+      "EL": "Καθαρή Αξία",
+      "EN": "Net Value",
+      "RO": "Valoare netă"
+    }
+  },
+  {
+    "Key": "User",
+    "Value": "User",
+    "Translation": {
+      "EL": "Χρήστης",
+      "EN": "User",
+      "RO": "Utilizator"
+    }
+  },
+  {
+    "Key": "Vat",
+    "Value": "Vat",
+    "Translation": {
+      "EL": "Φ.Π.Α.",
+      "EN": "Vat",
+      "RO": "TVA"
+    }
+  },
+  {
+    "Key": "Total",
+    "Value": "Total",
+    "Translation": {
+      "EL": "Σύνολο",
+      "EN": "Total",
+      "RO": "Total"
+    }
+  },
+  {
+    "Key": "AddToCart",
+    "Value": "Add to cart",
+    "Translation": {
+      "EL": "Προσθήκη στο καλάθι",
+      "EN": "Add to cart",
+      "RO": "Adaugă în coş"
+    }
+  },
+  {
+    "Key": "Cancel",
+    "Value": "Cancel",
+    "Translation": {
+      "EL": "Ακύρωση",
+      "EN": "Cancel",
+      "RO": "Anulează"
+    }
+  },
+  {
+    "Key": "Add_to_cart_and_proceed_to_checkout",
+    "Value": "Add to cart and proceed to checkout",
+    "Translation": {
+      "EL": "Προσθήκη στο καλάθι και ολοκλήρωση αγοράς",
+      "EN": "Add to cart and proceed to checkout",
+      "RO": "Adaugă în coş şi finalizează comanda"
+    }
+  },
+  {
+    "Key": "View",
+    "Value": "View",
+    "Translation": {
+      "EL": "Εμφάνιση",
+      "EN": "View",
+      "RO": "Vizualizare"
+    }
+  }
+
+]

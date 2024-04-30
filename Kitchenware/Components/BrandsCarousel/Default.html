@@ -1,0 +1,17 @@
+﻿<section :id="this.model.id" v-if="this.brands !== null" :class="this.model?.cssClass" class="container pt-md-3 pb-2 mb-5 pb-lg-3">
+    <!-- <h2 class="h3 fw-bold text-center pb-4">{{this.model.title}}</h2> -->
+    <div v-if="this.model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'mb-4', 'pb-4', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+    </div>
+    <div class="tns-carousel tns-controls-static tns-controls-outside">
+        <div :id="'brandscarousel-'+this.model.id" class="tns-carousel-inner " data-carousel-options='{"items": 4, "nav": false, "responsive": {"0":{"items":1},"500":{"items":2, "gutter": 18},"768":{"items":3, "gutter": 20},"1100":{"items":4, "gutter": 22}, "1260":{"gutter": 24}}}'>
+            <div v-for="(brand, index) in this.brands" class="col-md-3 col-sm-4 col-6">
+                <a class="d-flex align-items-center bg-white shadow-sm rounded-3 py-3 py-sm-4 mb-grid-gutter justify-content-center" :href="'/brand/'+brand.alias" style="height: 130px;">
+                    <img v-if="brand.mediaItem!== null && brand.mediaItem !== ''" class="d-block mx-auto" :src="brand.mediaItem.link" style="width: 150px; height:80px; object-fit: contain" alt="Brand">
+                    <h5 v-else class="mb-0">{{brand.name}}</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

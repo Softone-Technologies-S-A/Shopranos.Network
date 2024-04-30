@@ -1,0 +1,822 @@
+<div v-if="isLoading" class="container pb-5 mb-2 mb-md-4" :class="this.model?.cssClass">
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="d-flex flex-wrap justify-content-justify-content-center pt-3" style="height: 200px;">
+                <div class="d-none d-sm-block py-1 fs-sm mx-auto">
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center pt-3 pb-4 pb-sm-5 mt-1">
+                <div class="spinner-grow spinner-grow-sm body-secondary-text" style="width: 2rem; height: 2rem;"
+                     role="status">
+                    <span class="visually-hidden">##Loading##...</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div v-else-if="!offerExists" class="container d-flex justify-content-center align-items-center mt-4 pb-5 mb-2 mb-md-4 "
+     style="height:50vh;">
+    <div class="d-flex flex-column text-center">
+        <div class="text-danger fs-sm py-2">##OfferDoesNotExist##</div>
+        <div class="mt-4">
+            <a class="btn btn-outline-primary btn-lg" href="/"><i class="ci-arrow-left"></i></a>
+        </div>
+    </div>
+</div>
+<div v-else-if="this.offer===null || !this.offer.id||this.offer.id===null" :id="this.model.id"
+     class="container mt-4 pb-5 mb-2 mb-md-4">
+    <div class="row">
+        <section class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center pt-3 pb-4 pb-sm-5 mt-1">
+                <h2 class="h6 text-breadcrumb mb-0">##Products##</h2>
+                <a class="btn btn-outline-primary btn-sm ps-2" href="/">
+                    <i class="ci-arrow-left me-2"></i>##Continue_shopping##
+                </a>
+            </div>
+            <div :id="this.model.id" class="row justify-content-between align-items-center my-2 pb-3 ">
+                <div class="col-md-3 mb-2">
+                    <span class="text-nowrap text-primary"> ##Quickly_add_product##</span>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <input class="form-control rounded-end pe-5" type="text" placeholder='##SearchForProducts##'
+                           v-on:input="Search"
+                           v-on:keyup.enter="(this.products>0)?AddClickedProduct(this.products[0]):AddClickedProduct(null)"
+                           v-model="SearchText">
+                    <span v-if="isSearching"
+                          class="spinner-border spinner-border-sm position-absolute end-0 text-muted fs-base me-4"
+                          role="status" style="top:35%"></span>
+                    <i v-if="!isSearching && !searchFailed"
+                       class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+                    <i v-if="searchFailed"
+                       class="ci-close position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+
+                    <div class="dropdown-search w-100" v-on:input="Search">
+                        <ul class="dropdown-menu w-100 px-2" style="max-height: 60vh;" data-simplebar="init"
+                            data-simplebar-auto-hide="true" v-on:input="Search">
+                            <li href="#select-variant-modal" data-bs-toggle="modal"
+                                v-for="(product, index) in this.products" v-bind:key="product"
+                                :class="( this.showVariants[index]&& product!= null && product.productVariants!=null && product.productVariants.length>1)?'d-flex flex-row':''"
+                                v-on:input="Search">
+                                <div class="d-flex align-items-center border-bottom py-2" role="button"
+                                     @click="AddClickedProduct(product)">
+                                    <a class="flex-shrink-0">
+                                        <img v-if="product.mediaItems.length > 0 && product.mediaItems[0].mediaType=='Image'"
+                                             v-bind:src="product.mediaItems[0].link" width="64" :alt="product.title"
+                                             class="my-auto py-1" style=" max-height: 80px; object-fit: cover;" @error="this._handleImageError">
+                                        <img v-else :src="this._getNoImageUrl()" alt="" width="64"
+                                             class="mx-auto" />
+                                    </a>
+                                    <div class="ps-2">
+                                        <h6 class="widget-product-title">
+                                            <a>
+                                                <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!==undefined && product.productVariants[0].sku!=null"
+                                                      class="product-meta d-block fs-xs text-secondary fw-bold pb-1">
+                                                    {{product.productVariants[0].sku}}
+                                                </span>
+                                                {{product.title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div v-bind:key="product" class="row py-5 master-related">
+                <div class="col-12">
+                    <div class="d-flex flex-row align-items-center text-center bg-table-header-dark bg-primary"
+                         style="padding: 15px;">
+                        <div class="w-12p">##SKU##</div>
+                        <div class="w-12p">##Title##</div>
+                        <div class="w-12p">##Price##</div>
+                        <div class="w-19p">##Quantity##</div>
+                        <div class="w-19p">##Margin##</div>
+                        <div class="w-19p">##SalePrice##</div>
+                        <div class="w-7p"> </div>
+                    </div>
+                    <template v-if="this.offer.offerLines!==undefined && this.offer.offerLines!==null && this.offer.offerLines.length>0"
+                              v-for="(line, index) in this.offer.offerLines">
+                        <div class="d-block d-md-flex flex-md-row flex-column align-items-center text-center border-bottom py-1">
+                            <div class="w-12p  px-2 fs-sm d-flex justify-content-around">
+                                <span class="mr-title fs-bold text-primary w-100 text-center">##SKU##: </span>
+                                <span class="mr-content  w-100 text-center product-title">
+                                    <span v-if="line.sku" class="product-title mb-2">
+                                        {{line.sku}}
+                                    </span>
+                                    <span v-else class="product-title mb-2">
+                                        -
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="w-12p px-2 fs-sm d-flex justify-content-around">
+                                <span class="mr-title text-primary w-100 text-center">##Title##: </span>
+                                <span class="mr-content   w-100 text-center product-title">
+                                    <span class="product-title mb-2">
+                                        {{line.productTitle}}
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="w-12p px-2 d-flex justify-content-around">
+                                <span class="mr-title text-primary w-100 text-center">##Price##: </span>
+                                <span class="mr-content  w-100 text-center">
+                                    <span v-if="line.netValue!==undefined && line.netValue!==null"
+                                          class="fs-sm">{{this._calculateCurrency(line.netValue)}}</span>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##Quantity##: </span>
+                                <span class="mr-content w-100 d-flex justify-content-center">
+                                    <div class="input-group " style="max-width: 9rem;min-width: 7rem">
+                                        <button class="btn btn-secondary  border border-end-0 btn-icon" type="button"
+                                                @click="()=>handleQuantitySubtraction(line)">
+                                            <i class="h6">-</i>
+                                        </button>
+                                        <input class="form-control  border-start-0 border-end-0 text-center " type="number"
+                                               :value="line.quantity" id="quantity1"
+                                               @change="(c)=>handleQuantityChange(line, c)"
+                                               :step="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1"
+                                               :min="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1">
+                                        <button class="btn btn-secondary  border border-start-0 btn-icon"
+                                                @click="()=>handleQuantityAddition(line)">
+                                            <i class="ci-add"></i>
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##Margin##: </span>
+                                <span class="mr-content  w-100 text-center">
+                                    <div class="input-group mx-auto" style="max-width: 9rem;min-width: 7rem">
+                                        <input v-model="line.margin" @change="(c)=>handleMarginChange(c, line)" step="1.00"
+                                               class="form-control text-center commission_field" type="number" :min="0">
+                                        <button @click="" class="btn btn-light border btn-icon" type="button">
+                                            %
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##SalePrice##: </span>
+                                <span class="mr-content w-100 text-center">
+                                    <div class="input-group mx-auto" style="max-width: 9rem;min-width: 7rem">
+                                        <input class="form-control text-center commission_field" type="number" step="1.00"
+                                               :id="line.sku + '-customer_price'" :name="line.sku + '-customer_price'" :min="1"
+                                               v-model="line.lineValue" @change="(c)=>handleLineValueChange(c,line)">
+                                        <button class="btn btn-light border btn-icon" type="button">
+                                            {{this._getCurrencySymbol()}}
+                                        </button>
+                                    </div>
+                                </span>
+
+                            </div>
+                            <div class="w-7p text-center">
+                                <button class="btn btn-link px-0 text-danger" @click="clearItem(index)" type="button">
+                                    <i class="ci-close-circle me-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                    <div v-else class="h-100 d-flex justify-content-center">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center text-center">
+                            <div class="container">
+                                <div class="mt-3">
+                                    <p class="text-muted font-size-sm mb-0">##NoProductsInTheOffer##.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+            <div class="bg-body rounded-3 shadow-lg p-4 ms-lg-auto">
+                <div class="py-2 px-xl-2">
+                    <div class="widget mb-3 border-bottom">
+                        <h2 class="widget-title text-center">##ProfitAmount##</h2>
+                        <span v-if="this.isLoadingData" class="body-secondary-text me-1"> </span>
+                        <div v-if="!this.isLoadingData" class="row d-flex justify-content-between">
+                            <h4 class="text-center text-primary"> {{this._calculateCurrency(this.profitAmount)}}</h4>
+                        </div>
+                        <div v-if="this.isLoadingData" class="h4 d-flex justify-content-center">
+                            <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-sm mx-2" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="list-unstyled fs-sm">
+                        <li class="d-flex justify-content-between align-items-center">
+                            <span class="me-2">##PurchaseValue##</span>
+                            <span v-if="!this.isLoadingData" class="text-end">
+                                {{this._calculateCurrency(this.initialTotalAmount)}}
+                            </span>
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-between align-items-center">
+                            <span class="me-2">##Net##</span>
+                            <span v-if="!this.isLoadingData" class="text-end">
+                                {{this._calculateCurrency(this.offer.netAmount)}}
+                            </span>
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="d-flex justify-content-between align-items-center">
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-end align-items-center  border-top">
+                            <span class="text-end">{{this._calculateCurrency(this.offer.totalAmount)}}</span>
+                        </li>
+                    </ul>
+                    <div class="widget">
+                        <div class="d-block d-md-flex flex-md-row flex-column align-items-center justify-content-between py-3">
+                            <span class="me-2 fw-500">##ServiceAmount##</span>
+                            <div class="input-group" style=" max-width: 9rem;min-width: 7rem;">
+                                <input :readonly="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)"
+                                       class="form-control text-center commission_field" type="number" :id="serviceAmount"
+                                       :name="serviceAmount" min="0" v-model="offer.serviceAmount"
+                                       @change="(c)=>handleServiceAmountChange(c)">
+                                <button :disabled="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)"
+                                        class="btn btn-light border btn-icon" type="button">
+                                    {{this._getCurrencySymbol()}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 border-bottom mb-5"></div>
+                    <h3 v-if="!this.isLoadingData" class="fw-normal text-center my-4">
+                        {{this._calculateCurrency(this.offer.totalAmount+this.offer.serviceAmount)}}
+                    </h3>
+                    <div v-if="this.isLoadingData" class="my-4 fw-normal d-flex justify-content-center">
+                        <div class="spinner-grow spinner-grow " role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow spinner-grow mx-2" role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow spinner-grow" role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="btn btn-primary btn-shadow d-block w-100"
+                   :class="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)?'disabled':''"
+                   href="#offer-modal" data-bs-toggle="modal" @click="clearErrors">
+                    <i class="ci-card fs-lg me-2"></i>
+                    ##CreateOffer##
+                </a>
+            </div>
+            <div class="toast w-100" :class="successToastCssClass" role="alert" aria-live="assertive"
+                 aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <i class="ci-check-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Success##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>successToastCssClass='hide'"></button>
+                </div>
+                <div v-if="sendEmail" class="toast-body text-success">##SuccessMessageSendOffer##</div>
+                <div v-else class="toast-body text-success">##SuccessMessageSaveOffer##</div>
+            </div>
+            <div class="toast w-100" :class="errorToastCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorToastCssClass='hide'"></button>
+                </div>
+                <div class="toast-body text-danger">##processOfferErrorMessage##</div>
+            </div>
+        </aside>
+    </div>
+
+</div>
+<div v-else class="container mt-4 pb-5 mb-2 mb-md-4">
+    <div class="row">
+        <section class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center pt-3 pb-4 pb-sm-5 mt-1">
+                <h2 class="h6 text-breadcrumb mb-0">##Products##</h2>
+                <a class="btn btn-outline-primary btn-sm ps-2" href="/">
+                    <i class="ci-arrow-left me-2"></i>##Continue_shopping##
+                </a>
+            </div>
+            <div :id="this.model.id" class="row justify-content-between align-items-center my-2 pb-3 ">
+                <div class="col-md-3 mb-2">
+                    <span class="text-nowrap text-primary"> ##Quickly_add_product##</span>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <input :readOnly="status==='Rejected'|| status===3" class="form-control rounded-end pe-5"
+                           type="text" placeholder='##SearchForProducts##' v-on:input="Search"
+                           v-on:keyup.enter="(this.products>0)?AddClickedProduct(this.products[0]):AddClickedProduct(null)"
+                           v-model="SearchText">
+                    <span v-if="isSearching"
+                          class="spinner-border spinner-border-sm position-absolute end-0 text-muted fs-base me-4"
+                          role="status" style="top:35%"></span>
+                    <i v-if="!isSearching && !searchFailed"
+                       class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+                    <i v-if="searchFailed"
+                       class="ci-close position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+
+                    <div class="dropdown-search w-100" v-on:input="Search">
+                        <ul class="dropdown-menu w-100 px-2" style="max-height: 60vh;" data-simplebar="init"
+                            data-simplebar-auto-hide="true" v-on:input="Search">
+                            <li href="#select-variant-modal" data-bs-toggle="modal"
+                                v-for="(product, index) in this.products" v-bind:key="product"
+                                :class="( this.showVariants[index]&& product!= null && product.productVariants!=null && product.productVariants.length>1)?'d-flex flex-row':''"
+                                v-on:input="Search">
+                                <div class="d-flex align-items-center border-bottom py-2" role="button"
+                                     @click="AddClickedProduct(product)">
+                                    <a class="flex-shrink-0">
+                                        <img v-if="product.mediaItems.length > 0 && product.mediaItems[0].mediaType=='Image'"
+                                             v-bind:src="product.mediaItems[0].link" width="64" :alt="product.title"
+                                             class="my-auto py-1" style=" max-height: 80px; object-fit: cover;">
+                                        <img v-else :src="this._getNoImageUrl()" alt="" width="64"
+                                             class="mx-auto" />
+                                    </a>
+                                    <div class="ps-2">
+                                        <h6 class="widget-product-title">
+                                            <a>
+                                                <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!==undefined && product.productVariants[0].sku!=null"
+                                                      class="product-meta d-block fs-xs text-secondary fw-bold pb-1">
+                                                    {{product.productVariants[0].sku}}
+                                                </span>
+                                                {{product.title}}
+                                            </a>
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div v-bind:key="product" class="row py-5 master-related">
+                <div class="col-12">
+                    <div class="d-flex flex-row align-items-center text-center bg-table-header-dark bg-primary"
+                         style="padding: 15px;">
+                        <div class="w-12p">##SKU##</div>
+                        <div class="w-12p">##Title##</div>
+                        <div class="w-12p">##Price##</div>
+                        <div class="w-19p">##Quantity##</div>
+                        <div class="w-19p">##Margin##</div>
+                        <div class="w-19p">##SalePrice##</div>
+                        <div class="w-7p"> </div>
+                    </div>
+                    <template v-if="this.offer.offerLines!==undefined && this.offer.offerLines!==null && this.offer.offerLines.length>0"
+                              v-for="(line, index) in this.offer.offerLines">
+                        <div class="d-block d-md-flex flex-md-row flex-column align-items-center text-center border-bottom py-1">
+                            <div class="w-12p  px-2 fs-sm d-flex justify-content-around">
+                                <span class="mr-title fs-bold text-primary w-100 text-center">##SKU##: </span>
+                                <span class="mr-content  w-100 text-center product-title">
+                                    <span v-if="line.sku" class="product-title mb-2">
+                                        {{line.sku}}
+                                    </span>
+                                    <span v-else class="product-title mb-2">
+                                        -
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="w-12p px-2 fs-sm d-flex justify-content-around">
+                                <span class="mr-title text-primary w-100 text-center">##Title##: </span>
+                                <span class="mr-content   w-100 text-center product-title">
+                                    <span class="product-title mb-2">
+                                        {{line.productTitle}}
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="w-12p px-2 d-flex justify-content-around">
+                                <span class="mr-title text-primary w-100 text-center">##Price##: </span>
+                                <span class="mr-content  w-100 text-center">
+                                    <span v-if="line.netValue!==undefined && line.netValue!==null"
+                                          class="fs-sm">{{this._calculateCurrency(line.netValue)}}</span>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##Quantity##: </span>
+                                <span class="mr-content w-100 d-flex justify-content-center">
+                                    <div class="input-group " style="max-width: 9rem;min-width: 7rem">
+                                        <button class="btn btn-secondary  border border-end-0 btn-icon" type="button"
+                                                @click="()=>handleQuantitySubtraction(line)">
+                                            <i class="h6">-</i>
+                                        </button>
+                                        <input class="form-control  border-start-0 border-end-0 text-center " type="number"
+                                               :value="line.quantity" id="quantity1"
+                                               @change="(c)=>handleQuantityChange(line, c)"
+                                               :step="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1"
+                                               :min="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1">
+                                        <button class="btn btn-secondary  border border-start-0 btn-icon"
+                                                @click="()=>handleQuantityAddition(line)">
+                                            <i class="ci-add"></i>
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##Margin##: </span>
+                                <span class="mr-content  w-100 text-center">
+                                    <div class="input-group mx-auto" style="max-width: 9rem;min-width: 7rem">
+                                        <input v-model="line.margin" @change="(c)=>handleMarginChange(c, line)" step="1.00"
+                                               class="form-control text-center commission_field" type="number" :min="0">
+                                        <button @click="" class="btn btn-light border btn-icon" type="button">
+                                            %
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="w-19p d-flex d-md-block justify-content-around px-1 text-center my-2">
+                                <span class="mr-title text-primary w-100 text-center">##SalePrice##: </span>
+                                <span class="mr-content w-100 text-center">
+                                    <div class="input-group mx-auto" style="max-width: 9rem;min-width: 7rem">
+                                        <input class="form-control text-center commission_field" type="number" step="1.00"
+                                               :id="line.sku + '-customer_price'" :name="line.sku + '-customer_price'" :min="1"
+                                               v-model="line.lineValue" @change="(c)=>handleLineValueChange(c,line)">
+                                        <button class="btn btn-light border btn-icon" type="button">
+                                            {{this._getCurrencySymbol()}}
+                                        </button>
+                                    </div>
+                                </span>
+
+                            </div>
+                            <div class="w-7p text-center">
+                                <button class="btn btn-link px-0 text-danger" @click="clearItem(index)" type="button">
+                                    <i class="ci-close-circle me-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                    <div v-else class="h-100 d-flex justify-content-center">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center text-center">
+                            <div class="container">
+                                <div class="mt-3">
+                                    <p class="text-muted font-size-sm mb-0">##NoProductsInTheOffer##.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+            <div class="bg-body rounded-3 shadow-lg p-4 ms-lg-auto">
+                <div class="row ">
+                    <div class="text-start text-start align-self-center col-lg-5 col-md-2 col-sm-4 px-3 px-3">
+                        <div v-if="status==='Draft' || status===0"
+                             class="me-1 mb-1 text-white bg-warning product-label">##Draft##</div>
+                        <div v-if="status==='Open' || status===1" class="me-1 mb-1 text-white bg-accent product-label">
+                            ##Open##
+                        </div>
+                        <div v-if="status==='Accepted' || status===2"
+                             class="me-1 mb-1 text-white bg-primary product-label">##Accepted##</div>
+                        <div v-if="status==='Rejected' || status===3"
+                             class="me-1 mb-1 text-white bg-danger product-label">##Rejected##</div>
+                    </div>
+                </div>
+
+                <div class="py-2 px-xl-2">
+                    <div class="widget mb-3 border-bottom">
+                        <h2 class="widget-title text-center">##Details##</h2>
+                        <ul class="list-unstyled fs-sm pb-2">
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span class="me-2">##FullName##</span>
+                                <span v-if="!this.isLoadingData" class="text-end">
+                                    {{this.offer.contact?.firstName}} {{this.offer.contact?.lastName}}
+                                </span>
+                            </li>
+
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span class="me-2">##CustomerEmail##</span>
+                                <span v-if="!this.isLoadingData" class="text-end">
+                                    {{this.offer.contact?.email}}
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget mb-3 border-bottom">
+                        <h2 class="widget-title text-center">##ProfitAmount##</h2>
+                        <span v-if="this.isLoadingData" class="body-secondary-text me-1"> </span>
+                        <div v-if="!this.isLoadingData" class="row d-flex justify-content-between">
+                            <h4 class="text-center text-primary"> {{this._calculateCurrency(this.profitAmount)}}</h4>
+                        </div>
+                        <div v-if="this.isLoadingData" class="h-4 d-flex justify-content-center">
+                            <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-sm mx-2" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled fs-sm">
+                        <li class="d-flex justify-content-between align-items-center">
+                            <span class="me-2">##PurchaseValue##</span>
+                            <span v-if="!this.isLoadingData" class="text-end">
+                                {{this._calculateCurrency(this.initialTotalAmount)}}
+                            </span>
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-between align-items-center">
+                            <span class="me-2">##Net##</span>
+                            <span v-if="!this.isLoadingData" class="text-end">
+                                {{this._calculateCurrency(this.offer.netAmount)}}
+                            </span>
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex justify-content-between align-items-center">
+                            <div v-if="this.isLoadingData" class=" d-flex justify-content-center">
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm mx-2" role="status"
+                                     style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="widget">
+                        <div class="d-block d-md-flex flex-md-row flex-column align-items-center justify-content-between py-3">
+                            <span class="me-2 fw-500">##ServiceAmount##</span>
+                            <div class="input-group" style=" max-width: 9rem;min-width: 7rem;">
+                                <input class="form-control text-center commission_field" type="number"
+                                       :readOnly="status==='Rejected'|| status===3" :id="serviceAmount"
+                                       :name="serviceAmount" min="0" v-model="offer.serviceAmount"
+                                       @change="(c)=>handleServiceAmountChange(c)">
+                                <button class="btn btn-light border btn-icon" type="button">
+                                    {{this._getCurrencySymbol()}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 border-bottom mb-5"></div>
+                    <h3 v-if="!this.isLoadingData" class="fw-normal text-center my-4">
+                        <span v-if="this.offer.totalAmount!==undefined && this.offer.totalAmount">{{this._calculateCurrency(this.offer.totalAmount+this.offer.serviceAmount)}}</span>
+                    </h3>
+                    <div v-if="this.isLoadingData" class=" my-4 d-flex justify-content-center">
+                        <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow spinner-grow-sm mx-2" role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow spinner-grow-sm" role="status" style="width:10px;height:10px">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-secondary btn-shadow d-block w-100"
+                   v-if="status!=='Rejected' && status!==3 || isConvertingToCart" href="#offer-cancelation"
+                   data-bs-toggle="modal">
+                    ##Cancel##
+                </a>
+                <a class="btn btn-primary btn-shadow w-100 my-2 d-flex"
+                   :class="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)?'disabled':''"
+                   href="#offer-modal" data-bs-toggle="modal" @click="clearErrors">
+                    <span class="col-1 text-start"><i class="ci-edit fs-lg me-2"></i></span>
+                    <span class="text-center w-100 pe-2">##Edit##</span>
+                </a>
+                <a v-if="showConvertToOffer" :href="`/offer/${this.offer.id}/convert`"
+                   :class="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)?'disabled':''"
+                   class="btn btn-primary btn-shadow  w-100 my-2 d-flex">
+                    <span class="text-start" style="width:10%"><i class="ci-percent fs-lg me-2"></i></span>
+                    <span class="text-center w-100 pe-2">##ConvertToNewOffer##</span>
+                </a>
+                <a v-if="status!=='Rejected' && status!==3 || isConvertingToCart"
+                   class="btn btn-primary btn-shadow w-100 my-2 d-flex"
+                   :class="(!this.offer.offerLines ||this.offer.offerLines===null || this.offer.offerLines.length===0)?'disabled':''"
+                   @click="convertToCart">
+                    <span class="text-start" style="width:10%"><i class="ci-cart fs-lg me-2"></i></span>
+                    <span v-if="!isConvertingToCart" class="text-center w-100 pe-2">##ConvertToCart##</span>
+                    <span v-if="isConvertingToCart" class="w-100 text-center">
+                        <span v-if="isConvertingToCart" class="spinner-border spinner-border-sm text-muted"
+                              role="status"></span>
+                    </span>
+
+                </a>
+
+            </div>
+            <div class="toast w-100" :class="cancelOfferToastCssClass" role="alert" aria-live="assertive"
+                 aria-atomic="true">
+                <div class="toast-header bg-warning text-white">
+                    <i class="cancelOfferToastCssClass me-2"></i>
+                    <span class="fw-medium me-auto">##OfferCancellationToastTitle##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>cancelOfferToastCssClass='hide'"></button>
+                </div>
+                <div v-else class="toast-body text-warning">##MessageCancelOffer##</div>
+            </div>
+            <div class="toast w-100" :class="errorToastCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorToastCssClass='hide'"></button>
+                </div>
+                <div class="toast-body text-danger">##processOfferErrorMessage##</div>
+            </div>
+            <div class="toast w-100" :class="successToastCssClass" role="alert" aria-live="assertive"
+                 aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <i class="ci-check-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Success##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>successToastCssClass='hide'"></button>
+                </div>
+                <div v-if="sendEmail" class="toast-body text-success">##SuccessMessageSendOffer##</div>
+                <div v-else class="toast-body text-success">##SuccessMessageSaveOffer##</div>
+            </div>
+        </aside>
+    </div>
+    <div class="modal fade" id="offer-cancelation" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> ##OfferCancellationTitle##</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body tab-content py-4">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">##OfferCancellationMessage##</div>
+                    </div>
+                    <div class="row">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-secondary btn-sm mx-1">
+                                ##OfferCancelButton##
+                            </button>
+                            <button class="btn btn-primary btn-sm mx-1" @click="cancelOffer">
+                                <span class="align-middle" :class="isCanceling?'pe-3':''">##OfferAcceptButton##</span>
+                                <span v-if="isCanceling"
+                                      class="align-middle spinner-border spinner-border-sm text-muted"
+                                      role="status"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="offer-modal" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> ##Offer##</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body tab-content py-4">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="offer-title" class="form-label">
+                            ##OfferTitle##<span class="text-danger ps-1">*</span>
+                        </label>
+                        <input v-model="this.title" id="offer-title" class="form-control" type="text" required>
+                        <div v-if="titleIsInvalid" class="text-danger"
+                             style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##InvalidTitle##</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="offer-fname" class="form-label">
+                            ##FirstName##<span class="text-danger ps-1">*</span>
+                        </label>
+                        <input v-model="this.firstName" class="form-control" type="text" id="offer-fname">
+                        <div v-if="firstNameIsInvalid" class="text-danger"
+                             style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##InvalidFirstName##</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="offer-lname" class="form-label">
+                            ##LastName##<span class="text-danger ps-1">*</span>
+                        </label>
+                        <input v-model="this.lastName" class="form-control" type="text" id="offer-lname">
+                        <div v-if="lastNameIsInvalid" class="text-danger"
+                             style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##InvalidLastName##</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="customer-email" class="form-label">
+                            ##CustomerEmail##<span class="text-danger ps-1">*</span>
+                        </label>
+                        <input class="form-control" v-model="this.email" type="email" id="customer-email"
+                               placeholder="email@example.com">
+                        <div v-if="emailIsInvalid" class="text-danger"
+                             style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##InvalidEmail##</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">##ExpirationDate##<span class="text-danger ps-1">*</label>
+                        <div class="input-group">
+                            <input ref="datepicker" v-model="this.expiresAt"
+                                   class="form-control date-picker rounded pe-5" type="text"
+                                   placeholder="##ChooseExpirationDate##"
+                                   data-datepicker-options='{"altInput": true, "dateFormat": "Y-m-d","defaultDate": "today", "minDate": "today"}'>
+                            <i class="fi-calendar position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                        </div>
+                        <div v-if="expirationDateIsInvalid" class="text-danger"
+                             style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">
+                            ##InvalidExpirationDate##
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="offer-address" class="form-label">##Address##</label>
+                        <input id="offer-address" v-model="this.address" class="form-control" type="text">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="offer-description" class="form-label">
+                            <span class="badge bg-primary fs-xs me-2">##Note##</span>##OfferDescription##
+                            <button class="btn ms-1 p-2 btn-primary btn-sm" @click="()=>generateTextFromAI()">
+                                <span class="align-middle" :class="isGeneratingText?'pe-3':''">##Generate##</span>
+                                <span v-if="isGeneratingText"
+                                      class="align-middle spinner-border spinner-border-sm text-muted"
+                                      role="status"></span>
+                            </button>
+                        </label>
+                        <textarea id="offer-description" v-model="this.notes" class="form-control" id="textarea-input"
+                                  rows="5" placeholder="##Writetexthere##"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-secondary btn-sm" @click="()=>saveOffer()">
+                            <span class="align-middle" :class="isSaving?'pe-3':''">##SaveOffer##</span>
+                            <span v-if="isSaving" class="align-middle spinner-border spinner-border-sm text-muted"
+                                  role="status"></span>
+                        </button>
+                        <button class="btn btn-primary btn-sm" @click="()=>sendOffer()">
+                            <span class="align-middle" :class="isSending?'pe-3':''">##SendOffer##</span>
+                            <span v-if="isSending" class=" align-middle spinner-border spinner-border-sm text-muted"
+                                  role="status"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

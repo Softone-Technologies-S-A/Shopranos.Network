@@ -1,0 +1,92 @@
+﻿[
+  {
+    "Key": "Credit",
+    "Value": "Credit",
+    "Translation": {
+      "EL": "Πίστωση",
+      "EN": "Credit",
+      "RO": "Credit"
+    }
+  },
+  {
+    "Key": "Debit",
+    "Value": "Debit",
+    "Translation": {
+      "EL": "Χρέωση",
+      "EN": "Debit",
+      "RO": "Debit"
+    }
+  },
+  {
+    "Key": "Balance",
+    "Value": "Balance",
+    "Translation": {
+      "EL": "Υπόλοιπο",
+      "EN": "Balance",
+      "RO": "Sold"
+    }
+  },
+  {
+    "Key": "FiscalYear",
+    "Value": "FiscalYear",
+    "Translation": {
+      "EL": "Οικονομικό Έτος",
+      "EN": "Fiscal Year",
+      "RO": "An fiscal"
+    }
+  },
+  {
+    "Key": "Turnover",
+    "Value": "Turnover",
+    "Translation": {
+      "EL": "Τζίρος",
+      "EN": "Turnover",
+      "RO": "Cifra de afaceri"
+    }
+  },
+  {
+    "Key": "Period",
+    "Value": "Period",
+    "Translation": {
+      "EL": "Περίοδος",
+      "EN": "Period",
+      "RO": "Perioadă"
+    }
+  },
+  {
+    "Key": "Totals",
+    "Value": "Totals",
+    "Translation": {
+      "EL": "Σύνολα",
+      "EN": "Totals",
+      "RO": "Totaluri"
+    }
+  },
+  {
+    "Key": "TotalBalance",
+    "Value": "TotalBalance",
+    "Translation": {
+      "EL": "Συνολικό Υπόλοιπο",
+      "EN": "Total Balance",
+      "RO": "Sold total"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Φόρτωση",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "NoResults",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results found",
+      "RO": "Nu au fost găsite rezultate"
+    }
+  }
+]

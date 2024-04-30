@@ -1,0 +1,209 @@
+﻿<section :id="'product-'+this.model.id" :class="this.model?.cssClass"
+         class="product-single container pt-md-3 pb-2 mb-5 pb-lg-3">
+    <div class="tab-pane fade show active" id="general" role="tabpanel">
+        <div class="row">
+            <div class="col-lg-7 pe-lg-0 pt-lg-4">
+                <div class="product-gallery justify-content-between mb-3 mb-md-0">
+                    <div v-if="imageList != null && imageList.length > 1"
+                         class="swiper side-product-swiper order-2 order-md-1">
+                        <div class="swiper-wrapper">
+                            <div v-for="sideImage in imageList"
+                                 class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active text-center">
+                                <img :src="sideImage.link" class="" style="height: 100%" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper main-product-swiper gallery order-1 order-md-2 mb-4 mb-md-0">
+                        <div v-if="imageList != null && imageList.length > 0" class="swiper-wrapper">
+                            <div v-for="image in imageList" class="swiper-slide text-center px-2">
+                                <a :href="image.link" class="gallery-item">
+                                    <img :src="image.link" :alt="image?.alt" />
+                                </a>
+                            </div>
+                        </div>
+                        <div v-else class="swiper-wrapper">
+                            <div class="swiper-slide text-center px-2">
+                                <img :src="this._getNoImageUrl()" alt="no image" class="image-empty" />
+                            </div>
+                        </div>
+                        <div v-if="imageList != null && imageList.length > 1" class="navigation">
+                            <div class="button-prev">
+                                <svg width="11" height="18" viewBox="0 0 11 18" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.18296 17.5548C9.47532 17.8353 9.93683 17.8353 10.2292 17.5548C10.3678 17.4194 10.446 17.2338 10.446 17.0399C10.446 16.8461 10.3678 16.6605 10.2292 16.525L2.3578 8.7605L10.2292 1.2667C10.3678 1.13125 10.446 0.945617 10.446 0.751802C10.446 0.557986 10.3678 0.372358 10.2292 0.236905C9.93879 -0.0483694 9.47337 -0.0483694 9.18296 0.236905L0.383789 8.7605L9.18296 17.5548Z"
+                                          fill="var(--body-primary-txt-color)" />
+                                </svg>
+                            </div>
+                            <div class="button-next">
+                                <svg width="11" height="18" viewBox="0 0 11 18" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.81704 17.5548C1.52468 17.8353 1.06317 17.8353 0.770806 17.5548C0.63218 17.4194 0.554029 17.2338 0.554029 17.0399C0.554029 16.8461 0.63218 16.6605 0.770806 16.525L8.6422 8.7605L0.770806 1.2667C0.63218 1.13125 0.554029 0.945617 0.554029 0.751802C0.554029 0.557986 0.63218 0.372358 0.770806 0.236905C1.06121 -0.0483694 1.52663 -0.0483694 1.81704 0.236905L10.6162 8.7605L1.81704 17.5548Z"
+                                          fill="var(--body-primary-txt-color)" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div v-if="productData.productVariants.length >0" class="col-lg-5 pt-lg-4 ps-lg-4">
+                <div v-if="productData.productVariants.length>0 && productData.productVariants[0].sku!=null"
+                     class="text-secondary fw-bold fs-4 mb-1">
+                    {{productData.productVariants[0].sku}}
+                </div>
+                <h1 class="h3 fw-bold">{{productData.title}}</h1>
+                <div class="ms-auto pb-3 pb-4 pt-2">
+                    <template v-if="model.additionalFields != null && model.additionalFields.length > 0">
+                        <div class="fs-md mb-2" v-for="field in model.additionalFields">
+                            <template v-if="getFieldValue(field.fieldName) && resolveAuthentication(field)">
+                                <template v-if="isValidUrl(getFieldValue(field.fieldName))">
+                                    <a :href="getFieldValue(field.fieldName)" target="_blank">{{field.label}}</a>
+                                </template>
+                                <template v-else>
+                                    <span class=" fw-medium me-1">{{field.label}}:</span>
+                                    <span>{{getFieldValue(field.fieldName)}}</span>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                    <div v-if="this.productData.additionalFeatures.icoTags !== null" class="mt-4 mb-2">
+                        <div class="d-flex flex-wrap justify-content-start" v-html="this._getBadges(this.productData)">
+                        </div>
+                    </div>
+                    <h4 v-if="productData.productVariants[0].canOrder" class="h6 mb-3 pb-2 border-bottom"></h4>
+                    <div class="mb-3 mt-4 d-flex align-items-center"
+                         v-if="productData.productVariants.length>0 && productData.productVariants[0].additionalFeatures!=null && productData.productVariants[0].additionalFeatures.stockAvailability!=null">
+                        <img class="me-4"
+                             v-if="productData.productVariants[0].additionalFeatures.stockAvailability?.image?.link != null"
+                             height="50" width="50"
+                             :src="productData.productVariants[0].additionalFeatures.stockAvailability.image.link"
+                             :alt="productData.productVariants[0].additionalFeatures.stockAvailability?.message"
+                             style="width: 30px;height: 30px" />
+                        <div :style="`color: ${productData.productVariants[0].additionalFeatures.stockAvailability?.color}`">
+                            {{productData.productVariants[0].additionalFeatures.stockAvailability?.message}}
+                        </div>
+                    </div>
+                    <div v-if="productData.productVariants[0].canOrder" class="d-flex align-items-center py-4">
+                        <span class="me-2">##Quantity##:</span>
+                        <input v-if="this._product.productVariants[0].sellOutOfStock" class="form-control quantity mx-2" type="number"
+                               v-model="this._product.productVariants[0].selectedQuantity"
+                               :step="this._product.productVariants[0].orderQuantityStep!==null && this._product.productVariants[0].orderQuantityStep>0?this._product.productVariants[0].orderQuantityStep:1"
+                               :min="this._findMinimum(this._product.productVariants[0].minOrderQuantity,this._product.productVariants[0].orderQuantityStep)"
+                               @change="this._onQuantityChange(this._product)">
+                        <input v-else class="form-control quantity" type="number"
+                               v-model="this._product.productVariants[0].selectedQuantity"
+                               :step="this._product.productVariants[0].orderQuantityStep!==null && this._product.productVariants[0].orderQuantityStep>0?this._product.productVariants[0].orderQuantityStep:1"
+                               :min="this._findMinimum(this._product.productVariants[0].minOrderQuantity,this._product.productVariants[0].orderQuantityStep)"
+                               :max="this._product.productVariants[0].quantity"
+                               @change="this._onQuantityChange(this._product)">
+                    </div>
+                    <h4 v-if="productData.productVariants[0].canOrder" class="h6 mb-2 pb-2 border-bottom"></h4>
+                    <div v-if="productData.showPrice" class="mb-3 py-3">
+                        <span class="h3 fw-normal text-primary me-1">{{calculateCurrency(productData.productVariants[0].price)}}</span>
+                        <del v-if="this._hasDiscount(productData.productVariants[0])" class="text-muted fs-lg me-2">
+                            {{calculateCurrency(productData.productVariants[0].initialPrice)}}
+                        </del>
+                        <span v-if="this.productData.variant.unit != null" class="text-muted">
+                            /
+                            {{this.productData.variant.unit}}
+                        </span>
+                        <span v-else class="text-muted">/##Unit##</span>
+                    </div>
+                    <div v-if="productData.productVariants[0].canOrder" class="mb-3 d-flex -flex-row">
+                        <button class="cart-button btn col-12 col-md-6" v-on:click="addToCart()">
+                            <span class="add-to-cart"><i class="ci-cart fs-sm"></i>##Add_to_cart##</span>
+                            <span class="added">##Add_to_cart##</span>
+                            <i class="ci-cart"></i>
+                            <span class="cart-item-circle"> {{SelectedQuantity}} </span>
+                        </button>
+                        <div v-if="this._resolveModules('shoppinglists')" class="position-relative">
+
+                            <button class="btn svg-button border ms-2 p-0 d-flex align-items-center"
+                                    @click="handleAddToListModal()">
+                                <i class=" " style="padding: 17px 13px 10px">
+                                    <svg class="icon-svg" width="21" height="19" viewBox="0 0 21 19"
+                                         fill="var(--body-bg-second-color)" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="icon-svg"
+                                              d="M-0.000976562 14H9.99902V16H-0.000976562V14ZM-0.000976562 7H19.999V9H-0.000976562V7ZM-0.000976562 0H19.999V2H-0.000976562V0ZM15.999 14V11H17.999V14H20.999V16H17.999V19H15.999V16H12.999V14H15.999Z"
+                                              fill="var(--body-bg-second-color)" />
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="productData.description!=null && productData.description!='' " class="pt-5">
+            <h2 class="h3 fw-bold">##Description##</h2>
+            <div class="fs-7" v-html="productData.description"></div>
+        </div>
+    </div>
+</section>
+
+<div ref="addToList" class="modal fade" v-bind:class="{show: showAddToListModal}">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">##AddToList##</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"
+                        @click="closeAddToListModal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card product-card">
+                    <div v-if="imageList != null && imageList.length > 0" class="card-img-top d-block mb-4 overflow-hidden align-middle text-center">
+                        <img style="max-height: 250px" :src="imageList[0].link" :alt="imageList[0]?.alt" @error="this._handleImageError" />
+                    </div>
+                    <div v-else class="card-img-top d-block overflow-hidden align-middle text-center">
+                        <img :src="this._getNoImageUrl()" alt="no image" style="max-height: 250px" />
+                    </div>
+                    <div class="card-body py-2">
+                        <h3 v-if="productData.productVariants.length >0" class="product-title">
+                            {{productData.title}}
+                        </h3>
+                        <div class="col-12 mb-4">
+                            <div data-simplebar data-simplebar-auto-hide="false" style="max-height:190px;">
+                                <div class="px-3" @click="this.updateShoppingList(list);" v-for="list in this.lists"
+                                     :key="list.id">
+                                    <div class="form-check  px-2   ">
+                                        <div class="dropdown-item ">
+                                            <div class="d-flex flex-column py-2">
+                                                <div class="d-flex flex-row">
+                                                    <input v-model="list.checked" class="form-check-input p-2 me-3"
+                                                           type="checkbox" :id="list.alias"
+                                                           style="padding: 12px!important;">
+                                                    <div class="fs-md my-auto pt-1 fw-bold tooltip-custom"
+                                                         for="list.alias">
+                                                        {{list.title}}
+                                                        <span :id="list.id+'-tooltip-text-added'"
+                                                              class="d-none ms-2">##added##</span>
+                                                        <span :id="list.id+'-tooltip-text-removed'"
+                                                              class="d-none ms-2">##removed##</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-divider border border-muted opacity-50 "></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form @submit.prevent="this.createList()" class="credit-card-form row g-3">
+                            <div class="col-sm-8">
+                                <input type="text" v-model="this.title" class="form-control" name="name"
+                                       placeholder="##newlistname##" required />
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-primary d-block w-100">
+                                    ##save##
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

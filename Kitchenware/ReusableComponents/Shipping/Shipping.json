@@ -1,0 +1,47 @@
+﻿[
+  {
+    "Key": "Choose_shipping_method",
+    "Value": "Choose_shipping_method",
+    "Translation": {
+      "EL": "Διάλεξε τρόπο αποστολής",
+      "EN": "Choose shipping method",
+      "RO": "Alege metoda de livrare"
+    }
+  },
+  {
+    "Key": "Shipping_method",
+    "Value": "Shipping_method",
+    "Translation": {
+      "EL": "Μέθοδος αποστολής",
+      "EN": "Shipping method",
+      "RO": "Metoda de livrare"
+    }
+  },
+  {
+    "Key": "Delivery_time",
+    "Value": "Delivery_time",
+    "Translation": {
+      "EL": "Χρόνος αποστολής",
+      "EN": "Delivery time",
+      "RO": "Timp de livrare"
+    }
+  },
+  {
+    "Key": "Handling_fee",
+    "Value": "Handling_fee",
+    "Translation": {
+      "EL": "Έξοδα αποστολής",
+      "EN": "Handling fee",
+      "RO": "Comision de procesare"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Φόρτωση",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  }
+]

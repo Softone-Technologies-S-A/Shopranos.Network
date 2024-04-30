@@ -1,0 +1,38 @@
+﻿<!-- <div class="tns-carousel tns-nav-enabled pb-5">
+    <div :id="'herocarousel-'+this.model.id" class="tns-carousel-inner" data-carousel-options='{"mode": "gallery", "speed": 1000}'>
+        <div v-for="slide in this.model.slides">
+            <a v-if="slide.buttonLink !== null && slide.buttonLink !== ''" :href="slide.buttonLink">
+                <img v-if="slide.image!== null && slide.image!==''" class="w-100" :src="slide.image.link" :alt="slide.header" style="max-height:700px;object-fit:cover;" />
+            </a>
+            <img v-else-if="slide.image!== null && slide.image!==''" class="w-100" :src="slide.image.link" :alt="slide.header" style="max-height:700px;object-fit:cover;" />
+        </div>
+    </div>
+</div> -->
+
+<div :class="this.model?.cssClass" class="pb-5" :id="'heroswiper-'+this.model.id">
+    <div v-if="this.model.header !== null && this.model.header !=''" class="container pt-md-3 pb-2 pb-lg-3">
+        <div :class="['d-flex', 'flex-wrap', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ model.header }}</h2>
+        </div>
+    </div>
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <div v-for="slide in this.model?.slides" class="swiper-slide">
+                <a v-if="slide.buttonLink != null" :href="slide.buttonLink" class="w-100 h-100">
+                    <img v-if="slide.image !== null" :src="slide.image.link" :alt="slide.image.alt" />
+                </a>
+                <img v-else-if="slide.image !== null" :src="slide.image.link" :alt="slide.image.alt" />
+            </div>
+        </div>
+        <div class="button-next">
+            <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.81704 17.5548C1.52468 17.8353 1.06317 17.8353 0.770806 17.5548C0.63218 17.4194 0.554029 17.2338 0.554029 17.0399C0.554029 16.8461 0.63218 16.6605 0.770806 16.525L8.6422 8.7605L0.770806 1.2667C0.63218 1.13125 0.554029 0.945617 0.554029 0.751802C0.554029 0.557986 0.63218 0.372358 0.770806 0.236905C1.06121 -0.0483694 1.52663 -0.0483694 1.81704 0.236905L10.6162 8.7605L1.81704 17.5548Z" fill="var(--body-primary-txt-color)" />
+            </svg>
+        </div>
+        <div class="button-prev">
+            <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.18296 17.5548C9.47532 17.8353 9.93683 17.8353 10.2292 17.5548C10.3678 17.4194 10.446 17.2338 10.446 17.0399C10.446 16.8461 10.3678 16.6605 10.2292 16.525L2.3578 8.7605L10.2292 1.2667C10.3678 1.13125 10.446 0.945617 10.446 0.751802C10.446 0.557986 10.3678 0.372358 10.2292 0.236905C9.93879 -0.0483694 9.47337 -0.0483694 9.18296 0.236905L0.383789 8.7605L9.18296 17.5548Z" fill="var(--body-primary-txt-color)" />
+            </svg>
+        </div>
+    </div>
+</div>

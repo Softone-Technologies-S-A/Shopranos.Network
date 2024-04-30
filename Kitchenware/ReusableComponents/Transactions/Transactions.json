@@ -1,0 +1,128 @@
+﻿[
+  {
+    "Key": "Balance",
+    "Value": "Balance",
+    "Translation": {
+      "EL": "Υπόλοιπο",
+      "EN": "Balance",
+      "RO": "Sold"
+    }
+  },
+  {
+    "Key": "Credit",
+    "Value": "Credit",
+    "Translation": {
+      "EL": "Πίστωση",
+      "EN": "Credit",
+      "RO": "Credit"
+    }
+  },
+  {
+    "Key": "Debit",
+    "Value": "Debit",
+    "Translation": {
+      "EL": "Χρέωση",
+      "EN": "Debit",
+      "RO": "Debit"
+    }
+  },
+  {
+    "Key": "Date_Range",
+    "Value": "Date Range",
+    "Translation": {
+      "EL": "Επιλέξτε εύρος ημερομηνιών",
+      "EN": "Select date range",
+      "RO": "Selectează perioada"
+    }
+  },
+  {
+    "Key": "TransactionDate",
+    "Value": "Transaction date",
+    "Translation": {
+      "EL": "Ημ/νία Συναλλαγής",
+      "EN": "Transaction date",
+      "RO": "Data tranzacţiei"
+    }
+  },
+  {
+    "Key": "Code",
+    "Value": "Code",
+    "Translation": {
+      "EL": "Κωδικός",
+      "EN": "Code",
+      "RO": "Cod"
+    }
+  },
+  {
+    "Key": "Notes",
+    "Value": "Notes",
+    "Translation": {
+      "EL": "Σημειώσεις",
+      "EN": "Notes",
+      "RO": "Observaţii"
+    }
+  },
+  {
+    "Key": "ProgressiveBalance",
+    "Value": "ProgressiveBalance",
+    "Translation": {
+      "EL": "Προοδευτικό Υπόλοιπο",
+      "EN": "Progressive Balance",
+      "RO": "Sold progresiv"
+    }
+  },
+  {
+    "Key": "AccountBalanceTransfer",
+    "Value": "AccountBalanceTransfer",
+    "Translation": {
+      "EL": "Εκ Μεταφοράς Υπόλοιπο",
+      "EN": "Account Balance Transfer",
+      "RO": "Balanţa transferată"
+    }
+  },
+  {
+    "Key": "Invoice",
+    "Value": "Invoice",
+    "Translation": {
+      "EL": "Παραστατικό",
+      "EN": "Invoice",
+      "RO": "Factură"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Φόρτωση",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "NoResults",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results found",
+      "RO": "Nu au fost găsite rezultate"
+    }
+  },
+  {
+    "Key": "From",
+    "Value": "From",
+    "Translation": {
+      "EL": "Από",
+      "EN": "From",
+      "RO": "De la"
+    }
+  },
+  {
+    "Key": "To",
+    "Value": "To",
+    "Translation": {
+      "EL": "Έως",
+      "EN": "To",
+      "RO": "Către"
+    }
+  }
+]

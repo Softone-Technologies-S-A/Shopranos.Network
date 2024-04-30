@@ -1,0 +1,156 @@
+﻿[
+  {
+    "Key": "Writeatitletocreateanewshoppinglist",
+    "Value": "Writeatitletocreateanewshoppinglist",
+    "Translation": {
+      "EL": "Γράψε ένα τίτλο για να δημιουργήσεις μια νεα λίστα",
+      "EN": "Write a title to create a new shoppinglist",
+      "RO": "Denumeşte lista de cumpărături"
+    }
+  },
+  {
+    "Key": "Create_List",
+    "Value": "Create List",
+    "Translation": {
+      "EL": "Δημιουργήστε Λίστα",
+      "EN": "Create List",
+      "RO": "Creeză lista"
+    }
+  },
+  {
+    "Key": "Products",
+    "Value": "Products",
+    "Translation": {
+      "EL": "Προιόντα",
+      "EN": "Products",
+      "RO": "Produse"
+    }
+  },
+  {
+    "Key": "GiveName",
+    "Value": "Give a name",
+    "Translation": {
+      "EL": "Δώστε ένα όνομα",
+      "EN": "Give a name",
+      "RO": "Denumeşte"
+    }
+  },
+  {
+    "Key": "AddToCart",
+    "Value": "Add to cart",
+    "Translation": {
+      "EL": "Προσθήκη στο καλάθι",
+      "EN": "Add to cart",
+      "RO": "Adaugă în coş"
+    }
+  },
+  {
+    "Key": "Update_Name",
+    "Value": "Rename",
+    "Translation": {
+      "EL": "Μετανομασία",
+      "EN": "Rename",
+      "RO": "Redenumeşte"
+    }
+  },
+  {
+    "Key": "Delete",
+    "Value": "Delete",
+    "Translation": {
+      "EL": "Διαγραφή",
+      "EN": "Delete",
+      "RO": "Delete",
+      "RO": "Şterge"
+    }
+  },
+  {
+    "Key": "View",
+    "Value": "View",
+    "Translation": {
+      "EL": "Εμφάνιση",
+      "EN": "View",
+      "RO": "Vizualizare"
+    }
+  },
+  {
+    "Key": "Back",
+    "Value": "Back",
+    "Translation": {
+      "EL": "Πίσω",
+      "EN": "Back",
+      "RO": "Înapoi"
+    }
+  },
+  {
+    "Key": "Add_All",
+    "Value": "Add All",
+    "Translation": {
+      "EL": "Προσθήκη Όλων",
+      "EN": "Add All",
+      "RO": "Adaugă tot"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Loading",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "Name",
+    "Value": "Name",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "SKU",
+    "Value": "SKU",
+    "Translation": {
+      "EL": "Κωδικός",
+      "EN": "SKU",
+      "RO": "SKU"
+    }
+  },
+  {
+    "Key": "Price",
+    "Value": "Price",
+    "Translation": {
+      "EL": "Τιμή",
+      "EN": "Price",
+      "RO": "Preţ"
+    }
+  },
+  {
+    "Key": "AddtoCart",
+    "Value": "Add to Cart",
+    "Translation": {
+      "EL": "Προσθήκη",
+      "EN": "Add to Cart",
+      "RO": "Adaugă în coş"
+    }
+  },
+  {
+    "Key": "Back_to_Home_Page",
+    "Value": "Back to Home Page",
+    "Translation": {
+      "EL": "Πίσω στην Αρχική Σελίδα",
+      "EN": "Back to Home Page",
+      "RO": "Înapoi la pagina principală."
+    }
+  },
+  {
+    "Key": "This_Shopping_List_has_no_products",
+    "Value": "This Shopping List has no products",
+    "Translation": {
+      "EL": "Αυτή η Λίστα Αγορών δεν έχει προϊόντα",
+      "EN": "This Shopping List has no products",
+      "RO": "Această listă de cumpărături nu conţine produse."
+    }
+  }
+]

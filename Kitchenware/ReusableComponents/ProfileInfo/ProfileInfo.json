@@ -1,0 +1,91 @@
+﻿[
+  {
+    "Key": "invalidFileType",
+    "Value": "invalidFileType",
+    "Translation": {
+      "EL": "Μη έγκυρος τύπος αρχείου",
+      "EN": "Not valid file type"
+    }
+  },
+  {
+    "Key": "Upload",
+    "Value": "Upload",
+    "Translation": {
+      "EL": "Ανέβασμα",
+      "EN": "Upload",
+      "RO": "Încărcaţi"
+    }
+  },
+  {
+    "Key": "FirstName",
+    "Value": "First name",
+    "Translation": {
+      "EL": "Ονομα",
+      "EN": "First name",
+      "RO": "Prenume"
+    }
+  },
+  {
+    "Key": "LastName",
+    "Value": "Last name",
+    "Translation": {
+      "EL": "Επίθετο",
+      "EN": "Last name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "Email",
+    "Value": "Email",
+    "Translation": {
+      "EL": "Email",
+      "EN": "Email",
+      "RO": "Email"
+    }
+  },
+  {
+    "Key": "OldPassword",
+    "Value": "Old password",
+    "Translation": {
+      "EL": "Παλιός κωδικός",
+      "EN": "Old password",
+      "RO": "Parola veche"
+    }
+  },
+  {
+    "Key": "NewPassword",
+    "Value": "New password",
+    "Translation": {
+      "EL": "Νέος κωδικός",
+      "EN": "New password",
+      "RO": "Parola nouă"
+    }
+  },
+  {
+    "Key": "ChangePassword",
+    "Value": "Change password",
+    "Translation": {
+      "EL": "Αλλαγή κωδικού",
+      "EN": "Change password",
+      "RO": "Schimbă parola"
+    }
+  },
+  {
+    "Key": "ChooseLogo",
+    "Value": "ChooseLogo",
+    "Translation": {
+      "EL": "Επιλέξτε logo",
+      "EN": "Choose logo",
+      "RO": "Alege logo"
+    }
+  },
+  {
+    "Key": "userLocked",
+    "Value": "User Locked Error",
+    "Translation": {
+      "EL": "Ο λογαριασμός κλειδώθηκε προσωρινά. Περιμένετε 15 λεπτά πριν επιχειρήσετε να συνδεθείτε ξανά.",
+      "EN": "Account temporarily locked. Please wait for 15 minutes before attempting to login again.",
+      "RO": ""
+    }
+  }
+]

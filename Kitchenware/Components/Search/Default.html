@@ -1,0 +1,131 @@
+﻿<section :id="this.model.id" :class="this.model?.cssClass" class="container pt-md-3 pb-5 mb-2 mb-md-4">
+    <div class="row py-5">
+        <div class="col-lg-12 justify-content-center align-items-center d-flex flex-column">
+            <h1 class="mb-4">##SearchFor##</h1>
+            <div class="input-group d-flex order-lg-2" style="max-width: 550px; width: 100%">
+                <input class="form-control rounded-end pe-5" type="text" placeholder="##Search##"
+                       v-on:input="delayedSearch" v-model="SearchText" />
+                <i v-on:click="delayedSearch"
+                   class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"
+                   style="cursor: pointer"></i>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row pt-5">
+        <div class="col-lg-12">
+            <div v-if="this.isLoading" class="row" style="height: 500px">
+                <section class="col-lg-12">
+                    <div class="d-flex flex-wrap justify-content-justify-content-center pt-3" style="height: 250px">
+                        <div class="d-none d-sm-block py-1 fs-sm mx-auto"></div>
+                    </div>
+                    <div v-if="this.isLoading"
+                         class="d-flex flex-column align-items-center justify-content-center pt-4 pb-4 pb-sm-5 mt-1">
+                        <div class="spinner-grow spinner-grow-sm body-secondary-text" style="width: 2rem; height: 2rem"
+                             role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div v-if="!this.isLoading && this.filterData == null" class="row" style="height: 500px">
+                <section class="col-lg-12">
+                    <div class="d-flex flex-column align-items-center justify-content-center pt-1 pb-1 pb-sm-1 mt-1">
+                    </div>
+                </section>
+            </div>
+            <div v-if="this.filterData!==null && this.filterData?.length > 0 && !this.isLoading" class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4" v-for="(product, index) in this.filterData"
+                     v-bind:key="product">
+                    <div class="card product-card-alt px-1" style="min-height: 350px; max-height: 350px">
+                        <div v-if="product.additionalFeatures.icoTags !== null"
+                             class="d-flex flex-wrap justify-content-start position-absolute top-0 start-0 pt-1 ps-2 me-4"
+                             v-html="this._getBadges(product)"></div>
+                        <div class="product-thumb text-center" style="height: 260px">
+                            <!-- <div class="product-card-actions">
+                              <a
+                                class="btn btn-light btn-icon btn-shadow fs-base mx-2"
+                                @click.stop="this._showProductModal(product, product.productVariants[0].id)"
+                                href="#quick-view"
+                                data-bs-toggle="modal"
+                                data-target="#modal-product-collection-1"
+                              >
+                                <i class="ci-eye"></i>
+                              </a>
+                            </div> -->
+                            <a class="product-thumb-overlay" :href="'/product/'+product.alias"></a>
+                            <img v-if="this._getMediaItem(product.mediaItems)!==null" :src="this._getMediaItem(product.mediaItems)"
+                                 alt="Product" style="height: 100%; width: 100%; object-fit: contain" @error="this._handleImageError" />
+                            <img v-else :src="this._getNoImageUrl()" alt="Product" width="200"
+                                 style="height: 100%; width: 100%; object-fit: cover" />
+                        </div>
+                        <div class="mt-2">
+                            <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!=null"
+                                  class="d-block text-secondary fs-sm fw-bold pb-1">{{product.productVariants[0].sku}}</span>
+                            <h3 class="product-title fs-sm truncate mb-1" style="height: 35px">
+                                <a :href="'/product/'+product.alias">{{product.title}}</a>
+                            </h3>
+                            <span class="product-meta d-block fs-xs mb-1 truncate"
+                                  style="height: 35px">{{product.subTitle}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top pt-3 mt-3"></div>
+            </div>
+            <div v-else-if="!this.isLoading && this.filterData?.length == 0" class="row" style="height: 500px">
+                <section class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                    <p class="fs-lg">##NoResults##</p>
+                </section>
+            </div>
+            <nav v-if="this.filterData!==null && this.filterData.length> 0 && ShowPagination"
+                 class="d-flex justify-content-center pt-2" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" v-on:click.prevent="this.sendFilterRequest(PreviousPage)">
+                            <i class="ci-arrow-left me-2"></i>##Prev##
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pagination">
+                    <li v-if="ShowFirstPage" class="page-item d-none d-sm-block">
+                        <a class="page-link" href="#" v-on:click.prevent="this.sendFilterRequest(1)">1</a>
+                    </li>
+                    <li v-if="ShowPreviousPage">
+                        <div class="p-1">...</div>
+                    </li>
+                    <li v-if="ShowPreviousPage" class="page-item d-none d-sm-block">
+                        <a class="page-link" href="#"
+                           v-on:click.prevent="this.sendFilterRequest(PreviousPage)">{{PreviousPage}}</a>
+                    </li>
+
+                    <li class="page-item active d-none d-sm-block" aria-current="page">
+                        <span class="page-link">
+                            {{CurrentPage}}
+                            <span class="visually-hidden">(current)</span>
+                        </span>
+                    </li>
+
+                    <li v-if="ShowNextPage" class="page-item d-none d-sm-block">
+                        <a class="page-link" href="#"
+                           v-on:click.prevent="this.sendFilterRequest(NextPage)">{{NextPage}}</a>
+                    </li>
+                    <li v-if="ShowNextPage">
+                        <div class="p-1">...</div>
+                    </li>
+                    <li v-if="ShowLastPage" class="page-item d-none d-sm-block">
+                        <a class="page-link" href="#"
+                           v-on:click.prevent="this.sendFilterRequest(LastPage)">{{LastPage}}</a>
+                    </li>
+                </ul>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next"
+                           v-on:click.prevent="this.sendFilterRequest(NextPage)">
+                            ##Next##<i class="ci-arrow-right ms-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

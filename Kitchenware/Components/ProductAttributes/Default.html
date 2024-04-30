@@ -1,0 +1,47 @@
+﻿<section :class="this.model?.cssClass" :id="this.model.id" v-if="attributeSet !== null && attributeSet.groups!==null && attributeSet.groups.length>0" class="mb-5 pb-lg-3">
+    <div class="container" v-if="this.model.header !== null && this.model.header !=''">
+        <div :class="['d-flex', 'flex-wrap', 'mb-2', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+        </div>
+    </div>
+    <ul class="list-unstyled fs-sm pb-2  ">
+        <li v-if="attributeSet !== null && attributeSet.groups!==null" v-for="(attributeGroup,index) in attributeSet.groups" v-bind:key="index" class="py-4">
+            <template v-if="attributeGroup!=null && attributeGroup.items!==null && attributeGroup.items.length>0 &&checkGroupAttributes(attributeGroup)">
+                <div class="container">
+                    <h3 v-if="attributeGroup.id == '(UNGROUPED)'" class="pb-2 fs-5 px-4 fw-bold">##AdditionalAttributes##</h3>
+                    <h3 v-else class="pb-2 fs-5 px-4 fw-bold">{{attributeGroup.title}}</h3>
+                </div>
+                <template v-for="(groupItem, groupIndex) in attributeGroup.items">
+                    <div class="py-2 w-100" v-if="groupItem.value" v-bind:key="groupIndex" :class="(groupIndex%2===0?'bg-secondary':'')">
+                        <div class="container">
+                            <div class="row px-5">
+                                <div class="col-md-3 fw-bold ">{{groupItem.name}}</div>
+                                <div class="col-md-3">{{groupItem.value}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </li>
+    </ul>
+</section>
+<section :id="this.model.id" v-else-if="attributes != null && this.attributes.length > 0 && checkAttributes()" class="mb-5 pb-lg-3">
+    <div class="container" v-if="this.model.header !== null && this.model.header !=''">
+        <div :class="['d-flex', 'flex-wrap', 'mb-2', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+        </div>
+    </div>
+    <ul class="list-unstyled fs-sm pb-2 py-4">
+        <template v-for="(item, index) in attributes">
+            <li class="py-2 w-100" v-if="item.attributeItemValue != null" v-bind:key="index" :class="(index%2===0?'bg-secondary':'')">
+                <div class="container">
+                    <div class="row px-5">
+                        <div class="col-sm-3 fw-bold ">{{item.name}}</div>
+                        <div class="col-sm-3">{{item.attributeItemValue}}</div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</section>
+

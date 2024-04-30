@@ -1,0 +1,236 @@
+﻿[
+  {
+    "Key": "Billing",
+    "Value": "Billing",
+    "Translation": {
+      "EL": "Χρέωση",
+      "EN": "Billing",
+      "RO": "Furnizor"
+    }
+  },
+  {
+    "Key": "Client",
+    "Value": "Client",
+    "Translation": {
+      "EL": "Πελάτης",
+      "EN": "Client",
+      "RO": "Client"
+    }
+  },
+  {
+    "Key": "Address",
+    "Value": "Address",
+    "Translation": {
+      "EL": "Διεύθυνση",
+      "EN": "Address",
+      "RO": "Adresă"
+    }
+  },
+  {
+    "Key": "Email",
+    "Value": "Email",
+    "Translation": {
+      "EL": "Email",
+      "EN": "Email",
+      "RO": "Email"
+    }
+  },
+  {
+    "Key": "Shipping_address",
+    "Value": "Shipping_address",
+    "Translation": {
+      "EL": "Διεύθυνση αποστολής",
+      "EN": "Shipping address",
+      "RO": "Adresa de livrare"
+    }
+  },
+  {
+    "Key": "Billing_address",
+    "Value": "Billing_address",
+    "Translation": {
+      "EL": "Διεύθυνση χρέωσης",
+      "EN": "Billing Αddress",
+      "RO": "Adresa de facturare Αddress"
+    }
+  },
+  {
+    "Key": "Name",
+    "Value": "Name",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "Addresses",
+    "Value": "Addresses",
+    "Translation": {
+      "EL": "Διευθύνσεις",
+      "EN": "Addresses",
+      "RO": "Adrese"
+    }
+  },
+  {
+    "Key": "Address1",
+    "Value": "Address1",
+    "Translation": {
+      "EL": "Διεύθυνση 1",
+      "EN": "Address 1",
+      "RO": "Adresa 1"
+    }
+  },
+  {
+    "Key": "Address2",
+    "Value": "Address2",
+    "Translation": {
+      "EL": "Διεύθυνση 2",
+      "EN": "Address 2",
+      "RO": "Adresa 2"
+    }
+  },
+  {
+    "Key": "Town_City",
+    "Value": "Town_City",
+    "Translation": {
+      "EL": "Πόλη",
+      "EN": "Town City",
+      "RO": "Oraş"
+    }
+  },
+  {
+    "Key": "ErrorEmptyField",
+    "Value": "ErrorEmptyField",
+    "Translation": {
+      "EL": "To πεδίο αυτό είναι υποχρεωτικό",
+      "EN": "This field is required",
+      "RO": "Acest câmp este obligatoriu"
+    }
+  },
+  {
+    "Key": "ErrorInputSize",
+    "Value": "ErrorInputSize",
+    "Translation": {
+      "EL": "Εισαγάγετε μια έγκυρη τιμή στο πεδίο",
+      "EN": "Input a valid value to the field",
+      "RO": "Introduceţi o valoare validă"
+    }
+  },
+  {
+    "Key": "State",
+    "Value": "State",
+    "Translation": {
+      "EL": "Περιφερειακή Ενότητα",
+      "EN": "State",
+      "RO": "Judeţ"
+    }
+  },
+  {
+    "Key": "Country",
+    "Value": "Country",
+    "Translation": {
+      "EL": "Χώρα",
+      "EN": "Country",
+      "RO": "Ţară"
+    }
+  },
+  {
+    "Key": "Postcode_ZIP",
+    "Value": "Postcode_ZIP",
+    "Translation": {
+      "EL": "Ταχυδρομικός κώδικας / ΤΚ",
+      "EN": "Postcode / ZIP",
+      "RO": "Cod poştal"
+    }
+  },
+  {
+    "Key": "Invoice",
+    "Value": "Invoice",
+    "Translation": {
+      "EL": "Τιμολόγιο",
+      "EN": "Invoice",
+      "RO": "Factură"
+    }
+  },
+  {
+    "Key": "Receipt",
+    "Value": "Receipt",
+    "Translation": {
+      "EL": "Απόδειξη",
+      "EN": "Receipt",
+      "RO": "Chitanță"
+    }
+  },
+  {
+    "Key": "InvoiceDetails",
+    "Value": "InvoiceDetails",
+    "Translation": {
+      "EL": "Στοιχεία τιμολογίου",
+      "EN": "Invoice Details",
+      "RO": "Detalii factură"
+    }
+  },
+  {
+    "Key": "CompanyName",
+    "Value": "CompanyName",
+    "Translation": {
+      "EL": "Όνομα εταιρείας",
+      "EN": "Company Name",
+      "RO": "Numele companiei"
+    }
+  },
+  {
+    "Key": "Profession",
+    "Value": "Profession",
+    "Translation": {
+      "EL": "Επάγγελμα",
+      "EN": "Profession",
+      "RO": "Profesia"
+    }
+  },
+  {
+    "Key": "TaxOffice",
+    "Value": "TaxOffice",
+    "Translation": {
+      "EL": "ΔΟΥ",
+      "EN": "Tax Office",
+      "RO": "Biroul fiscal"
+    }
+  },
+  {
+    "Key": "TIN",
+    "Value": "TIN",
+    "Translation": {
+      "EL": "ΑΦΜ",
+      "EN": "TIN",
+      "RO": "TIN"
+    }
+  },
+  {
+    "Key": "FirstName",
+    "Value": "FirstName",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "LastName",
+    "Value": "LastName",
+    "Translation": {
+      "EL": "Επίθετο",
+      "EN": "Last Name",
+      "RO": "Nume de familie"
+    }
+  },
+  {
+    "Key": "PhoneNumber",
+    "Value": "PhoneNumber",
+    "Translation": {
+      "EL": "Αριθμός τηλεφώνου",
+      "EN": "Phone Number",
+      "RO": "Număr de telefon"
+    }
+  }
+]

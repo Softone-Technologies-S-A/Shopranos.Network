@@ -1,0 +1,73 @@
+﻿
+<div v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'RetailWholesale' && this.globalModel.operationMode != 'CatalogRetailPrice'&& this.globalModel.operationMode != 'RequiresLogin'&& this.globalModel.operationMode != 'CatalogPrice')" :class="this.model?.cssClass" :id="this.model.id" class="container py-4 py-lg-5 my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h2 class="h4 mb-2">##Register##</h2>
+                    <hr>
+                    <form @submit.prevent="checkForm" class="needs-validation pt-4" novalidate="">
+                        <!-- email -->
+                        <div class="input-group mb-3">
+                            <i class="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input v-model="email" class="form-control rounded-start" type="email" placeholder="Email" required="" id="log-email">
+                        </div>
+                        <div v-if="emailError===0" class="text-danger" style="margin-bottom:30px">##InvalidEmailText##</div>
+                        <div v-else-if="emailError===1" class="text-danger" style="margin-bottom:30px">##EmptyEmailText##</div>
+                        <div v-else-if="emailError===2" class="text-danger" style="margin-bottom:30px">##UserAlreadyExists##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                        <!-- firstname -->
+                        <div class="input-group mb-3">
+                            <i class="ci-user position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input v-model="firstname" class="form-control rounded-start" type="text" placeholder="##FirstName##" required="" id="log-firstname">
+                        </div>
+                        <div v-if="firstnameError===1" class="text-danger" style="margin-bottom:30px">##EmptyFirstNameText##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                        <!-- lastname -->
+                        <div class="input-group mb-3">
+                            <i class="ci-user position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input v-model="lastname" class="form-control rounded-start" type="text" placeholder="##LastName##" required="" id="log-lastname">
+                        </div>
+                        <div v-if="lastnameError===1" class="text-danger" style="margin-bottom:30px">##EmptyLastNameText##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                        <!-- password -->
+                        <div class="input-group mb-3">
+                            <i class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <div class="password-toggle w-100">
+                                <input v-model="password" class="form-control" type="password" placeholder="##Password##" required="" id="log-password">
+                                <label class="password-toggle-btn" aria-label="Show/hide password">
+                                    <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator" @click="toggleVisibility('log-password')"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div v-if="passwordError===0" class="text-danger" style="margin-bottom:30px">##EmptyPasswordText##</div>
+                        <div v-else-if="passwordError===1" class="text-danger" style="margin-bottom:30px">##Passwordistooshort##</div>
+                        <div v-else-if="passwordError===2" class="text-danger" style="margin-bottom:30px">##Missingalphanumericcharactersandnonalphanumeric##</div>
+                        <div v-else-if="passwordError===3" class="text-danger" style="margin-bottom:30px">##PasswordMismatchText##</div>
+                        <div v-else-if="passwordError === null" class="text-success" style="margin-bottom: 30px">##PasswordCorrectText##</div>
+                        <!-- retype password -->
+                        <div v-if="!this.model.retypePassword" class="input-group mb-3">
+                            <i class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <div class="password-toggle w-100">
+                                <input v-model="retypepassword" class="form-control" type="password" placeholder="##RetypePassword##" required="" id="log-retypepassword">
+                                <label class="password-toggle-btn" aria-label="Show/hide password">
+                                    <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator" @click="toggleVisibility('log-retypepassword')"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div v-if="passwordError===0" class="text-danger" style="margin-bottom:30px">##EmptyPasswordText##</div>
+                        <div v-else-if="passwordError===1" class="text-danger" style="margin-bottom:30px">##Passwordistooshort##</div>
+                        <div v-else-if="passwordError===2" class="text-danger" style="margin-bottom:30px">##Missingalphanumericcharactersandnonalphanumeric##</div>
+                        <div v-else-if="passwordError===3" class="text-danger" style="margin-bottom:30px">##PasswordMismatchText##</div>
+                        <div v-else-if="passwordError === null" class="text-success" style="margin-bottom: 30px">##PasswordCorrectText##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                        <hr class="mt-4">
+                        <div class="text-end pt-4">
+                            <button class="btn btn-primary" type="submit"><i class="ci-sign-in me-2 ms-n21"></i><span class="pe-2" v-show="!isloading">##Register##</span><span class="pe-2" v-show="isloading">##Loading##</span><span v-show="isloading" class="ml-4 spinner-border spinner-border-sm spiner-text"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

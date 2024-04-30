@@ -1,0 +1,168 @@
+﻿<!--<div :id="this.model.id" v-if="!showCookieBanner" class="position-fixed cookie-card ps-3 pb-3" style="opacity: 50%;">
+    <span style="cursor: pointer;" @click="()=>showCookieBanner=true" class="fs-2 text-primary">
+        <i class="ci-settings"></i>
+    </span>
+</div>-->
+<div :id="this.model.id" v-if="showCookieBanner" class="position-fixed cookie-card p-3">
+    <div class="card border-0 shadow " style="max-width:400px;">
+        <div class="card-body pe-5">
+            <h5 class="card-title">##CookieCardTitle##</h5>
+            <div class="card-text fs-sm text-muted">
+                <p>##CookieCardDescription##</p>
+                <p>
+                    <a href="#cookie-settings-modal" data-bs-toggle="modal" data-bs-target="#cookie-settings-modal"
+                       class="fs-sm text-primary">##CookieSettingsPromptText##</a>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="text-end">
+                <button @click="HandleCookieRejectAll" class="btn btn-sm btn-secondary mx-1">##RejectAllText##</button>
+                <button @click="HandleCookieSaveAll" class="btn btn-sm btn-primary mx-1">##AcceptAllText##</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="cookie-settings-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">##ModalTitle##</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-sm">##ModalDescription##</p>
+                <div class="accordion accordion-flush" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="necessary-cookies-accordion">
+                            <div class="d-flex">
+                                <button class="accordion-button collapsed p-1" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    ##NecessaryCookieAccordionTitle##
+                                </button>
+                                <div class="d-flex align-items-start py-1 position-absolute"
+                                     style="right:60px; z-index:1000;">
+                                    <div class="form-check form-switch">
+                                        <input checked type="checkbox" disabled class="form-check-input custom-switch">
+                                    </div>
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>##NecessaryCookieAccordionDescription##</p>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" scope="col">##Name##</th>
+                                                <th class="text-center" scope="col">##Domain##</th>
+                                                <th class="text-center" scope="col">##Usage##</th>
+                                                <th class="text-center" scope="col">##Expiration##</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">_staging</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##StagingCookieDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">_currency</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##CurrencyCookieDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">_culture</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##CultureCookieDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">AccessToken</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##AccessTokenDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">RefreshToken</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##RefreshTokenDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">_domainPath</td>
+                                                <td class="text-center">{{this.domain}}</td>
+                                                <td class="text-center">##DomainPathDescription##</td>
+                                                <td class="text-center">Session</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="this.model.blocks && this.model.blocks.length>0"
+                         v-for="(block, index) in this.model.blocks" class="accordion-item">
+                        <h2 class="accordion-header" :id="'heading'+index+1">
+                            <div class="d-flex">
+                                <button class="accordion-button collapsed p-1" type="button" data-bs-toggle="collapse"
+                                        :data-bs-target="'#collapse'+index+1" aria-expanded="true"
+                                        :aria-controls="'collapse'+index+1">
+                                    {{block.title}}
+                                </button>
+                                <div class="d-flex align-items-start py-1 position-absolute"
+                                     style="right:60px; z-index:1000;">
+                                    <div class="form-check form-switch">
+                                        <input v-model="block.toggle.isEnabled" type="checkbox"
+                                               :disabled="block.toggle && block.toggle.isReadOnly"
+                                               class="form-check-input custom-switch">
+                                    </div>
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="accordion-collapse collapse" :id="'collapse'+index+1"
+                             :aria-labelledby="'collapse'+index+1" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div v-if="this.model.cookieTableHeaders && this.model.cookieTableHeaders.length>0 && block.rows && block.rows.length>0">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" v-for="header in this.model.cookieTableHeaders" scope="col">
+                                                    {{header.title}}
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="row in block.rows">
+                                                <td class="text-center" v-for="col in row.columnNames">{{col.title}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p v-if="block.description!==undefined && block.description!==null"> {{block.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row w-100">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">##Close##</button>
+                    </div>
+                    <div class="col-8 text-end">
+                        <button @click="handleCookieSave" type="button"
+                                class="btn btn-secondary btn-sm mx-1">
+                            ##Save##
+                        </button>
+                        <button @click="HandleCookieSaveAll" type="button" class="btn btn-primary btn-sm mx-1">##AcceptAllText##</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

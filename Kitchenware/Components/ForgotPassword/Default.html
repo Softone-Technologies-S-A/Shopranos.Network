@@ -1,0 +1,26 @@
+﻿<div :id="this.model.id" :class="this.model?.cssClass" class="container py-4 py-lg-5 my-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <h2 class="h3 mb-4">##ForgotPassword##</h2>
+            <p class="fs-md">##Change_your_password_in_three_easy_steps_This_helps_to_keep_your_new_password_secure##</p>
+            <ol class="list-unstyled fs-md">
+                <li><span class="text-primary me-2">1.</span>##Fill_in_your_email_address_below##.</li>
+                <li><span class="text-primary me-2">2.</span>##We_ll_email_you_a_temporary_link##.</li>
+                <li><span class="text-primary me-2">3.</span>##Use_the_link_to_change_your_password##.</li>
+            </ol>
+            <div class="card py-2 mt-4">
+                <form class="card-body needs-validation" novalidate @submit.prevent="checkForm">
+                    <div class="mb-3">
+                        <label class="form-label" for="recover-email">##Enter_your_email_address##</label>
+                        <input class="form-control" type="email" id="recover-email" required="" v-model="email">
+                        <div v-if="emailError==0" class="invalid-feedback">##InvalidEmailText##</div>
+                        <div v-else-if="emailError==1" class="invalid-feedback">##EmptyEmailText##</div>
+                        <div v-else-if="emailError==2" class="invalid-feedback">##InvalidRequest##</div>
+                        <div v-else-if="emailError==3" class="invalid-feedback">##RequestError##</div>
+                    </div>
+                    <button class="btn btn-primary" type="submit"><span>##ButtonText##</span><span v-show="isloading" class="ml-2 spinner-border spinner-border-sm text-white"></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

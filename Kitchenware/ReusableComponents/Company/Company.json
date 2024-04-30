@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Key": "email",
+    "Value": "Email",
+    "Translation": {
+      "EL": "Email",
+      "EN": "Email",
+      "RO": "Email"
+    }
+  },
+  {
+    "Key": "Phone",
+    "Value": "Phone",
+    "Translation": {
+      "EL": "Τηλέφωνο",
+      "EN": "Phone",
+      "RO": "Telefon"
+    }
+  },
+  {
+    "Key": "VatType",
+    "Value": "Vat type",
+    "Translation": {
+      "EL": "Τύπος Φ.Π.Α.",
+      "EN": "Vat type",
+      "RO": "TVA"
+    }
+  },
+  {
+    "Key": "TaxOffice",
+    "Value": "Tax office",
+    "Translation": {
+      "EL": "Εφορία",
+      "EN": "Tax office",
+      "RO": "Nr. Reg. Comert"
+    }
+  }
+]

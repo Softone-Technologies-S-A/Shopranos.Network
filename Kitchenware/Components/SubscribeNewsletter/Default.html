@@ -1,0 +1,26 @@
+﻿<section :class="this.model?.cssClass" :id="this.model.id" class=" d-flex justify-content-center container pt-md-3 pb-2 mb-5 pb-lg-3" style="min-height: 250px;">
+    <div class="col-md-4 d-flex align-items-center">
+        <div class="widget pb-2 mb-4">
+            <div v-if="this.model.header !== null && this.model.header !=''"
+                 :class="['d-flex', 'flex-wrap', 'pb-4', 'mb-4', getAlignmentClass(model.alignment)]">
+                <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+            </div>
+            <h6 class="pb-1">{{subHeader}}</h6>
+            <form class="subscription-form validate" action="" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+                <div class="input-group flex-nowrap">
+                    <i class="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                    <input v-model="email" class="form-control rounded-start" type="email" name="EMAIL" placeholder="##email##" required="">
+                    <button @click.prevent="subscribeEmail" class="btn btn-primary" type="submit" name="subscribe">
+                        <span v-bind:class="{hidden:isLoading}">
+                            {{buttonText}}
+                        </span>
+                        <span v-bind:class="{hidden:!isLoading}" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p v-if="this.emailIsValid===false" class="text-danger" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##mailError##</p>
+                <p v-if="this.showEmailValidMessage===true" class="text-success" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;">##emailValid##</p>
+                <div class="subscription-status"></div>
+            </form>
+        </div>
+    </div>
+</section>

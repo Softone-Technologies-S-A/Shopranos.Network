@@ -1,0 +1,35 @@
+﻿<section :id="this.model.id" v-if="this._global.isAuthenticated" :class="this.model?.cssClass" class="pt-md-3 pb-2 mb-5 pb-lg-3">
+    <div class="container" v-if="this.model.header !== null && this.model.header !=''">
+        <div :class="['d-flex', 'flex-wrap', 'mb-2', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+        </div>
+    </div>
+    <ul class="list-unstyled pb-2">
+        <li class="py-4">
+            <div class="py-2 w-100">
+                <div class="container">
+                    <div class="row px-5">
+                        <div class="col-md-3 col-6 fw-bold">##deliveryDate##</div>
+                        <div class="col-md-2 col-6 text-end fw-bold">##expectedQuantity##</div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="expectedLines !== null && expectedLines.length > 0" class="py-2 w-100" v-for="(line, index) in expectedLines" v-bind:key="index" :class="(index%2===0?'bg-secondary':'')">
+                <div class="container">
+                    <div class="row px-5 fs-sm">
+                        <div class="col-md-3 col-6">{{this.formatDate(line.deliveryDate)}}</div>
+                        <div class="col-md-2 col-6 text-end">{{line.expectedQuantity}}</div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="py-2 w-100 bg-secondary">
+                <div class="container">
+                    <div class="row px-5 fs-sm">
+                        <div class="col-md-6">##NoExpected##</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+

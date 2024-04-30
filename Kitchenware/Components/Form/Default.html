@@ -1,0 +1,73 @@
+﻿<section class="container pt-md-3 pb-2 mb-5 pb-lg-3" :class="this.model?.cssClass" :id="this.model.id">
+    <div v-if="this.model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'pb-4', 'mb-4', getAlignmentClass(this.model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+    </div>
+    <div class="row g-0 d-flex justify-content-center">
+        <div class="row w-100 g-0 d-flex justify-content-center position-absolute">
+            <div class="toast" v-bind:class="toastSuccessClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <i class="ci-check-circle me-2"></i>
+                    <span class="fw-medium me-auto"></span>
+                    <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="toast" aria-label="Close" v-on:click="clearForm()"></button>
+                </div>
+                <div class="toast-body text-center text-success">{{data.successMessage}}</div>
+            </div>
+            <div class="toast" :class="toastErrorClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##oops##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="toast" aria-label="Close" v-on:click="clearForm()"></button>
+                </div>
+                <div class="toast-body text-danger text-error">##toastError##</div>
+            </div>
+        </div>
+        <div class="col-lg-12 px-4 px-xl-5">
+            <form v-if="fields!=null && fields.length>0" class="mb-3" @submit.prevent="checkForm" novalidate _lpchecked="1">
+                <div v-for="field in fields" class="row g-3">
+                    <div v-if="!field.isHidden">
+                        <div v-if="field.type==1" class="col-sm-12 py-1">
+                            <label v-if="field.label!==null" class="form-label  py-1" for="cf-name">{{field.label}}<span v-if="field.required" class="text-danger ps-1">*</span></label>
+                            <input v-model="field.value" style=" border-radius:8px;border-width:1px;" :name="field.name" class="form-control" type="text" id="cf-name" placeholder="" autocomplete="off">
+                            <p v-if="field.hasValidationError===true && field.validationMessage!==null" class="text-danger" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;"><spa v-html="field.validationMessage"></span></p>
+                        </div>
+                        <div v-if="field.type==2" class="col-sm-12 py-1">
+                            <input v-if="field.type==3" style=" border-radius:8px;border-width:1px;" :name="field.name" class="form-control" type="email" id="cf-name" placeholder="" autocomplete="on">
+                            <label v-if="field.label!==null" class="form-label  py-1" for="cf-name">{{field.label}}<span v-if="field.required" class="text-danger ps-1">*</span></label>
+                            <textarea v-model="field.value" v-if="field.type==2" style=" border-radius:8px;border-width:1px;" :name="field.name" class="form-control" :id="field.name" rows="6" placeholder="" autocomplete="off"></textarea>
+                            <p v-if="field.hasValidationError===true && field.validationMessage!==null" class="text-danger" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;"><spa v-html="field.validationMessage"></span></p>
+                        </div>
+                        <div v-if="field.type==3" class="col-sm-12 py-1">
+                            <label v-if="field.label!==null" class="form-label  py-1" for="cf-name">{{field.label}}<span v-if="field.required" class="text-danger ps-1">*</span></label>
+                            <input v-model="field.value" v-if="field.type==3" style=" border-radius:8px;border-width:1px;" :name="field.name" class="form-control" :class="field.hasValidationError?'is-invalid':''" type="email" :id="field.name" placeholder="" autocomplete="on">
+                            <p v-if="field.hasValidationError===true && field.validationMessage!==null" class="text-danger" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;"><spa v-html="field.validationMessage"></span></p>
+                        </div>
+                        <div v-if="field.type==4" class="col-sm-12 py-1">
+                            <label v-if="field.label!==null" class="form-label  py-1" for="cf-name">{{field.label}}<span v-if="field.required" class="text-danger ps-1">*</span></label>
+                            <input @change="uploadChange($event, field)" style=" border-radius:8px;border-width:1px;" :name="field.name" class="form-control" :class="field.hasValidationError?'is-invalid':''" type="file" :id="field.name" placeholder="" autocomplete="off" multiple>
+                            <p v-if="field.hasValidationError===true && field.validationMessage!==null" class="text-danger" style="width: 100%; margin-top: 0.375rem; font-size: 0.75rem;"><spa v-html="field.validationMessage"></span></p>
+                        </div>
+                        <div v-if="field.type==4&&this.isInvalid" class="invalid-feedback" style="display: block">
+                            ##invalidFileType##
+                        </div>
+                        <div v-if="field.type==3&&this.isInvalidEmail" class="invalid-feedback" style="display: block">
+                            ##invalidEmailAddress##
+                        </div>
+                    </div>
+                </div>
+                <div v-if="this.showReCaptcha" class="g-recaptcha" :data-sitekey="key"></div><!--reCaptcha v2-->
+                <span v-if="this.showReCaptcha" class="text-danger" :style="captchaErrorStyle">##CaptchaValidationMessage##</span>
+                <div class="d-flex justify-content-end">
+                    <button @click="this.clearForm()" type="button" class="btn btn-link mt-4 text-decoration-underline" style="background-color:#FFF;">##Clear##</button>
+                    <button class="btn btn-primary mt-4 ms-2" style="float:right;" type="submit" formnovalidate="formnovalidate">
+
+                        <span class="pe-2"> {{this.model.buttonText}}</span>
+                        <span v-bind:class="{hidden:!isSaving}" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

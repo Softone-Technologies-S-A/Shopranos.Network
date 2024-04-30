@@ -1,0 +1,173 @@
+﻿[
+  {
+    "Key": "Review_your_order",
+    "Value": "Review_your_order",
+    "Translation": {
+      "EL": "Ανασκόπηση της παραγγελίας σας",
+      "EN": "Review your order",
+      "RO": "Verificare comandă"
+    }
+  },
+  {
+    "Key": "Quantity",
+    "Value": "Quantity",
+    "Translation": {
+      "EL": "Ποσότητα",
+      "EN": "Quantity",
+      "RO": "Cantitate"
+    }
+  },
+  {
+    "Key": "Client",
+    "Value": "Client",
+    "Translation": {
+      "EL": "Πελάτης",
+      "EN": "Client",
+      "RO": "Client"
+    }
+  },
+  {
+    "Key": "Billing",
+    "Value": "Billing",
+    "Translation": {
+      "EL": "Χρέωση",
+      "EN": "Billing",
+      "RO": "Furnizor"
+    }
+  },
+  {
+    "Key": "Client",
+    "Value": "Client",
+    "Translation": {
+      "EL": "Πελάτης",
+      "EN": "Client",
+      "RO": "Client"
+    }
+  },
+  {
+    "Key": "Address",
+    "Value": "Address",
+    "Translation": {
+      "EL": "Διεύθυνση",
+      "EN": "Address",
+      "RO": "Adresă"
+    }
+  },
+  {
+    "Key": "Billing_to",
+    "Value": "Billing_to",
+    "Translation": {
+      "EL": "Χρέωση σε",
+      "EN": "Billing to",
+      "RO": "Cumpărător"
+    }
+  },
+  {
+    "Key": "Shipping_to",
+    "Value": "Shipping_to",
+    "Translation": {
+      "EL": "Αποστολή προς",
+      "EN": "Shipping to",
+      "RO": "Livrat către"
+    }
+  },
+  {
+    "Key": "Carriers",
+    "Value": "Carriers",
+    "Translation": {
+      "EL": "Μεταφορικά",
+      "EN": "Carriers",
+      "RO": "Curieri"
+    }
+  },
+  {
+    "Key": "Name",
+    "Value": "Name",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "TransitTime",
+    "Value": "TransitTime",
+    "Translation": {
+      "EL": "Χρόνος παράδοσης",
+      "EN": "Transit time",
+      "RO": "Timp de livrare"
+    }
+  },
+  {
+    "Key": "Complete_Order",
+    "Value": "Complete_Order",
+    "Translation": {
+      "EL": "Ολοκληρωση παραγγελίας",
+      "EN": "Complete Order",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Complete",
+    "Value": "Complete",
+    "Translation": {
+      "EL": "Ολοκλήρωση",
+      "EN": "Complete",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Placing_Order",
+    "Value": "Placing_Order",
+    "Translation": {
+      "EL": "Τοποθέτηση Παραγγελίας",
+      "EN": "Placing_Order",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Thank_you_for_your_order",
+    "Value": "Thank_you_for_your_order",
+    "Translation": {
+      "EL": "Σας ευχαριστούμε για την παραγγελία σας",
+      "EN": "Thank you for your order",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Your_order_has_been_placed_and_will_be_processed_as_soon_as_possible",
+    "Value": "Your_order_has_been_placed_and_will_be_processed_as_soon_as_possible",
+    "Translation": {
+      "EL": "Η παραγγελία σας έχει γίνει και θα την επεξεργαστούμε το συντομότερο δυνατό",
+      "EN": "Your order has been placed and will be processed as soon as possible",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Make_sure_you_make_note_of_your_order_number_which_is",
+    "Value": "Make_sure_you_make_note_of_your_order_number_which_is",
+    "Translation": {
+      "EL": "Παρακαλώ σημειώστε τον κωδικό της παραγγελίας, ο οποίος είναι",
+      "EN": "Make sure you make note of your order number which is",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "You_will_be_receiving_an_email_shortly_with_confirmation_of_your_order",
+    "Value": "You_will_be_receiving_an_email_shortly_with_confirmation_of_your_order",
+    "Translation": {
+      "EL": "Θα λάβετε σύντομα ένα επιβεβαιωτικό email με την παραγγελία σας",
+      "EN": "You will be receiving an email shortly with confirmation of your order",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Go_back_shopping",
+    "Value": "Go_back_shopping",
+    "Translation": {
+      "EL": "Επιστροφή",
+      "EN": "Go back shopping",
+      "RO": ""
+    }
+  }
+]

@@ -1,0 +1,82 @@
+﻿[
+  {
+    "Key": "Accepted_file_types",
+    "Value": "Accepted_file_types",
+    "Translation": {
+      "EL": "(Τύποι αρχείων: excel, csv)",
+      "EN": "(File types: excel, csv)"
+    }
+  },
+  {
+    "Key": "Add_file",
+    "Value": "Add file",
+    "Translation": {
+      "EL": "Εισαγωγή αρχείου",
+      "EN": "Add file"
+    }
+  },
+  {
+    "Key": "Please_provide_a_valid_file",
+    "Value": "Please provide a valid file",
+    "Translation": {
+      "EL": "Παρακαλώ διαλέξτε ένα σωστό αρχείο",
+      "EN": "Please provide a valid file"
+    }
+  },
+  {
+    "Key": "ImportCart",
+    "Value": "ImportCart",
+    "Translation": {
+      "EL": "Εισαγωγή καλαθιού",
+      "EN": "Import cart"
+    }
+  },
+  {
+    "Key": "ExportCart",
+    "Value": "ExportCart",
+    "Translation": {
+      "EL": "Εξαγωγή καλαθιού",
+      "EN": "Export cart"
+    }
+  },
+  {
+    "Key": "more",
+    "Value": "more",
+    "Translation": {
+      "EL": "Περισσότερα",
+      "EN": "More"
+    }
+  },
+  {
+    "Key": "The_below_products_were_not_found",
+    "Value": "The below products were not found",
+    "Translation": {
+      "EL": "Τα παρακάτω προϊόντα δεν βρέθηκαν",
+      "EN": "The below products were not found"
+    }
+  },
+  {
+    "Key": "You_have_items_in_your_cart",
+    "Value": "You have items in your cart",
+    "Translation": {
+      "EL": "Έχετε ήδη αντικείμενα στο καλάθι. Είστε σίγουροι ότι θέλετε να εισάγετε νεά προιόντα;",
+      "EN": "You have items in your cart. Are you sure you want to add new products?"
+    }
+  },
+  {
+    "Key": "products_added_to_cart",
+    "Value": "products added to cart",
+    "Translation": {
+      "EL": "προϊόντα προστέθηκαν στο καλάθι",
+      "EN": "products added to cart"
+    }
+  },
+  {
+    "Key": "fatal_error_message",
+    "Value": "fatal_error_message",
+    "Translation": {
+      "EL": "Ωχ! Κάτι πήγε στραβά κατά την επεξεργασία του αρχείου σας. Παρακαλώ ελέγξτε το περιεχόμενο του αρχείου και προσπαθήστε ξανά.",
+      "EN": "Oops! Something went wrong while processing your file. Please check the contents of the file and try again."
+    }
+  }
+]

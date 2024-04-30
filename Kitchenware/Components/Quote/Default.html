@@ -1,0 +1,456 @@
+﻿<div v-if="isLoading" class="container pb-5 mb-2 mb-md-4" :class="this.model?.cssClass">
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="d-flex flex-wrap justify-content-justify-content-center pt-3" style="height: 200px;">
+
+                <div class="d-none d-sm-block py-1 fs-sm mx-auto">
+
+                </div>
+
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center pt-3 pb-4 pb-sm-5 mt-1">
+                <div class="spinner-grow spinner-grow-sm body-secondary-text" style="width: 2rem; height: 2rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div v-else :id="this.model.id" class="container mt-4 pb-5 mb-2 mb-md-4">
+    <div class="row">
+        <section class="col-lg-8">
+            <div class="d-flex justify-content-end  pt-3 pb-4 pb-sm-5 mt-1">
+                <a class="btn btn-outline-primary btn-sm ps-2" href="/">
+                    <i class="ci-arrow-left me-2"></i>##Continue_shopping##
+                </a>
+            </div>
+            <div :id="this.model.id" class="row justify-content-between align-items-center my-2 pb-3 ">
+                <div class="">
+                    <a class="btn btn-primary ps-2" href="#negotiation-modal" data-bs-toggle="modal">
+                        ##Negotiation_History##
+                    </a>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <span class="text-nowrap text-primary"> ##Quickly_add_product##</span>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <input class="form-control rounded-end pe-5" type="text" placeholder='##SearchForProducts##'
+                           v-on:input="Search"
+                           v-on:keyup.enter="(this.products>0)?AddClickedProduct(this.products[0]):AddClickedProduct(null)"
+                           v-model="SearchText">
+                    <span v-if="isSearching"
+                          class="spinner-border spinner-border-sm position-absolute end-0 text-muted fs-base me-4"
+                          role="status" style="top:35%"></span>
+                    <i v-if="!isSearching && !searchFailed"
+                       class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+                    <i v-if="searchFailed"
+                       class="ci-close position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-4"></i>
+
+                    <div class="dropdown-search w-100" v-on:input="Search">
+                        <ul class="dropdown-menu w-100 px-2" style="max-height: 60vh;" data-simplebar="init"
+                            data-simplebar-auto-hide="true" v-on:input="Search">
+                            <li href="#select-variant-modal" data-bs-toggle="modal"
+                                v-for="(product, index) in this.products" v-bind:key="product"
+                                :class="( this.showVariants[index]&& product!= null && product.productVariants!=null && product.productVariants.length>1)?'d-flex flex-row':''"
+                                v-on:input="Search">
+                                <div class="d-flex align-items-center border-bottom py-2" role="button"
+                                     @click="AddClickedProduct(product)">
+                                    <a class="flex-shrink-0">
+                                        <img v-if="product.mediaItems.length > 0 && product.mediaItems[0].mediaType=='Image'"
+                                             v-bind:src="product.mediaItems[0].link" width="64" :alt="product.title"
+                                             class="my-auto py-1" style=" max-height: 80px; object-fit: cover;" @error="this._handleImageError">
+                                        <img v-else :src="this._getNoImageUrl()" alt="" width="64"
+                                             class="mx-auto" />
+                                    </a>
+                                    <div class="ps-2">
+                                        <h6 class="widget-product-title">
+                                            <a>
+                                                <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!=null"
+                                                      class="product-meta d-block fs-xs text-secondary fw-bold pb-1">
+                                                    {{product.productVariants[0].sku}}
+                                                </span>
+                                                {{product.title}}
+                                            </a>
+                                        </h6>
+                                        <div v-if="product!= null && product.productVariants!=null && product.productVariants.length>0" class="widget-product-meta">
+                                            <span class="body-secondary-text me-2">{{this._calculateCurrency(product.productVariants[0].price)}}</span>
+                                            <del v-if="product.productVariants[0].price !== product.productVariants[0].initialPrice && product.productVariants[0].initialPrice !== null" class="fs-sm text-muted">{{this._calculateCurrency(product.productVariants[0].initialPrice)}}</del>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="position-relative">
+                <div v-if="this.isCalculating" class="position-absolute w-100 h-100  d-flex justify-content-center allign-items-center bg-light opacity opacity-75 " :style="{ zIndex: 999 }">
+                    <div class="spinner-border my-auto " role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div v-if="productLines.length>0" v-for="(line, index) in productLines" v-bind:key="product"
+                     class="row d-flex align-items-center justify-content-between my-2 pb-2 border-bottom">
+
+                    <div class="col-sm-2">
+                        <a class="d-inline-block flex-shrink-0 mx-auto me-sm-4" v-bind:href="'/product/'+ line.link">
+                            <img v-if="line.imageLink"
+                                 class="rounded-3  me-3" :src="line.imageLink" :alt="line.productTitle"
+                                 style="width:150px;max-height:200px;object-fit:cover;" @error="this._handleImageError">
+                            <img v-else class="rounded-3 me-3" :src="this._getNoImageUrl()" :alt="line.productTitle"
+                                 style="width:150px;" >
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <span v-if="line.sku!=null"
+                              class="d-block text-secondary fs-sm fw-bold pb-1">{{line.sku}}</span>
+                        <h3 class="product-title fs-base mb-1">
+                            <a v-bind:href="'/'+ line.link">{{line.productTitle}}</a>
+                        </h3>
+                        <div class="fs-lg body-secondary-text">
+                            <span v-if="this.isLoadingData" class="body-secondary-text me-1"> </span>
+                            <span v-if="!this.isLoadingData"
+                                  class="body-secondary-text me-1">{{this._calculateCurrency(line.price)}} </span>
+                            <del v-if="!this.isLoadingData && line.discountValue > 0" class="fs-sm text-muted">
+                                {{this._calculateCurrency(line.lineValue+line.discountValue)}}
+                            </del>
+                            <div v-if="this.isLoadingData" class="spinner-grow spinner-grow-sm" role="status"
+                                 style="width:10px;height:10px">
+                                <span class="visually-hidden">##Loading##...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label">##Quantity## </label>
+                        <div class="input-group w-100">
+                            <button class="btn btn-secondary  border border-end-0 btn-icon" type="button"
+                                    @click="()=>handleQuantitySubtraction(line, index)">
+                                <i class="h5">-</i>
+                            </button>
+                            <input class="form-control form-control-sm border-start-0 border-end-0 text-center px-1"
+                                   :disabled="quote.status && quote?.status!='Quoted'"
+                                   @change="handleQuantityChange(line, index)"
+                                   type="number"
+                                   v-model="quote.lines[index].quantity"
+                                   :step="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1"
+                                   :min="line.orderQuantityStep !== null &&line.orderQuantityStep >0?line.orderQuantityStep:1">
+                            <button class="btn btn-secondary  border border-start-0 btn-icon" id="quantity1"
+                                    @click="()=>handleQuantityAddition(line, index)">
+                                <i class="ci-add"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="form-label">##NetValue## </label>
+                        <div v-if="!this.isLoadingData" class="input-group mt-2" style="width: 100px;">
+                            <span class="text-center">{{this._calculateCurrency(line.netValue.toFixed(2))}}</span>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-2">
+                        <label class="form-label">##NewNet## </label>
+                        <div v-if="!this.isLoadingData" class="input-group mt-2" style="width: 100px;">
+                            <span>{{this._calculateCurrency(quote.lines[index].netValue)}}</span>
+                        </div>
+                    </div> -->
+                    <div class="col-sm-1">
+                        <button class="btn btn-link px-0 text-danger  pt-5" @click="()=>{if(!quote.status || quote?.status=='Quoted') clearItem(index)}" type="button">
+                            <i class="ci-close-circle me-2"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div v-else class="pt-2 pt-sm-0 ps-sm-3 mx-auto mx-sm-0">
+                    <div class="h-100 d-flex justify-content-center">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center text-center">
+                            <div class="container">
+                                <div class="navcart-icon" style="height:60px;"></div>
+                                <div class="mt-2">
+                                    <p class="text-muted font-size-sm mb-0">##NoProductsInTheQuote##.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+            <div class="bg-body rounded-3 shadow-lg p-4 ms-lg-auto">
+                <div class="py-2 px-xl-2">
+                    <div class="widget mb-3">
+                        <h2 class="widget-title text-center">##QuoteService##</h2>
+
+                    </div>
+
+                    <ul class="list-unstyled fs-sm pb-2 border-bottom">
+                        <li class="border-bottom"></li>
+                        <li v-if="true" class="d-flex justify-content-between align-items-center">
+                            <span class="me-2">##SubTotal##</span>
+                            <span v-if="!this.isLoadingData" class="text-end">{{ this._calculateCurrency(netAmount)}}</span>
+                        </li>
+                    </ul>
+                    <div class="widget mb-3">
+                        <ul class="list-unstyled fs-sm pb-2">
+                            <li class="d-flex justify-content-between align-items-center">
+                                <span class="me-2">##RequestAmount##</span>
+                                <div class="input-group mt-2" style="width: 180px;">
+                                    <input v-model="quote.netAmount" :disabled="quote.status && quote?.status!='Quoted'"
+                                           class="form-control text-center commission_field" type="number" :min="0"
+                                           v-on:input="calculateWithDiscountDelay"
+                                           value="0">
+                                    <button class="btn btn-light border btn-icon"
+                                            type="button">
+                                        {{this._getCurrencySymbol()}}
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="border-bottom"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div v-if="quote?.status =='Quoted' || id =='add'" class="d-flex justify-content-between flex-column">
+                    <div v-if="!this.isSending">
+                        <a class="btn btn-primary btn-shadow d-block w-100" @click="sendModal">
+                            ##SendQuote##
+                        </a>
+                    </div>
+                    <div v-else>
+                        <button class="btn btn-primary btn-shadow d-block w-100" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    </div>
+                    <div v-if="id!=='add'">
+
+                        <a class="btn btn-success btn-shadow d-block w-100" @click="acceptModal">
+                            ##Accept##
+                        </a>
+                        <a class="btn btn-danger btn-shadow d-block w-100" @click="declineModal">
+                            ##Decline##
+                        </a>
+                    </div>
+
+                </div>
+                <div v-else-if="quote?.status =='Accepted'">
+                    <div v-if="!this.isSending">
+                        <a class="btn btn-primary btn-shadow d-block w-100" @click="orderModal">
+                            ##OrderThisQuote##
+                        </a>
+                    </div>
+                    <div v-else>
+                        <button class="btn btn-primary btn-shadow d-block w-100" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="toast w-100" :class="successToastCssClass" role="alert" aria-live="assertive"
+                 aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <i class="ci-check-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Success##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>successToastCssClass='hide'"></button>
+                </div>
+                <div class="toast-body text-success">##SuccessMessageSaveQuote##</div>
+            </div>
+            <div class="toast w-100" :class="errorToastCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorToastCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##ProcessQuoteErrorMessage##</div>
+            </div>
+            <div class="toast w-100" :class="errorTurnCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorTurnCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##NotYourTurn##</div>
+            </div>
+
+            <div class="toast w-100" :class="errorExpirationCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorExpirationCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##Expired##</div>
+            </div>
+            <div class="toast w-100" :class="errorNetAmounntCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorNetAmounntCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##ProvideNetAmount##</div>
+            </div>
+            <div class="toast w-100" :class="errorLinesCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorLinesCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##ProvideLines##</div>
+            </div>
+            <div class="toast w-100" :class="errorOrderCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-danger text-white">
+                    <i class="ci-close-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Error##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>errorOrderCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-danger">##QuoteAlreadyOrdered##</div>
+            </div>
+            <div class="toast w-100" :class="successOrderCssClass" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-success text-white">
+                    <i class="ci-check-circle me-2"></i>
+                    <span class="fw-medium me-auto">##Success##</span>
+                    <button type="button" class="btn-close btn-close-white ms-2"
+                            @click="()=>successOrderCssClass='hide'">
+                    </button>
+                </div>
+                <div class="toast-body text-success">##OrderCreated##</div>
+            </div>
+        </aside>
+    </div>
+    <div class="modal fade" id="quote-modal" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> ##Quote##</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body tab-content py-4">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="quote-title" class="form-label">
+                                ##QuoteTitle##
+                            </label>
+                            <input v-model="quote.title" id="quote-title" class="form-control" type="text">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="quote-description" class="form-label">
+                                ##QuoteDescription##
+                            </label>
+                            <textarea id="quote-description" v-model="quote.notes" class="form-control" id="textarea-input"
+                                      rows="5" placeholder="##Writetexthere##"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="d-flex justify-content-between">
+                            <button v-if="this.modalVariant[1]==`Accept`" :class="this.modalVariant[0]" @click="()=>this[modalVariant[2]]('Accepted')">##Accept##</button>
+                            <button v-if="this.modalVariant[1]==`Decline`" :class="this.modalVariant[0]" @click="()=>this[modalVariant[2]]('Declined')">##Decline##</button>
+                            <button v-if="this.modalVariant[1]==`Cancel`" :class="this.modalVariant[0]" @click="()=>this[modalVariant[2]]('Cancelled')">##Cancel##</button>
+                            <button v-if="this.modalVariant[1]==`SendQuote`" :class="this.modalVariant[0]" @click="()=>this[modalVariant[2]]()">##SendQuote##</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quote-order" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content w-75">
+                <div class="modal-header">
+                    <h5 class="modal-title"> ##Order##</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-dialog tab-content py-4">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="quote-order-prompt" class="form-label">
+                                ##AreYouSure?##
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-right">
+                        <button class="btn btn-danger me-2" @click="()=>{}">##Cancel##</button>
+                        <a class="btn btn-primary btn-shadow d-block w-100" @click="proceedToCheckout()"><i class="ci-card fs-lg me-2"></i> ##Checkout##</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="negotiation-modal" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> ##Negotiations##</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body tab-content py-4">
+                    <div v-if="quote.negotiations.length>0" v-for="(negotiation, index) in quote.negotiations"
+                         class="d-sm-flex align-items-center my-2 pb-3 border-bottom">
+                        <div className="timeline-item">
+                            <div className="timeline-line w-40px"></div>
+                            <div className="timeline-icon symbol symbol-circle symbol-40px me-4">
+                                <span className="symbol-label bg-light">
+                                    <span className="svg-icon svg-icon-2 svg-icon-gray-500">
+                                        <span v-if="negotiation.sender === 'Client'" class="svg-icon svg-icon-muted svg-icon-2hx">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                                                <path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <span v-else class="svg-icon svg-icon-muted svg-icon-2hx">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect opacity="0.5" x="5" y="11" width="13" height="2" rx="1" fill="currentColor" />
+                                                <path d="M15.4343 11.4343L11.25 7.25C10.8358 6.83579 10.8358 6.16421 11.25 5.75C11.6642 5.33579 12.3358 5.33579 12.75 5.75L18.2929 11.2929C18.6834 11.6834 18.6834 12.3166 18.2929 12.7071L12.75 18.25C12.3358 18.6642 11.6642 18.6642 11.25 18.25C10.8358 17.8358 10.8358 17.1642 11.25 16.75L15.4343 12.5657C15.7467 12.2533 15.7467 11.7467 15.4343 11.4343Z" fill="currentColor" />
+                                            </svg>
+                                        </span>
+
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div className="timeline-content ">
+                            <div class="">
+                                <div class="fs-5 fw-bold mb-2">
+                                    <span>
+                                        ##UpdatedFrom##:
+                                        <span v-if="negotiation.sender === 'Admin'" class="text-primary fw-bolder me-1">
+                                            ##Admin##
+                                        </span>
+                                        <span v-else class="text-primary fw-bolder me-1">
+                                            ##You##
+                                        </span>
+                                        <div class="text-primary fw-bolder me-1">
+                                            {{negotiation.notes}}
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="d-flex align-items-center mt-1 fs-6">
+                                    <div class="text-muted me-2 fs-7">
+                                        ##Updatedat##
+                                        {{negotiation.date}} ##by## {{negotiation.sender}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

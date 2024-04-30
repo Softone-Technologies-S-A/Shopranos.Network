@@ -1,0 +1,16 @@
+﻿<section :class="this.model?.cssClass" :id="this.model.id" v-if="attachments != null && attachments.length > 0" class="container pt-md-3 pb-2 mb-5 pb-lg-3">
+    <div v-if="this.model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'pb-2', 'mb-2', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+    </div>
+    <div class="d-flex flex-wrap ">
+        <div v-for="item in attachments" v-bind:key="item.id" class="card border-0  d-flex justify-content-start  ">
+            <a class="btn btn-outline-secondary text-nowrap text-primary  p-2 pt-4 m-2 border-0" :href="item.link" target="_blank">
+                <div>
+                    <i class="ci-document d-flex justify-content-center text-primary   h4">   </i>
+                </div>
+                <div v-if="item.alt != null" class="text-center text-dark fs-ms overflow-hidden px-2">{{item.alt}}</div>
+            </a>
+        </div>
+    </div>
+</section>

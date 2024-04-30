@@ -1,0 +1,29 @@
+﻿<section :id="'bannerWithProductsCarousel-'+this.model.id" v-if="this.products !== null" :class="this.model?.cssClass"
+         class="container pt-md-3 pb-2 mb-5 pb-lg-3" style="min-height: 400px;">
+    <div v-if="model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'mb-4', 'pb-4', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ model.header }}</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="d-flex flex-column h-100 overflow-hidden rounded-3">
+                <a class="mt-auto" :href="collectionUrl">
+                    <img v-if="model.image !== null"
+                         class="d-block w-100" :src="model.image.link" :alt="model.header" style="object-fit: cover;" @error="this._handleImageError">
+                    <img v-else :src="this._getNoImageUrl()" class="d-block w-100" :alt="model.header"
+                         style="object-fit: cover;">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-7 pt-4 pt-md-0">
+            <div v-if="this.products !== null" class="row pt-4 mx-n2">
+                <div v-for="(product, index) in products.slice(0, 6)" class="col-lg-4 col-sm-6 px-2 mb-5" :key="index">
+                    <productlistitem :model="product" :isCalculated="areProductsCalculated"></productlistitem>
+                </div>
+            </div>
+        </div>
+        <div v-if="this.buttonText !== null" class="mt-5 text-center">
+            <a type="button" :href="collectionUrl" class="btn btn-outline-primary">{{buttonText}}</a>
+        </div>
+    </div>
+</section>

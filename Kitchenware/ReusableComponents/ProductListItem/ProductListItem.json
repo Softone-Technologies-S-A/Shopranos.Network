@@ -1,0 +1,26 @@
+﻿[
+    {
+        "key": "Per_Unit",
+        "value": "Per_Unit",
+        "translation": {
+            "el": "ανά τεμάχιο",
+            "en": "per unit"
+        }
+    },
+    {
+        "key": "Per",
+        "value": "Per",
+        "translation": {
+            "el": "ανά",
+            "en": "per"
+        }
+    },
+    {
+        "key": "AddtoCart",
+        "value": "Add to Cart",
+        "translation": {
+            "el": "Προσθήκη",
+            "en": "Add to Cart"
+        }
+    }
+]

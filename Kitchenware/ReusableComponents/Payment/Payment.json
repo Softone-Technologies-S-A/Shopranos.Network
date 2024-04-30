@@ -1,0 +1,20 @@
+﻿[
+  {
+    "Key": "Choose_payment_method",
+    "Value": "Choose_payment_method",
+    "Translation": {
+      "EL": "Διάλεξε μέθοδο πληρωμής",
+      "EN": "Choose payment method",
+      "RO": "Alege metoda de plată"
+    }
+  },
+  {
+    "Key": "PaymentConfiguration",
+    "Value": "PaymentConfiguration",
+    "Translation": {
+      "EL": "Έξοδα αντικαταβολής",
+      "EN": "Cash on delivery costs",
+      "RO": ""
+    }
+  }
+]

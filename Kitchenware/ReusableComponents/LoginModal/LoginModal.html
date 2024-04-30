@@ -1,0 +1,126 @@
+﻿<div v-if="!userisauthenticated" class="modal fade" id="signin-modal" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header body-bg-second">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium active" href="#signin-tab" data-bs-toggle="tab" role="tab"
+                           aria-selected="true"><i class="ci-unlocked me-2 mt-n1"></i>##SignIn##</a>
+                    </li>
+                    <li v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'RetailWholesale' && this.globalModel.operationMode != 'CatalogRetailPrice' && this.globalModel.operationMode != 'RequiresLogin'&& this.globalModel.operationMode != 'CatalogPrice')" class="nav-item">
+                        <a class="nav-link" href="#signup" data-bs-toggle="tab" role="tab" aria-selected="false">
+                            <i class="ci-user me-2 mt-n1"></i>
+                            ##SignUp##
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body tab-content py-4">
+                <form @submit.prevent="submitForm" class="needs-validation tab-pane fade show active" autocomplete="off"
+                      novalidate="" id="signin-tab">
+                    <div class="mb-3">
+                        <label class="form-label" for="email">##EmailΑddress##</label>
+                        <input class="form-control" v-model="email" type="email" id="email"
+                               placeholder="johndoe@example.com" required="" />
+                        <div v-if="this.emailError" class="invalid-feedback" style="display: block">
+                            ##emailError##
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">##Password##</label>
+                        <div class="password-toggle">
+                            <input class="form-control" type="password" v-model="password" id="password" required="" />
+                            <label class="password-toggle-btn" aria-label="Show/hide password">
+                                <input class="password-toggle-check" type="checkbox" /><span class="password-toggle-indicator" @click="toggleVisibility('password')"></span>
+                            </label>
+                        </div>
+                        <div v-if="this.passwordError" class="invalid-feedback" style="display: block">
+                            ##passwordError##
+                        </div>
+                        <div v-if="this.islocked" class="invalid-feedback" style="display: block">
+                            ##userLocked##
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex flex-wrap justify-content-between">
+                        <div class="form-check mb-2"></div>
+                        <a class="fs-sm" href="/account/forgotpassword">##forgotPasswordText##</a>
+                    </div>
+                    <!-- <button class="btn btn-primary btn-shadow d-block w-100" type="submit">
+                        <div v-show="!isloadingModal">##SignIn##</div>
+                        <span v-show="isloadingModal" class="ml-2 spinner-border spinner-border-sm text-white"></span>
+                    </button> -->
+                    <button class="btn btn-primary btn-shadow d-block w-100" type="button" @click="accountLogin()">
+                        <div v-show="!isloadingModal">##SignIn##</div>
+                        <span v-show="isloadingModal" class="ml-2 spinner-border spinner-border-sm text-white"></span>
+                    </button>
+                </form>
+                <form class="needs-validation tab-pane fade show" id="signup" autocomplete="off" @submit.prevent="checkForm">
+                    <!-- email -->
+                    <div class="input-group mb-3">
+                        <i class="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                        <input v-model="signupEmail" class="form-control rounded-start" type="email" placeholder="Email" required id="log-email">
+                    </div>
+                    <div v-if="emailError===0" class="text-danger" style="margin-bottom:30px">##InvalidEmailText##</div>
+                    <div v-else-if="emailError===1" class="text-danger" style="margin-bottom:30px">##EmptyEmailText##</div>
+                    <div v-else-if="emailError===2" class="text-danger" style="margin-bottom:30px">##UserAlreadyExists##</div>
+                    <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                    <!-- fristname -->
+                    <div class="input-group mb-3">
+                        <i class="ci-user position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                        <input v-model="firstname" class="form-control rounded-start" type="firstname" placeholder="##FirstName##" required id="log-firstname">
+                    </div>
+                    <div v-if="firstnameError===0" class="text-danger" style="margin-bottom:30px">##InvalidFirstNameText##</div>
+                    <div v-else-if="firstnameError===1" class="text-danger" style="margin-bottom:30px">##EmptyFirstNameText##</div>
+                    <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                    <!-- lastname -->
+                    <div class="input-group mb-3">
+                        <i class="ci-user position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                        <input v-model="lastname" class="form-control rounded-start" type="lastname" placeholder="##LastName##" required="" id="log-lastname">
+                    </div>
+                    <div v-if="lastnameError===0" class="text-danger" style="margin-bottom:30px">##InvalidLastNameText##</div>
+                    <div v-else-if="lastnameError===1" class="text-danger" style="margin-bottom:30px">##EmptyLastNameText##</div>
+                    <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                    <!-- password -->
+                    <div class="input-group mb-3">
+                        <i class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                        <div class="password-toggle w-100">
+                            <input v-model="signupPassword" class="form-control" type="password" placeholder="##Password##" required id="pass2">
+                            <label class="password-toggle-btn" aria-label="Show/hide password">
+                                <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator" @click="toggleVisibility('pass2')"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div v-if="passwordError===0" class="text-danger" style="margin-bottom:30px">##EmptyPasswordText##</div>
+                    <div v-else-if="passwordError===1" class="text-danger" style="margin-bottom:30px">##Passwordistooshort##</div>
+                    <div v-else-if="passwordError===2" class="text-danger" style="margin-bottom:30px">##Missingalphanumericcharactersandnonalphanumeric##</div>
+                    <div v-else-if="passwordError===3" class="text-danger" style="margin-bottom:30px">##PasswordMismatchText##</div>
+                    <div v-else-if="passwordError === null" class="text-success" style="margin-bottom: 30px">##PasswordCorrectText##</div>
+                    <!-- retype password  -->
+                    <div class="input-group mb-3">
+                        <i class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                        <div class="password-toggle w-100">
+                            <input v-model="retypeSingupPassword" class="form-control" type="password" placeholder="##RetypePassword##" required id="pass3">
+                            <label class="password-toggle-btn" aria-label="Show/hide password">
+                                <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator" @click="toggleVisibility('pass3')"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div v-if="passwordError===0" class="text-danger" style="margin-bottom:30px">##EmptyPasswordText##</div>
+                    <div v-else-if="passwordError===1" class="text-danger" style="margin-bottom:30px">##Passwordistooshort##</div>
+                    <div v-else-if="passwordError===2" class="text-danger" style="margin-bottom:30px">##Missingalphanumericcharactersandnonalphanumeric##</div>
+                    <div v-else-if="passwordError===3" class="text-danger" style="margin-bottom:30px">##PasswordMismatchText##</div>
+                    <div v-else-if="passwordError === null" class="text-success" style="margin-bottom: 30px">##PasswordCorrectText##</div>
+                    <!-- <button class="btn btn-primary btn-shadow d-block w-100" type="submit">
+                        <div v-show="!isloadingModal">##Register##</div>
+                        <span v-show="isloadingModal" class="ml-2 spinner-border spinner-border-sm text-white"></span>
+                    </button> -->
+                    <button class="btn btn-primary btn-shadow d-block w-100" type="button" @click="accountRegister()">
+                        <div v-show="!isloadingModal">##Register##</div>
+                        <span v-show="isloadingModal" class="ml-2 spinner-border spinner-border-sm text-white"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

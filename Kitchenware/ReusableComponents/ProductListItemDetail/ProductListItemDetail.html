@@ -1,0 +1,47 @@
+<div class="card product-card-alt  px-1" style="min-height: 500px; max-height: 500px">
+    <div v-if="product.additionalFeatures.icoTags !== null"
+         class="d-flex flex-wrap justify-content-start position-absolute top-0 start-0 pt-1 ps-2 me-4"
+         v-html="this._getBadges(product)"></div>
+    <div class="product-thumb text-center" style="height: 260px;">
+        <div class="product-card-actions">
+            <a class="btn btn-light btn-icon btn-shadow fs-base mx-2"
+               @click.stop="this._showProductModal(product, product.productVariants[0].id)" href="#quick-view"
+               data-bs-toggle="modal" data-target="#modal-product-collection-1">
+                <i class="ci-eye"></i>
+            </a>
+        </div>
+        <a class="product-thumb-overlay" :href="'/product/'+product.alias"></a>
+        <img  v-if="this._getMediaItem(product.mediaItems)!==null"
+             :src="this._getMediaItem(product.mediaItems)" alt="Product"
+             style="height: 100%; width: 100%; object-fit: contain"  @error="this._handleImageError">
+        <img v-else :src="this._getNoImageUrl()" alt="Product" width="200"
+             style="height: 100%; width: 100%; object-fit: cover" />
+    </div>
+    <div class="mt-2">
+        <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!=null"
+              class="d-block text-secondary fs-sm fw-bold pb-1">{{product.productVariants[0].sku}}</span>
+        <h3 class="product-title fs-sm truncate mb-1" style="height: 35px">
+            <a :href="'/product/'+product.alias">{{product.title}}</a>
+        </h3>
+        <template v-if="this.additionalFields != null && this.additionalFields.length > 0">
+            <div class="additionalFields pb-1" style="height: 65px">
+                <template v-for="field in this.additionalFields">
+                    <template v-if="getFieldValue(product, field.fieldName) && resolveAuthentication(field)">
+                        <div class="btn-tag fs-xs mb-1 py-1 px-2 me-1" role="button"
+                             @click="handleFieldUrl(product, field.fieldName)">
+                            <template v-if="isValidUrl(getFieldValue(product, field.fieldName))">
+                                <a :href="getFieldValue(product, field.fieldName)" target="_blank">{{field.label}}</a>
+                            </template>
+                            <template v-else>
+                                <span class=" fw-medium me-1">{{field.label}}:</span>
+                                <span>{{getFieldValue(product, field.fieldName)}}</span>
+                            </template>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </template>
+        <span class="product-meta d-block fs-xs mb-1 truncate" style="height: 35px">{{product.subTitle}}</span>
+        <addtocart :model="product" :detail="true" :isCalculated="isCalculated"></addtocart>
+    </div>
+</div>

@@ -1,0 +1,221 @@
+[
+  {
+    "key": "SignIn",
+    "value": "Sign In",
+    "translation": {
+      "el": "Είσοδος",
+      "en": "Sign In"
+    }
+  },
+  {
+    "key": "EmailΑddress",
+    "value": "Email address",
+    "translation": {
+      "el": "Διεύθυνση email",
+      "en": "Email address"
+    }
+  },
+  {
+    "key": "emailError",
+    "value": "The email is not correct",
+    "translation": {
+      "el": "Το email είναι λάθος",
+      "en": "The email is not correct"
+    }
+  },
+  {
+    "key": "Password",
+    "value": "Password",
+    "translation": {
+      "el": "Κωδικός",
+      "en": "Password"
+    }
+  },
+  {
+    "key": "passwordError",
+    "value": "Wrong password or username",
+    "translation": {
+      "el": "Λάθος κωδικός ή email",
+      "en": "Wrong password or username"
+    }
+  },
+  {
+    "key": "forgotPasswordText",
+    "value": "Forgot password?",
+    "translation": {
+      "el": "Ξεχάσατε τον κωδικό;",
+      "en": "Forgot password?"
+    }
+  },
+  {
+    "Key": "Missingalphanumericcharactersandnonalphanumeric",
+    "Value": "Missingalphanumericcharactersandnonalphanumeric",
+    "Translation": {
+      "EL": "Βεβαιωθείτε ότι ο κωδικός πρόσβασής σας περιέχει, γράμματα, αριθμούς και τουλάχιστον έναν ειδικό χαρακτήρα. Αν σας λείπει κάποιο από αυτά, προσθέστε τα τώρα για να δημιουργήσετε έναν ολοκληρωμένο και ασφαλή κωδικό πρόσβασης.",
+      "EN": "Make sure your password contains letters, numbers and at least one special character. If you're missing any of these, add them now to create a complete and secure password.",
+      "RO": "Asigurați-vă că parola conține litere, numere și cel puțin un caracter special. Dacă vă lipsește vreunul dintre acestea, adăugați-l acum pentru a crea o parolă completă și sigură."
+    }
+  },
+  {
+    "Key": "InvalidEmailText",
+    "Value": "InvalidEmailText",
+    "Translation": {
+      "EL": "Η διεύθυνση email δεν είναι σωστή",
+      "EN": "The value is not a valid email address",
+      "RO": "Adresa de email nu este validă"
+    }
+  },
+  {
+    "Key": "InvalidFirstName",
+    "Value": "InvalidFirstName",
+    "Translation": {
+      "EL": "Το πεδίο Όνομα είναι υποχρεωτικό",
+      "EN": "First Name field is mandatory",
+      "RO": "Prenumele este obligatoriu"
+    }
+  },
+  {
+    "Key": "InvalidLastName",
+    "Value": "InvalidLastName",
+    "Translation": {
+      "EL": "Το πεδίο Επίθετο είναι υποχρεωτικό",
+      "EN": "Last Name field is mandatory",
+      "RO": "Numele este obligatoriu"
+    }
+  },
+  {
+    "Key": "EmptyPasswordText",
+    "Value": "EmptyPasswordText",
+    "Translation": {
+      "EL": "O κωδικός πρόσβασης είναι υποχρεωτικό πεδίο",
+      "EN": "Password is required",
+      "RO": "Parola este obligatorie"
+    }
+  },
+  {
+    "Key": "Passwordistooshort",
+    "Value": "Passwordistooshort",
+    "Translation": {
+      "EL": "Ο κωδικός πρόσβασης είναι πολύ σύντομος",
+      "EN": "Password is too short",
+      "RO": "Parola este prea scurtă"
+    }
+  },
+  {
+    "Key": "EmptyFirstNameText",
+    "Value": "EmptyFirstNameText",
+    "Translation": {
+      "EL": "Το επώνυμο είναι υποχρεωτικό",
+      "EN": "First Name is required",
+      "RO": "Primul nume este obligatoriu"
+    }
+  },
+  {
+    "Key": "EmptyLastNameText",
+    "Value": "EmptyLastNameText",
+    "Translation": {
+      "EL": "Το επώνυμο είναι υποχρεωτικό",
+      "EN": "Last Name is required",
+      "RO": "Numele de familie este obligatoriu"
+    }
+  },
+  {
+    "Key": "EmptyEmailText",
+    "Value": "EmptyEmailText",
+    "Translation": {
+      "EL": "Η διεύθυνση email είναι υποχρεωτική",
+      "EN": "Email address is required",
+      "RO": "Adresa de email este obligatorie"
+    }
+  },
+  {
+    "Key": "PasswordMismatchText",
+    "Value": "PasswordMismatchText",
+    "Translation": {
+      "EL": "Οι κωδικοί δεν ταιριάζουν",
+      "EN": "Passwords do not match",
+      "RO": "Parolele nu coincid"
+    }
+  },
+  {
+    "Key": "PasswordCorrectText",
+    "Value": "PasswordCorrectText",
+    "Translation": {
+      "EL": "Ο κωδικός είναι σωστός",
+      "EN": "Password is Correct",
+      "RO": "Parola este corectă"
+    }
+  },
+  {
+    "Key": "No favorite list found.",
+    "Value": "No favorite list found.",
+    "Translation": {
+      "EL": "Δεν βρέθηκε λίστα αγαπημένων.",
+      "EN": "No favorite list found",
+      "RO": "Lista [Favorite] nu a  fost găsită"
+    }
+  },
+  {
+    "Key": "FirstName",
+    "Value": "FirstName",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "First name",
+      "RO": "Prenume"
+    }
+  },
+  {
+    "Key": "LastName",
+    "Value": "LastName",
+    "Translation": {
+      "EL": "Επίθετο",
+      "EN": "Last name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "RetypePassword",
+    "Value": "Retype your Password",
+    "Translation": {
+      "EL": "Επαναλάβετε τον κωδικό πρόσβασής σας",
+      "EN": "Retype your Password",
+      "RO": "Repeta parola"
+    }
+  },
+  {
+    "Key": "EmailΑddress",
+    "Value": "Email Αddress",
+    "Translation": {
+      "EL": "Διέυθυνση email",
+      "EN": "Email address",
+      "RO": "Adresă email"
+    }
+  },
+  {
+    "Key": "UserAlreadyExists",
+    "Value": "UserAlreadyExists",
+    "Translation": {
+      "EL": "Αυτός ο χρήστης υπάρχει ήδη",
+      "EN": "User Already Exists",
+      "RO": "Utilizatorul există deja"
+    }
+  },
+  {
+    "Key": "SignUp",
+    "Value": "Sign Up",
+    "Translation": {
+      "EL": "Εγγραφή",
+      "EN": "Sign Up",
+      "RO": "înscrieți-vă"
+    }
+  },
+  {
+    "Key": "Register",
+    "Value": "Register",
+    "Translation": {
+      "EL": "Εγγραφή",
+      "EN": "Register",
+      "RO": "Înregistrare"
+    }
+  }
+]

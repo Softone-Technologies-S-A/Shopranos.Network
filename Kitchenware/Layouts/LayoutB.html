@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="{{IsoLang}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    {{RequiredHeaders}}
+
+    <link rel="stylesheet" href="{{Assets}}/css/simplebar.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/tiny-slider.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/nouislider.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/drift-basic.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/theme.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/lightgallery.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/flatpickr.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/swiper.min.css?version={{Version}}">
+    <link rel="stylesheet" href="{{Assets}}/css/kitchenware.css?version={{Version}}">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/plain" data-cookie-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id={{GoogleAnalytics}}"></script>
+    <script type="text/plain" data-cookie-category="analytics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'grand', {
+            'ad_user_data': 'grand',
+            'ad_personalization': 'grand',
+            'ad_storage': 'grand',
+            'analytics_storage': 'grand'
+        });
+        gtag('js', new Date());
+        gtag('config', '{{GoogleAnalytics}}');
+    </script>
+    <script>
+        var reCaptchaApiKey = '{{ReCaptchaApiKey}}';
+    </script>
+    <!-- Vue JS app and its used dependencies -->
+    <style>
+        :root {
+            --bs-primary: {{PaletteThemeColor}};
+            --bs-primary-text: {{PaletteThemeText}};
+            --bs-success: {{PaletteSuccess}};
+            --bs-warning: {{PaletteWarning}};
+            --bs-danger: {{PaletteDanger}};
+            --white: white;
+            --header-txt-color: {{PaletteHeaderTextColor}};
+            --header-bg-color: {{PaletteHeaderBackgroundColor}};
+            --footer-txt-color: {{PaletteFooterTextColor}};
+            --footer-bg-color: {{PaletteFooterBackgroundColor}};
+            --breadcrumb-txt-color: {{PaletteBreadcrumbTextColor}};
+            --breadcrumb-bg-color: {{PaletteBreadcrumbBackgroundColor}};
+            --body-primary-txt-color: {{PaletteBodyPrimaryTextColor}};
+            --body-secondary-txt-color: {{PaletteBodySecondaryTextColor}};
+            --body-bg-first-color: {{PaletteBodyBackgroundFirstColor}};
+            --body-bg-second-color: {{PaletteBodyBackgroundSecondColor}};
+            --topbar-txt-color: {{PaletteTopBarTextColor}};
+            --topbar-bg-color: {{PaletteTopBarBackgroundColor}};
+            --border-color: {{PaletteBodyBorderColor}};
+            --bs-warning-op09: {{PaletteWarning}}09;
+            --bs-success-op09: {{PaletteSuccess}}09;
+            --bs-primary-op07: {{PaletteThemeColor}}70;
+            --bs-primary-text-op05: {{PaletteThemeText}}05;
+            --body-primary-txt-color-op08: {{PaletteThemeText}}08;
+            --body-bg-first-color-op00: {{PaletteBodyBackgroundFirstColor}}00;
+            --breadcrumb-txt-color-op03: {{PaletteBreadCrumbTextColor}}03;
+            --breadcrumb-txt-color-op08: {{PaletteBreadCrumbTextColor}}08;
+            --bs-primary-op035: {{PaletteThemeColor}}35;
+            --bs-primary-op09: {{PaletteThemeColor}}30;
+            --footer-txt-color-op025: {{PaletteFooterTextColor}}25;
+            --topbar-txt-color-op065: {{PaletteTopbarTextColor}}65;
+            --header-txt-color-op085: {{PaletteHeaderTextColor}}85;
+            --body-bg-second-color-op08: {{PaletteBodyBackgroundSecondColor}}80;
+            --bs-primary-op04: {{PaletteThemeText}}50;
+            --body-primary-txt-color-op075: {{PaletteBodyPrimaryTextColor}}75;
+            --breadcrumb-txt-color-op06: {{PaletteBreadcrumbTextColor}}90;
+            --border-color-op06: {{PaletteBodyBorderColor}}40;
+            --body-primary-txt-color-op50: {{PaletteBodyPrimaryTextColor}}50;
+            --body-bg-second-color-op40: {{PaletteBodyBackgroundSecondColor}}80;
+            --footer-txt-color-opa6: {{PaletteFooterTextColor}}a6;
+            --body-primary-txt-color-op80: {{PaletteBodyPrimaryTextColor}}80;
+            --body-bg-second-color-op7a: {{PaletteBodyBackgroundSecondColor}}7a;
+        }
+
+    </style>
+    {{CustomCss}}
+
+</head>
+<body class="handheld-toolbar-enabled">
+    <div id="app">
+        <header style="z-index: 100;" class="shadow-sm position-fixed w-100">
+            {{SectionHeader}}
+        </header>
+        <loginmodal></loginmodal>
+        <aside id="sideNav" style="max-width: 21.875rem;" class="offcanvas offcanvas-expand w-100 border-end zindex-lg-5 pt-lg-5">
+            <fixedsidemenu></fixedsidemenu>
+        </aside>
+        <main style="margin-top: 7.3rem;" class="page-wrapper offcanvas-enabled pt-5">
+            {{SectionBody}}
+            {{SectionFooter}}
+        </main>
+    </div>
+
+    {{RequiredTemplates}}
+
+    <script src="{{Assets}}/vue/axios.min.js?version={{Version}}"></script>
+    <script src="{{Assets}}/vue/vue.global.prod.js?version={{Version}}"></script>
+    <script src="{{Assets}}/vue/mitt.umd.js?version={{Version}}"></script>
+    <script src="{{Assets}}/vue/Plugin.js?version={{Version}}"></script>
+    <script>
+        const emitter = mitt()
+        const app = Vue.createApp({});
+        app.use(myPlugin);
+    </script>
+    {{GlobalData}}
+    <!-- Plugins -->
+    <script type="text/javascript" src="https://unpkg.com/storage-based-queue@1.2.2/dist/queue.min.js"></script>
+    <script type="text/javascript" src="{{Assets}}/vue/thirdparty.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/vue/customization.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/bootstrap.bundle.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/simplebar.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/tiny-slider.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/smooth-scroll.polyfills.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/nouislider.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/Drift.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/lightgallery.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/lg-fullscreen.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/lg-zoom.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/flatpickr.min.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/rangePlugin.js?version={{Version}}"></script>
+    <script type="text/javascript" src="{{Assets}}/js/swiper.min.js?version={{Version}}"></script>
+    {{ThirdPartyApps}}
+    <script type="text/javascript" src="{{Root}}/componentscripts.js?version={{Version}}"></script>
+   
+    <script>
+        app.mount('#app')
+    </script>
+    <!--<script type="text/javascript" src="{{Assets}}/js/theme.min.js?version={{Version}}"></script>-->
+
+
+</body>
+</html>

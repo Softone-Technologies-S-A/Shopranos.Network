@@ -1,0 +1,210 @@
+﻿[
+  {
+    "Key": "InviteUser",
+    "Value": "InviteUser",
+    "Translation": {
+      "EL": "Πρόσκληση χρήστη",
+      "EN": "Invite user",
+      "RO": "Invitaţi utilizator"
+    }
+  },
+  {
+    "Key": "Email",
+    "Value": "Email",
+    "Translation": {
+      "EL": "Email",
+      "EN": "Email",
+      "RO": "Email"
+    }
+  },
+  {
+    "Key": "EmailIsNotValid",
+    "Value": "EmailIsNotValid",
+    "Translation": {
+      "EL": "Το email δεν είναι σωστό",
+      "EN": "This is not a valid email",
+      "RO": "Această adresă de email nu este validă"
+    }
+  },
+  {
+    "Key": "UserExists",
+    "Value": "UserExists",
+    "Translation": {
+      "EL": "Ο χρήστης υπάρχει ήδη",
+      "EN": "User already exists",
+      "RO": "Utilizatorul există deja"
+    }
+  },
+  {
+    "Key": "SelectRole",
+    "Value": "SelectRole",
+    "Translation": {
+      "EL": "Επιλογή ρόλου",
+      "EN": "Select role",
+      "RO": "Selectează rol"
+    }
+  },
+  {
+    "Key": "Admin",
+    "Value": "Admin",
+    "Translation": {
+      "EL": "Διαχειριστής",
+      "EN": "Admin",
+      "RO": "Admministrator"
+    }
+  },
+  {
+    "Key": "SelectBranch",
+    "Value": "Select Branch",
+    "Translation": {
+      "EL": "Επιλέξτε καταστήματα",
+      "EN": "Select branches",
+      "RO": "Selectează filială"
+    }
+  },
+  {
+    "Key": "ErrorSelectBranch",
+    "Value": "Error Select Branch",
+    "Translation": {
+      "EL": "Επιλέξτε ένα ή περισσότερα καταστήματα",
+      "EN": "Please select one or more branches",
+      "RO": "Selectează una sau mai multe filiale"
+    }
+  },
+  {
+    "Key": "Invite",
+    "Value": "Invite",
+    "Translation": {
+      "EL": "Προσκάλεσε",
+      "EN": "Invite",
+      "RO": "Invită"
+    }
+  },
+  {
+    "Key": "Role",
+    "Value": "Role",
+    "Translation": {
+      "EL": "Ρόλος",
+      "EN": "Role",
+      "RO": "Rol"
+    }
+  },
+  {
+    "Key": "EditRole",
+    "Value": "EditRole",
+    "Translation": {
+      "EL": "Αλλαγή ρόλου",
+      "EN": "Edit role",
+      "RO": "Editează rol"
+    }
+  },
+  {
+    "Key": "Actions",
+    "Value": "Actions",
+    "Translation": {
+      "EL": "Ενέργειες",
+      "EN": "Actions",
+      "RO": "Acţiuni"
+    }
+  },
+  {
+    "Key": "Delete",
+    "Value": "Delete",
+    "Translation": {
+      "EL": "Διαγραφή",
+      "EN": "Delete",
+      "RO": "Delete",
+      "RO": "Şterge"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Loading",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "No results",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results",
+      "RO": "Niciun rezultat"
+    }
+  },
+  {
+    "Key": "Prev",
+    "Value": "Prev",
+    "Translation": {
+      "EL": "",
+      "EN": "Prev",
+      "RO": "Anterior"
+    }
+  },
+  {
+    "Key": "Next",
+    "Value": "Next",
+    "Translation": {
+      "EL": "",
+      "EN": "Next",
+      "RO": "Următorul"
+    }
+  },
+  {
+    "Key": "ConfirmUserDelete",
+    "Value": "ConfirmUserDelete",
+    "Translation": {
+      "EL": "Επιβεβαιώστε την διαγραφή του χρήστη",
+      "EN": "Confirm user deletion",
+      "RO": "Confirmă ştergerea utilizatorului"
+    }
+  },
+  {
+    "Key": "AreYouSureYouWantToDeleteUser",
+    "Value": "AreYouSureYouWantToDeleteUser",
+    "Translation": {
+      "EL": "Είστε σίγουροι ότι θέλετε να διαγράψετε τον χρήστη;",
+      "EN": "Are you sure you want to delete user?",
+      "RO": "Eşti sigur că doreşti ştergerea utilizatorului"
+    }
+  },
+  {
+    "Key": "OperationNotPermitted",
+    "Value": "Operation Not Permitted",
+    "Translation": {
+      "EL": "Δεν έχετε το δικαίωμα για αυτή την ενέργεια",
+      "EN": "You are not permitted to perform this action",
+      "RO": "Nu eşti autorizat pentru această acţiune"
+    }
+  },
+  {
+    "Key": "Cancel",
+    "Value": "Cancel",
+    "Translation": {
+      "EL": "Ακύρωση",
+      "EN": "Cancel",
+      "RO": "Anulare"
+    }
+  },
+  {
+    "Key": "Save",
+    "Value": "Save",
+    "Translation": {
+      "EL": "Αποθήκευση",
+      "EN": "Save",
+      "RO": "Salvează"
+    }
+  },
+  {
+    "Key": "Name",
+    "Value": "Name",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  }
+]

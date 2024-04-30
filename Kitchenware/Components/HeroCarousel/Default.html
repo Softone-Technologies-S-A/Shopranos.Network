@@ -1,0 +1,25 @@
+﻿<div :class="this.model?.cssClass" class="tns-carousel tns-nav-enabled pb-5">
+    <div v-if="this.model.header !== null && this.model.header !=''" class="container pt-md-3 pb-2 pb-lg-3">
+        <div :class="['d-flex', 'flex-wrap', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ model.header }}</h2>
+        </div>
+    </div>
+    <div :id="'herocarousel-'+this.model.id" class="tns-carousel-inner" data-carousel-options='{"mode": "gallery", "speed": 1000}'>
+        <div v-for="slide in this.model.slides" class="" :style="slide.backgroundImage !== null?'background-color:'+slide.backgroundColor+';background-image:url('+slide.backgroundImage.link+');':'background-color:'+slide.backgroundColor" style="background-repeat: no-repeat;background-size:cover">
+            <div class="container d-lg-flex justify-content-between align-items-center ps-lg-4" style="min-height: 700px;max-height:700px;">
+                <img v-if="slide.image !== null" class="d-block order-lg-2 me-lg-n5 flex-shrink-0" :src="slide.image.link" />
+                <div :class="'position-relative me-lg-n5 py-5 px-4 mb-lg-5 order-lg-1' +(((slide.header==null)||(slide.header==''))&&((slide.subHeader==null)||(slide.subHeader==''))&&((slide.subHeader2==null)||(slide.subHeader2==''))&&((slide.buttonLink == null || slide.buttonText == null || slide.buttonLink == '' || slide.buttonText == ''))?' d-none':'')" style="max-width: 42rem; z-index: 10;">
+                    <div class="pb-lg-5 mb-lg-5 text-center text-lg-start text-lg-nowrap">
+                        <h3 :class="' fw-light fs-2 m-0 py-2 from-start' +((slide.header == null || slide.header == '') ? ' d-none': '' )" :style="'color:'+slide.textColor">{{slide.subHeader}}</h3>
+                        <h2 :class="'display-5 py-1 m-0 from-start delay-1'+((slide.subHeader == null || slide.subHeader == '') ? 'd-none': '' )" :style="'color:'+ slide.textColor">{{slide.header}}</h2>
+                        <p :class="'fs-5 py-1  m-0 from-start delay-2'+((slide.subHeader2 == null || slide.subHeader2 == '') ? 'd-none': '' )" :style="'color:'+ slide.textColor">{{slide.subHeader2}}</p>
+                        <p :class="'fs-5 py-1  m-0 from-start delay-3'+((slide.text == null || slide.text == '') ? 'd-none': '' )" :style="'color:'+ slide.textColor">{{slide.text}}</p>
+                        <div :class="'d-table pt-5 scale-up delay-4 mx-auto mx-lg-0 '+((slide.buttonLink == null || slide.buttonText == null || slide.buttonLink == '' || slide.buttonText == '')?' d-none':'')">
+                            <a class="btn btn-primary btn-sm" :href="slide.buttonLink">{{slide.buttonText}}<i class="ci-arrow-right ms-2 me-n1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

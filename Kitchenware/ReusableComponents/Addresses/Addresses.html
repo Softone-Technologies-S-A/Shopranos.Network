@@ -1,0 +1,165 @@
+﻿    <!-- Addresses list-->
+<div class="table-responsive fs-md">
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(address, index) in user?.addresses" :key="index">
+                <td class="py-3 align-middle">
+                    <span v-if="!address.isEditing">
+                        {{ address?.address1 }}
+                        <template v-if="address?.firstName">
+                            , {{ address?.firstName }}
+                        </template>
+                        <template v-if="address?.lastName">
+                            , {{ address?.lastName }}
+                        </template>
+                        <template v-if="address?.phoneNumber">
+                            , {{ address?.phoneNumber }}
+                        </template>
+                        <template v-if="address?.address2">
+                            , {{ address?.address2 }}
+                        </template>
+                        <template v-if="address?.city">
+                            , {{ address?.city }}
+                        </template>
+                        <template v-if="address?.country">
+                            , {{ address?.country }}
+                        </template>
+                        <template v-if="address?.postalCode">
+                            , {{ address?.postalCode }}
+                        </template>
+                        <template v-if="address?.state">
+                            , {{ address?.state }}
+                        </template>
+                    </span>
+                    <span v-else>
+                        {{address?.editedAddress}}
+                    </span>
+                    <span class="align-middle badge bg-info ms-2" v-if="!address.isEditing && index === 0">Primary</span>
+                </td>
+                <td class="py-3 align-middle">
+                    <a v-if="!address.isEditing" class="nav-link-style me-2" href="#" @click="startEditing(address)">
+                        <i class="ci-edit"></i>
+                    </a>
+                    <a v-if="!address.isEditing" class="nav-link-style text-danger" href="#" @click="deleteAddress( index)" aria-label="Remove" data-bs-original-title="Remove">
+                        <div class="ci-trash"></div>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Edit address modal -->
+<div class="modal fade" id="editAddressForm" tabindex="-1" aria-labelledby="editAddressFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editAddressFormLabel">##Edit_Address##</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">##FirstName##</label>
+                    <input v-model="editedAddress.firstName" type="text" class="form-control" id="editedFirstName" placeholder="##EnterFirstName##">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">##LastName##</label>
+                    <input v-model="editedAddress.lastName" type="text" class="form-control" id="editedLastName" placeholder="##EnterLastName##">
+                </div>
+                <div class="mb-3">
+                    <label for="editPhoneNumber" class="form-label">##PhoneNumber##</label>
+                    <input v-model="editedAddress.phoneNumber" type="text" class="form-control" id="editedPhoneNumber" placeholder="##EnterPhoneNumber##">
+                </div>
+                <div class="mb-3">
+                    <label for="editAddressInput" class="form-label">##Address1##</label>
+                    <input v-model="editedAddress.address1" type="text" class="form-control" id="editAddressInput" placeholder="##Enteraddress##">
+                </div>
+                <div class="mb-3">
+                    <label for="editAddressInput2" class="form-label">##Address2##</label>
+                    <input v-model="editedAddress.address2" type="text" class="form-control" id="editAddressInput2" placeholder="##Entersecondaddress##">
+                </div>
+                <div class="mb-3">
+                    <label for="editCityInput" class="form-label">##City##</label>
+                    <input v-model="editedAddress.city" type="text" class="form-control" id="editCityInput" placeholder="##Entercityname##">
+                </div>
+                <div class="mb-3">
+                    <label for="editCountryInput" class="form-label">##Country##</label>
+                    <input v-model="editedAddress.country" type="text" class="form-control" id="editCountryInput" placeholder="##Entercountry##">
+                </div>
+                <div class="mb-3">
+                    <label for="editedStateInput" class="form-label">##State##</label>
+                    <input v-model="editedAddress.state" type="text" class="form-control" id="editedState" placeholder="##Enterstate##">
+                </div>
+                <div class="mb-3">
+                    <label for="editPostalCodeInput" class="form-label">##Postcode_ZIP##</label>
+                    <input v-model="editedAddress.postalCode" type="text" class="form-control" id="editPostalCodeInput" placeholder="##Enterpostalcode##">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">##Close##</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="saveEditedAddress()">##Save##</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add new address modal -->
+<div class="modal fade" id="addAddressForm" tabindex="-1" aria-labelledby="addAddressFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAddressFormLabel">##Add_New_Address##</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">##FirstName##</label>
+                    <input v-model="firstName" type="text" class="form-control" id="firstName" placeholder="##EnterFirstName##">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">##LastName##</label>
+                    <input v-model="lastName" type="text" class="form-control" id="LastName" placeholder="##EnterLastName##">
+                </div>
+                <div class="mb-3">
+                    <label for="editPhoneNumber" class="form-label">##PhoneNumber##</label>
+                    <input v-model="phoneNumber" type="text" class="form-control" id="PhoneNumber" placeholder="##EnterPhoneNumber##">
+                </div>
+                <div class="mb-3">
+                    <label for="newAddressInput" class="form-label">##Address1##</label>
+                    <input v-model="newAddress" type="text" class="form-control" id="newAddressInput" placeholder="##Enteraddress##">
+                </div>
+                <div class="mb-3">
+                    <label for="newAddressInput" class="form-label">##Address2##</label>
+                    <input v-model="newAddress1" type="text" class="form-control" id="newAddressInput" placeholder="##Entersecondaddress##">
+                </div>
+                <div class="mb-3">
+                    <label for="newAddressInput" class="form-label">##City##</label>
+                    <input v-model="city" type="text" class="form-control" id="newAddressInput" placeholder="##Entercityname##">
+                </div>
+                <div class="mb-3">
+                    <label for="newAddressInput" class="form-label">##Country##</label>
+                    <input v-model="country" type="text" class="form-control" id="newAddressInput" placeholder="##Entercountry##">
+                </div>
+                <div class="mb-3">
+                    <label for="newStateInput" class="form-label">##State##</label>
+                    <input v-model="state" type="text" class="form-control" id="newStateInput" placeholder="##Enterstate##">
+                </div>
+                <div class="mb-3">
+                    <label for="newPostalCodeInput" class="form-label">##Postcode_ZIP##</label>
+                    <input v-model="postalCode" type="text" class="form-control" id="newPostalCodeInput" placeholder="##Enterpostalcode##">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">##Close##</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="createNewAddress(address)">##Add_New_Address##</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-sm-start pt-4"><a class="btn btn-primary" href="#addAddressForm" data-bs-toggle="modal">##Add_New_Address##</a></div>

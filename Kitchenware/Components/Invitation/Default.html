@@ -1,0 +1,48 @@
+﻿<div :class="this.model?.cssClass" :id="this.model.id" class="container py-4 py-lg-5 my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h2 class="h4 mb-3">##Invitation##</h2>
+                    <hr>
+                    <form class="needs-validation pt-4" novalidate="" @submit.prevent="checkForm">
+                        <div class="row gx-4 gy-3">
+                            <div class="col-sm-6">
+                                <label class="form-label" for="reg-fn">##FirstNameText##</label>
+                                <input v-model="firstname" class="form-control" type="text" required="" id="reg-fn">
+                                <div v-if="this.firstNameError===0" class="invalid-message">##EmptyFirstName##</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="reg-ln">##LastNameText##</label>
+                                <input v-model="lastname" class="form-control" type="text" required="" id="reg-ln">
+                                <div v-if="this.lastNameError===0" class="invalid-message">##EmptyLastName##</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="reg-password">##NewPasswordText##</label>
+                                <input v-model="password" class="form-control" type="password" required="" id="reg-password">
+                                <div v-if="this.passwordError===0" class="invalid-message">##EmptyPasswordText##</div>
+                                <div v-if="this.passwordValidateError===2" class="invalid-message">##PasswordPolicyText##</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="reg-password-confirm">##ConfirmPasswordText##</label>
+                                <input v-model="passwordValidate" class="form-control" type="password" required="" id="reg-password-confirm">
+                                <div v-if="this.passwordValidateError===1" class="invalid-message">##MismatchPasswordText##</div>
+                                <div v-if="this.passwordValidateError===4" class="invalid-message">##RequestError##</div>
+                                <div v-if="this.passwordValidateError===5" class="invalid-message">##RequestError##</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label" for="reg-email">Email</label>
+                                <input v-model="email" class="form-control" type="email" required="" id="reg-email" disabled>
+                                <div v-if="this.emailError===0" class="invalid-message">##InvalidToken##</div>
+                                <div v-if="this.emailError===1" class="invalid-message">##UserAlreadyExist##</div>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button class="btn btn-primary" type="submit"><i class="ci-user me-2 ms-n1"></i>##ButtonText##</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

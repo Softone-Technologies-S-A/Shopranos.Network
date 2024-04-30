@@ -1,0 +1,74 @@
+﻿[
+  {
+    "Key": "Title",
+    "Value": "Title",
+    "Translation": {
+      "EL": "Τίτλος",
+      "EN": "Title",
+      "RO": "Titlu"
+    }
+  },
+  {
+    "Key": "Description",
+    "Value": "Description",
+    "Translation": {
+      "EL": "Περιγραφή",
+      "EN": "Description",
+      "RO": "Descriere"
+    }
+  },
+  {
+    "Key": "Actions",
+    "Value": "Actions",
+    "Translation": {
+      "EL": "Ενέργειες",
+      "EN": "Actions",
+      "RO": "Acţiuni"
+    }
+  },
+  {
+    "Key": "View",
+    "Value": "View",
+    "Translation": {
+      "EL": "Εμφάνιση",
+      "EN": "View",
+      "RO": "Vizualizare"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Loading",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "No results",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results",
+      "RO": "Niciun rezultat"
+    }
+  },
+  {
+    "Key": "Prev",
+    "Value": "Prev",
+    "Translation": {
+      "EL": "",
+      "EN": "Prev",
+      "RO": "Anterior"
+    }
+  },
+  {
+    "Key": "Next",
+    "Value": "Next",
+    "Translation": {
+      "EL": "",
+      "EN": "Next",
+      "RO": "Următorul"
+    }
+  }
+]

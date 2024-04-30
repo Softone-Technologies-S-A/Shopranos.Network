@@ -1,0 +1,63 @@
+﻿
+<div :class="this.model?.cssClass" :id="this.model.id" class="container py-4 py-lg-5 my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h2 class="h4 mb-2">##Login##</h2>
+                    <hr>
+                    <form @submit.prevent="checkForm" class="needs-validation pt-4" novalidate="">
+                        <div class="input-group mb-3">
+                            <i class="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input v-model="email" class="form-control rounded-start" type="email" placeholder="Email" required="" id="log-email">
+                        </div>
+                        <div v-if="emailError===0" class="text-danger" style="margin-bottom:30px">##InvalidEmailText##</div>
+                        <div v-else-if="emailError===1" class="text-danger" style="margin-bottom:30px">##EmptyEmailText##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+                        <div class="input-group mb-3">
+                            <i class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <div class="password-toggle w-100">
+                                <input v-model="password" class="form-control" type="password" placeholder="##Password##" required="" id="log-password">
+                                <label class="password-toggle-btn" aria-label="Show/hide password">
+                                    <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator" @click="toggleVisibility"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div v-if="passwordError===0" class="text-danger" style="margin-bottom:30px">##EmptyPasswordText##</div>
+                        <div v-else-if="passwordError===1" class="text-danger" style="margin-bottom:30px">##InvalidLoginText##</div>
+                        <div v-else-if="passwordError===2" class="text-danger" style="margin-bottom:30px">##InvalidLoginText##</div>
+                        <div v-else class="text-danger" style="margin-bottom:30px"></div>
+
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <div class="form-check">
+                            </div><a class="nav-link-inline fs-sm" href="/account/forgotpassword">##ForgotPassword##</a>
+                        </div>
+                        <hr class="mt-4">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <div class="text-end pt-4">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="ci-sign-in me-2 ms-n21"></i>
+                                    <span class="pe-2" v-show="!isloading">##ButtonText##</span>
+                                    <span class="pe-2" v-show="isloading">##Loading##</span>
+                                    <span v-show="isloading" class="ml-4 spinner-border spinner-border-sm spiner-text"></span>
+                                </button>
+                            </div>
+                            <div v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'RetailWholesale' && this.globalModel.operationMode != 'CatalogRetailPrice' && this.globalModel.operationMode != 'RequiresLogin'&& this.globalModel.operationMode != 'CatalogPrice' )" class="text-start pt-4">
+                                <a class="btn btn-primary" @click="registerUser">
+                                    <i class="ci-sign-in me-2 ms-n21"></i>
+                                    <span v-show="!isRegisterLoading">
+                                        <span class="pe-2">##Register##</span>
+                                    </span>
+                                    <span v-show="isRegisterLoading" class="pe-2">
+                                        <span class="mr-2">##Loading##</span>
+                                        <span class="spinner-border spinner-border-sm spinner-text"></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<div :id="this.model.id" :class="this.model?.cssClass" class="topbar topbar-dark bg-topbar" v-if="this._company!=null">
+    <div class="container">
+
+        <div class="topbar-text" v-if="this.model.MessageText !== null" v-html="this.model.text"></div>
+        <div class="ms-auto text-nowrap">
+            <div v-if="this._company.languages !== null && this._company.languages.length > 1 && this.resolveModules('lang')" class="topbar-text dropdown disable-autohide">
+                <a class="topbar-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><img class="me-2" :src="'/images/' + this.ActiveCulture +'.svg'" width="20" :alt="this._getCultureName(this.ActiveCulture)">{{this._getCultureName(this.ActiveCulture)}}</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li v-for="lang in this._company.languages">
+                        <a class="dropdown-item pb-1" :href="'?lang=' + lang"><img class="me-2" :src="'/images/' + lang +'.svg'" width="20" alt="this._getCultureName(lang)">{{this._getCultureName(lang)}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

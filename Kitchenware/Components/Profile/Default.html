@@ -1,0 +1,296 @@
+﻿<div :id="this.model.id" :class="this.model?.cssClass" class="container pb-5 mb-2 mb-md-4 mt-5">
+    <div class="row">
+        <div class="text-end mb-3">
+            <a class="btn btn-primary btn-sm d-none d-lg-inline-block me-2" href="/account/logout">
+                <i class="ci-sign-out me-2"></i>Sign Out
+            </a>
+        </div>
+        <aside class="col-lg-4 pt-4 pt-lg-0 pe-xl-5 sidebar">
+            <div class="bg-body rounded-3 shadow-lg pt-1 mb-5 mb-lg-0">
+                <div class="d-md-flex justify-content-between align-items-center text-center text-md-start p-4">
+                    <div v-if="this.user !== null" class="d-md-flex align-items-center">
+                        <div class="img-thumbnail rounded-circle position-relative flex-shrink-0 mx-auto mb-2 mx-md-0 mb-md-0"
+                             style="width: 6.375rem;">
+                            <img v-if="customer?.logo != null" class="rounded-circle" v-bind:src="customer?.logo"
+                                 alt="customer logo" style="width: 90px; height: 90px" />
+                            <img v-else src="/images/blank.png" class="rounded-circle" alt="no image" />
+                        </div>
+                        <div class="ps-md-3">
+                            <h3 class="fs-base mb-0">{{user.firstName}} {{user.lastName}}</h3><span class="body-secondary-text fs-sm">{{user.email}}</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0" href="#account-menu"
+                       data-bs-toggle="collapse" aria-expanded="false"><i class="ci-menu me-2"></i>##AccountMenu##</a>
+                </div>
+                <div v-if="(this.globalModel.operationMode != 'Retail')" class="d-lg-block collapse" id="account-menu">
+                    <div class="bg-secondary px-4 py-3">
+                        <h3 class="fs-sm mb-0 text-muted">##Dashboard##</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0">
+                        <li v-if="this._resolvePermissions('orders')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'orders'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#orders">
+                                <i class="ci-bag opacity-60 me-2"></i>##Orders##
+                            </a>
+                        </li>
+                        <li v-if="this._resolveModules('shoppinglists')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'shoppingLists'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#shoppingLists">
+                                <i class="ci-basket-alt opacity-60 me-2"></i>##ShoppingLists##
+                            </a>
+                        </li>
+                        <li v-if="this._resolvePermissions('transactions')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'transactions'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#transactions">
+                                <i class="ci-currency-exchange opacity-60 me-2"></i>##Transactions##
+                            </a>
+                        </li>
+                        <li v-if="this._resolvePermissions('monthlytransactions')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'monthlytransactions'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3"
+                               href="#monthlytransactions">
+                                <i class="ci-coins opacity-60 me-2"></i>##MonthlyTransactions##
+                            </a>
+                        </li>
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'announcements'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3"
+                               href="#announcements">
+                                <i class="ci-loudspeaker opacity-60 me-2"></i>##Announcements##
+                            </a>
+                        </li>
+                        <li v-if="this._resolvePermissions('offers')&&this._global.packets.showOffer&&this._resolveModules('offers')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'offers'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3"
+                               href="#offers">
+                                <i class="ci-discount opacity-60 me-2"></i>##Offers##
+                            </a>
+                        </li>
+                        <li v-if="this._global.packets.showQuote&&this._resolveModules('quotes')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'quotes'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3"
+                               href="#quotes">
+                                <i class="ci-discount opacity-60 me-2"></i>##Quotes##
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="bg-secondary px-4 py-3">
+                        <h3 class="fs-sm mb-0 text-muted">##AccountSettings##</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0">
+                        <li v-if="(this.globalModel.operationMode != 'Retail')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'company'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#company">
+                                <i class="ci-store opacity-60 me-2"></i>##Company##
+                            </a>
+                        </li>
+                        <li v-if="this._resolvePermissions('users')" class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'users'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#users">
+                                <i class="ci-add-user opacity-60 me-2"></i>##ManageUsers##
+                            </a>
+                        </li>
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'view'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#view">
+                                <i class="ci-user opacity-60 me-2"></i>##ProfileInfo##
+                            </a>
+                        </li>
+                        <li class="d-lg-none border-top mb-0">
+                            <a id="logout"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="/account/logout">
+                                <i class="ci-sign-out opacity-60 me-2"></i>##SignOut##
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div v-else class="d-lg-block collapse" id="account-menu">
+                    <div class="bg-secondary px-4 py-3">
+                        <h3 class="fs-sm mb-0 text-muted">##Dashboard##</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0">
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'orders'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#orders">
+                                <i class="ci-bag opacity-60 me-2"></i>##Orders##
+                            </a>
+                        </li>
+                        <!--<li class="border-bottom mb-0">
+                        <a v-bind:class="{active: activeTab === 'shoppingLists'}"
+                           class="nav-link-style d-flex align-items-center px-4 py-3" href="#shoppingLists">
+                            <i class="ci-basket-alt opacity-60 me-2"></i>##ShoppingLists##
+                        </a>
+                    </li>-->
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'announcements'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3"
+                               href="#announcements">
+                                <i class="ci-loudspeaker opacity-60 me-2"></i>##Announcements##
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="bg-secondary px-4 py-3">
+                        <h3 class="fs-sm mb-0 text-muted">##AccountSettings##</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0">
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'view'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#view">
+                                <i class="ci-user opacity-60 me-2"></i>##ProfileInfo##
+                            </a>
+                        </li>
+                        <li class="border-bottom mb-0">
+                            <a v-bind:class="{active: activeTab === 'addresses'}"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="#addresses">
+                                <i class="ci-location opacity-60 me-2"></i>##Addresses##
+                            </a>
+                        </li>
+                        <li class="d-lg-none border-top mb-0">
+                            <a id="logout"
+                               class="nav-link-style d-flex align-items-center px-4 py-3" href="/account/logout">
+                                <i class="ci-sign-out opacity-60 me-2"></i>##SignOut##
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <section class="col-lg-8 d-none" id="view">
+            <profileinfo></profileinfo>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'CatalogRetailPrice' && this.globalModel.operationMode != 'CatalogPrice' && this.globalModel.operationMode != 'RequiresLogin')" class="col-lg-8 d-none" id="addresses">
+            <addresses></addresses>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="company">
+            <company></company>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="monthlytransactions">
+            <monthlytransactions></monthlytransactions>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="transactions">
+            <transactions></transactions>
+        </section>
+        <section class="col-lg-8 d-none" id="shoppingLists">
+            <shoppinglist></shoppinglist>
+        </section>
+        <section class="col-lg-8 d-none" id="orders">
+            <orders></orders>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="users">
+            <users></users>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="margins">
+            <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
+                <div class="d-flex align-items-center">
+                </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="/account/logout">
+                    <i class="ci-sign-out me-2"></i>##SignOut##
+                </a>
+            </div>
+            <div class="row g-4 mb-5">
+                <div v-if="customerMargin !== null" class="col-sm-4">
+                    <div class="bg-secondary h-100 rounded-3 p-4 text-center d-flex flex-column justify-content-center">
+                        <h3 class="fs-md text-muted">##GlobalMargin##</h3>
+                        <input class="form-control mb-2" v-if="editGlobalMargin" v-model.number="customerMargin.margin"
+                               type="number">
+                        <p class="h2 mb-2 text-secondary" v-if="!editGlobalMargin">
+                            {{customerMargin.margin}}%
+                            <span class="text-primary fs-5" role='button' @click="() => editGlobalMargin = true">
+                                <i class="ci-edit-alt"></i>
+                            </span>
+                        </p>
+                        <div class="d-flex justify-content-between" v-if="editGlobalMargin">
+                            <button class="btn btn-sm btn-danger mr-2"
+                                    @click.prevent="()=>editGlobalMargin = false">
+                                ##Cancel##
+                            </button>
+                            <button v-if="customerMargin.id === null" class="btn btn-sm btn-success"
+                                    @click.prevent="createCustomerMargin">
+                                ##Create##
+                            </button>
+                            <button v-else class="btn btn-sm btn-success"
+                                    v-on:click="updateCustomerMargin()">
+                                ##Update##
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="customerMargin !== null && customerMargin.id !== null"
+                     class="col-sm-8 d-flex justify-content-center align-items-center">
+                    <div class="card w-100 " style="border:2px dashed var(--border-color);">
+                        <div class="card-body">
+                            <form novalidate @submit.prevent="addCategoryMargin">
+                                <div class="input-group mb-2">
+                                    <select v-if="categories !== null && categories.length>0" class="form-select"
+                                            id="categories" v-model="selectedCategory">
+                                        <option value="" disabled selected>##SelectCategory##</option>
+                                        <option v-for="cat in categories" :value="cat.id">{{cat.title}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <input class="form-control" type="number" id="cat-margin"
+                                           placeholder="##TypeMargin##" v-model="categoryMargin">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-primary btn-block">
+                                        ##AddOrEditMargin##
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive fs-md">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>##Category##</th>
+                            <th class="text-end">##Margin##</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody v-if="this.customerMargin!==null && this.customerMargin.categories !== null">
+                        <tr v-for="cat in customerMargin.categories">
+                            <td class="py-3 ">{{getCategoryName(cat.categoryId)}}</td>
+                            <td class="py-3 text-end">{{cat.margin}}%</td>
+                            <td class="text-end">
+                                <button @click="deleteMargin(cat)" class="btn btn-sm btn-outline-danger">
+                                    <i class="ci-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody v-if="this.customerMargin === null || this.customerMargin.categories === null || this.customerMargin.categories.length === 0">
+                        <tr>
+                            <td class="text-center" colspan="3">
+                                <div v-bind:class="{'d-none': !isLoading}" class="spinner-border" role="status">
+                                    <span class="visually-hidden">##Loading##...</span>
+                                </div>
+                                <div v-show="!isLoading"><i class="ci-eye-off opacity-60 me-2"></i>##NoResults##</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="offers">
+            <offers></offers>
+        </section>
+        <section v-if="(this.globalModel.operationMode != 'Retail')" class="col-lg-8 d-none" id="quotes">
+            <quotes></quotes>
+        </section>
+        <section class="col-lg-8 d-none" id="bulkorder">
+            <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
+                <div class="d-flex align-items-center">
+                </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="/account/logout">
+                    <i class="ci-sign-out me-2"></i>##SignOut##
+                </a>
+            </div>
+            <cartimport></cartimport>
+        </section>
+        <section class="col-lg-8 d-none" id="announcements">
+            <announcements></announcements>
+        </section>
+    </div>
+</div>

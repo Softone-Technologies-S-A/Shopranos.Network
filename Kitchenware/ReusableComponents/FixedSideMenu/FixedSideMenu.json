@@ -1,0 +1,18 @@
+[
+  {
+    "key": "Products",
+    "value": "Products",
+    "translation": {
+      "el": "Προϊόντα",
+      "en": "Products"
+    }
+  },
+  {
+    "key": "Menu",
+    "value": "Menu",
+    "translation": {
+      "el": "Μενού",
+      "en": "Menu"
+    }
+  }
+]

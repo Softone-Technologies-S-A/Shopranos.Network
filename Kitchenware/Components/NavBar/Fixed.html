@@ -1,0 +1,309 @@
+<div :class="this.model?.cssClass" :id="this.model.id" style="box-shadow: 0 0.25rem 0.5625rem -0.0625rem rgba(0,0,0,.03), 0 0.275rem 1.25rem -0.0625rem rgba(0,0,0,.05);" class="navbar-sticky bg-navbar">
+    <div class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand d-none d-sm-block me-3 me-xl-4 flex-shrink-0">
+                <img v-if="!imageError" :src="this._getLogoUrl()" style="max-height: 80px;" :alt="this._company.name" @error="handleLogoError()">
+                <div v-else>
+                    <span>{{this._company.name}}</span>
+                </div>
+            </a>
+            <div class="input-group d-none d-lg-flex mx-4">
+                <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <input v-model="SearchText" @input="Search" @keyup.enter="enterClicked()" type="text" placeholder="##SearchForProducts##" class="form-control rounded-start w-100">
+                <div class="dropdown-search w-100">
+                    <ul class="dropdown-menu w-100 px-2" style="max-height: 60vh" data-simplebar="init"
+                        data-simplebar-auto-hide="true">
+                        <li v-for="(product, index) in products" v-bind:key="product">
+                            <div v-if="product!=null && product.productVariants!=null && product.productVariants.length>=0 "
+                                 class="d-flex align-items-center border-bottom py-2">
+                                <a class="flex-shrink-0" v-bind:href="'/product/'+ product.alias">
+                                    <img v-if="this._getMediaItem(product.mediaItems)!==null" :src="this._getMediaItem(product.mediaItems)"
+                                         width="64" :alt="product.title" class="my-auto py-1"
+                                         @error="this._handleImageError"
+                                         style="max-height: 80px; object-fit: cover" />
+                                    <img v-else :src="this._getNoImageUrl()" :alt="product.title" width="64" class="mx-auto" />
+                                </a>
+                                <div class="ps-2">
+                                    <h6 class="widget-product-title">
+                                        <a v-bind:href="'/product/'+ product.alias">
+                                            <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!=null"
+                                                  class="product-meta d-block fs-xs text-secondary fw-bold pb-1">
+                                                {{product.productVariants[0].sku}}
+                                            </span>
+                                            {{product.title}}
+                                        </a>
+                                        <span v-if="product.subTitle != null"
+                                              class="product-meta d-block fs-xs pb-1 truncate">{{product.subTitle}}</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center ms-xl-2">
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#sideNav" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a role="button" href="#searchBox" data-bs-toggle="collapse" aria-expanded="false" aria-controls="searchBox" class="navbar-tool d-flex d-lg-none collapsed">
+                    <span class="navbar-tool-tooltip">##Search##</span>
+                    <div class="navbar-tool-icon-box">
+                        <i class="navbar-tool-icon ci-search"></i>
+                    </div>
+                </a>
+                <div v-if="this._resolveModules('shoppinglists')" @mouseenter="getShoppingLists" class="dropdown d-none d-lg-block">
+                    <a v-if="userisauthenticated" href="/profile/shoppingLists" class="navbar-tool d-flex">
+                        <div class="navbar-tool-icon-box">
+                            <i class="navbar-tool-icon ci-heart"></i>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <div v-if="this.lists!=null && this.lists.length>0" class="h5 text-nowrap mx-3 pt-1">##Favorites Lists ##</div>
+                        <div data-simplebar data-simplebar-auto-hide="false" style="max-height: 365px">
+                            <div v-if="this.lists!=null && this.lists.length>0"
+                                 :class="(changeBackground[index]?'px-3 bg-secondary':'px-3') "
+                                 v-for="(list,index) in this.lists" @mouseenter="changeBackground[index] = true"
+                                 @mouseleave="changeBackground[index] = false">
+                                <div class="dropdown-divider border border-muted opacity-50"></div>
+                                <div class="form-check px-2">
+                                    <a class="dropdown-item pe-0" :href="'/profile/shoppingLists/'+list.alias">
+                                        <div class="d-flex flex-row justify-content-between py-3">
+                                            <div class="d-flex flex-column">
+                                                <div class="fs-md my-auto h3 d-flex justify-content-start fw-bold"
+                                                     for="list.alias">
+                                                    {{list.title}}
+                                                </div>
+                                                <div v-if="list.items!=null"
+                                                     class="fs-xs h6 d-flex justify-content-start pt-1 text-muted mb-0">
+                                                    {{list.items.length}} ##Products##
+                                                </div>
+                                                <div v-else
+                                                     class="fs-xs h6 d-flex justify-content-start pt-1 text-muted mb-0">
+                                                    ##No Product##
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="ci-arrow-right"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-divider border border-muted opacity-50"></div>
+                                </div>
+                            </div>
+                            <div v-else class="text-center text-primary p-3">
+                                <div>##No favorite list found.##</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="userisauthenticated" class="dropdown">
+                    <a href="/profile" class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2">
+                        <div class="navbar-tool-icon-box">
+                            <i class="navbar-tool-icon ci-user"></i>
+                        </div>
+                        <div class="navbar-tool-text ms-n3">
+                            <small> ##HelloText##, {{firstName}} </small>##MyAccount##
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="/profile">##Profile##</a>
+                        <a class="dropdown-item" href="/profile/orders">##Orders##</a>
+                        <a class="dropdown-item" href="/account/logout">##LogOut##</a>
+                    </div>
+                </div>
+                <a v-else href="#signin-modal" data-bs-toggle="modal" class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2">
+                    <div class="navbar-tool-icon-box">
+                        <i class="navbar-tool-icon ci-user"></i>
+                    </div>
+                </a>
+                <template v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'CatalogRetailPrice') || this._global.isAuthenticated ">
+                    <div v-if="!isLoading" :key="cartTotal" class="navbar-tool">
+                        <div class="navbar-tool-icon-box bg-secondary" @click="ToggleCart()" id="navcart-icon"
+                             role="button">
+                            <span class="navbar-tool-label">{{cartTotal}}</span>
+                            <i class="navbar-tool-icon ci-cart"></i>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-end" id="navcart">
+                            <div v-if="cartPriceLoading"
+                                 class="d-flex flex-column align-items-center justify-content-center"
+                                 style="width: 20rem; height: 316px">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div v-else style="width: 20rem">
+                                <div v-if="cartData !== '' && cartData.cartItems.length > 0"
+                                     class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem">
+                                    <div style="height: 15rem" data-simplebar data-simplebar-auto-hide="false">
+                                        <div v-for="item in cartData.cartItems"
+                                             class="widget-cart-item pb-2 border-bottom">
+                                            <button class="btn-close text-danger" type="button" aria-label="Remove"
+                                                    v-on:click="getCartAfterRemove(item.productVariantId)">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <div class="d-flex align-items-center">
+                                                <a class="flex-shrink-0" v-bind:href="'/product/' + item.link">
+                                                    <img v-if="item.imageLink" v-bind:src="item.imageLink" width="64"
+                                                         :alt="item.productTitle" class="my-auto py-1"
+                                                         @error="this._handleImageError"
+                                                         style="max-height: 80px; object-fit: cover" />
+                                                    <img v-else :src="this._getNoImageUrl()" :alt="item.productTitle" width="64" />
+                                                </a>
+                                                <div class="ps-2 pt-2">
+                                                    <span v-if="item.sku!=null"
+                                                          class="product-meta d-block fs-xs text-secondary fw-bold">
+                                                        {{item.sku}}
+                                                    </span>
+                                                    <h6 class="widget-product-title">
+                                                        <a v-bind:href="'/product/'+ item.link">
+                                                            {{item.quantity}} x
+                                                            {{item.productTitle}}
+                                                        </a>
+                                                    </h6>
+                                                    <div class="widget-product-meta">
+                                                        <del v-if="hasDiscount(item)" class="fs-sm text-muted me-2">
+                                                            {{this._calculateCurrency(item.lineValue+item.discountValue)}}
+                                                        </del>
+                                                        <span class="body-secondary-text me-2">{{this._calculateCurrency(item.lineValue)}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-if="cartData.giftLines!=null && cartData.giftLines.length>0">
+                                        ##Gifts##
+                                        <div v-for="gift in cartData.giftLines"
+                                             class="widget-cart-item pb-2 border-bottom border-top">
+                                            <div class="d-flex align-items-center">
+                                                <a class="flex-shrink-0" v-bind:href="'/' + gift.link">
+                                                    <img v-if="gift.imageLink" v-bind:src="gift.imageLink" width="32"
+                                                         @error="this._handleImageError"
+                                                         :alt="gift.productTitle" />
+                                                    <img v-else :src="this._getNoImageUrl()" :alt="gift.productTitle" width="32" />
+                                                </a>
+                                                <div class="ps-2 pt-2">
+                                                    <h6 class="widget-product-title">
+                                                        <a v-bind:href="'/'+ gift.link">
+                                                            {{gift.quantity}} x
+                                                            {{gift.productTitle}}
+                                                        </a>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                                        <div class="fs-sm me-2 py-2">
+                                            <span class="text-muted">##Net##:</span>
+                                            <del v-if="hasTotalDiscount(item)" class="fs-sm text-muted me-2">
+                                                {{this._calculateCurrency(TotalNet+this.cartData.discountValue)}}
+                                            </del>
+                                            <span class="body-secondary-text fs-base ms-1">{{this._calculateCurrency(TotalNet)}}</span>
+                                        </div>
+                                        <a class="btn btn-outline-secondary btn-sm align-self-end"
+                                           href="/cart">##ExpandCart##<i class="ci-arrow-right ms-1 me-n1"></i></a>
+                                    </div>
+                                    <div v-if="cartPriceLoadingProblem">
+                                        <div class="alert alert-primary d-flex" role="alert">
+                                            <div class="alert-icon">
+                                                <i class="ci-bell"></i>
+                                            </div>
+                                            <div>##CartError##</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary btn-sm d-block w-100" href="/checkout">
+                                        <i class="ci-card me-2 fs-base align-middle"></i>##Checkout##
+                                    </a>
+                                </div>
+                                <div v-else class="widget widget-cart p-4" style="width: 20rem">
+                                    <div class="pt-2 text-center">
+                                        <div class="navcart-icon"></div>
+                                        <p class="text-muted font-size-sm mb-0">
+                                            ##No_products_in_the_cart##
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div class="collapse d-lg-none" id="searchBox">
+        <div class="card pt-2 pb-4 border-0 rounded-0">
+            <div class="container">
+                <div class="input-group">
+                    <i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input v-model="SearchText" @input="Search" @keyup.enter="enterClicked()" class="form-control rounded-start" type="text" placeholder="##SearchForProducts##">
+                    <div class="dropdown-search w-100">
+                        <ul class="dropdown-menu w-100 px-2" style="max-height: 60vh" data-simplebar="init"
+                            data-simplebar-auto-hide="true">
+                            <li v-for="(product, index) in products" v-bind:key="product">
+                                <div v-if="product!=null && product.productVariants!=null && product.productVariants.length>=0 "
+                                     class="d-flex align-items-center border-bottom py-2">
+                                    <a class="flex-shrink-0" v-bind:href="'/product/'+ product.alias">
+                                        <img v-if="this._getMediaItem(product.mediaItems)!==null" :src="this._getMediaItem(product.mediaItems)"
+                                             width="64" :alt="product.title" class="my-auto py-1"
+                                             @error="this._handleImageError"
+                                             style="max-height: 80px; object-fit: cover" />
+                                        <img v-else :src="this._getNoImageUrl()" :alt="product.title" width="64" class="mx-auto" />
+                                    </a>
+                                    <div class="ps-2">
+                                        <h6 class="widget-product-title">
+                                            <a v-bind:href="'/product/'+ product.alias">
+                                                <span v-if="product.productVariants.length>0 && product.productVariants[0].sku!=null"
+                                                      class="product-meta d-block fs-xs text-secondary fw-bold pb-1">
+                                                    {{product.productVariants[0].sku}}
+                                                </span>
+                                                {{product.title}}
+                                            </a>
+                                            <span v-if="product.subTitle != null"
+                                                  class="product-meta d-block fs-xs pb-1 truncate">{{product.subTitle}}</span>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div v-if="this._checkOperationMode()" class="handheld-toolbar">
+        <div class="d-table table-layout-fixed w-100">
+            <a v-if="showFilters" id="filters" class="d-table-cell handheld-toolbar-item" href="#"
+               data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar">
+                <span class="handheld-toolbar-icon">
+                    <i class="ci-filter-alt"></i>
+                </span><span class="handheld-toolbar-label">##Filters##</span>
+            </a>
+            <a v-if="userisauthenticated" class="d-table-cell handheld-toolbar-item" href="/profile">
+                <span class="handheld-toolbar-icon"><i class="ci-user"></i></span><span class="handheld-toolbar-label">##Profile##</span>
+            </a>
+
+            <a v-else class="d-table-cell handheld-toolbar-item" href="#signin-modal" data-bs-toggle="modal">
+                <span class="handheld-toolbar-icon"><i class="ci-user"></i></span>
+                <span class="handheld-toolbar-label">##SignIn##</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" href="javascript:void(0)" data-bs-toggle="collapse"
+               data-bs-target="#navbarCollapse" onclick="window.scrollTo(0, 0)">
+                <span class="handheld-toolbar-icon">
+                    <i class="ci-menu"></i>
+                </span><span class="handheld-toolbar-label">##Menu##</span>
+            </a>
+            <a v-if="(this.globalModel.operationMode != 'Catalog' && this.globalModel.operationMode != 'CatalogRetailPrice') || this._global.isAuthenticated"
+               class="d-table-cell handheld-toolbar-item" href="/cart">
+                <span class="handheld-toolbar-icon">
+                    <i class="ci-cart"></i>
+                    <span class="badge bg-primary rounded-pill ms-1">{{cartTotal}}</span>
+                </span>
+                <span class="handheld-toolbar-label">##Cart##</span>
+            </a>
+        </div>
+    </div>
+</div>

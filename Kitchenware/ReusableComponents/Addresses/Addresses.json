@@ -1,0 +1,236 @@
+﻿[
+  {
+    "Key": "Address",
+    "Value": "Address",
+    "Translation": {
+      "EL": "Διεύθυνση",
+      "EN": "Address",
+      "RO": "Adresă"
+    }
+  },
+  {
+    "Key": "Actions",
+    "Value": "Actions",
+    "Translation": {
+      "EL": "Ενέργειες",
+      "EN": "Actions",
+      "RO": "Acţiuni"
+    }
+  },
+  {
+    "Key": "Primary",
+    "Value": "Primary",
+    "Translation": {
+      "EL": "Πρωτεύον",
+      "EN": "Primary",
+      "RO": "primar"
+    }
+  },
+  {
+    "Key": "Address1",
+    "Value": "Address1",
+    "Translation": {
+      "EL": "Διεύθυνση 1",
+      "EN": "Address 1",
+      "RO": "Adresa 1"
+    }
+  },
+  {
+    "Key": "Address2",
+    "Value": "Address2",
+    "Translation": {
+      "EL": "Διεύθυνση 2",
+      "EN": "Address 2",
+      "RO": "Adresa 2"
+    }
+  },
+  {
+    "Key": "Edit_Address",
+    "Value": "Edit_Address",
+    "Translation": {
+      "EL": "Επεξεργασία διεύθυνσης",
+      "EN": "Edit Address",
+      "RO": "Editați adresa"
+    }
+  },
+  {
+    "Key": "City",
+    "Value": "City",
+    "Translation": {
+      "EL": "Πόλη",
+      "EN": "City",
+      "RO": "Orașul"
+    }
+  },
+  {
+    "Key": "State",
+    "Value": "State",
+    "Translation": {
+      "EL": "Περιφέρεια",
+      "EN": "State",
+      "RO": "Regiune"
+    }
+  },
+  {
+    "Key": "Country",
+    "Value": "Country",
+    "Translation": {
+      "EL": "Χώρα",
+      "EN": "Country",
+      "RO": "Țara"
+    }
+  },
+  {
+    "Key": "Postcode_ZIP",
+    "Value": "Postcode_ZIP",
+    "Translation": {
+      "EL": "Ταχυδρομικός κώδικας / ΤΚ",
+      "EN": "Postcode / ZIP",
+      "RO": "Cod poştal"
+    }
+  },
+  {
+    "Key": "Close",
+    "Value": "Close",
+    "Translation": {
+      "EL": "Κλείσιμο",
+      "EN": "Close",
+      "RO": ""
+    }
+  },
+  {
+    "Key": "Save",
+    "Value": "Save",
+    "Translation": {
+      "EL": "Αποθήκευση",
+      "EN": "Save",
+      "RO": "Salvați"
+    }
+  },
+  {
+    "Key": "Add_New_Address",
+    "Value": "Add_New_Address",
+    "Translation": {
+      "EL": "Προσθήκη Νέας Διεύθυνσης",
+      "EN": "Add New Address",
+      "RO": "Adăugați o adresă nouă"
+    }
+  },
+  {
+    "Key": "FirstName",
+    "Value": "FirstName",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "LastName",
+    "Value": "LastName",
+    "Translation": {
+      "EL": "Επίθετο",
+      "EN": "Last Name",
+      "RO": "Nume de familie"
+    }
+  },
+  {
+    "Key": "PhoneNumber",
+    "Value": "PhoneNumber",
+    "Translation": {
+      "EL": "Αριθμός τηλεφώνου",
+      "EN": "Phone Number",
+      "RO": "Număr de telefon"
+    }
+  },
+  {
+    "Key": "State",
+    "Value": "State",
+    "Translation": {
+      "EL": "Περιφερειακή Ενότητα",
+      "EN": "State",
+      "RO": "Judeţ"
+    }
+  },
+  {
+    "Key": "EnterFirstName",
+    "Value": "EnterFirstName",
+    "Translation": {
+      "EL": "Όνομα",
+      "EN": "Enter First Name",
+      "RO": "Nume"
+    }
+  },
+  {
+    "Key": "EnterLastName",
+    "Value": "EnterLastName",
+    "Translation": {
+      "EL": "Επίθετο",
+      "EN": "Enter Last Name",
+      "RO": "Numele de familie"
+    }
+  },
+  {
+    "Key": "EnterPhoneNumber",
+    "Value": "EnterPhoneNumber",
+    "Translation": {
+      "EL": "Τηλέφωνο",
+      "EN": "Enter Phone Name",
+      "RO": "Telefon"
+    }
+  },
+  {
+    "Key": "Enteraddress",
+    "Value": "Enteraddress",
+    "Translation": {
+      "EL": "Διεύθυνση",
+      "EN": "Enter Address",
+      "RO": "Adresa"
+    }
+  },
+  {
+    "Key": "Entersecondaddress",
+    "Value": "Entersecondaddress",
+    "Translation": {
+      "EL": "Διεύθυνση 2",
+      "EN": "Enter Second Address",
+      "RO": "Adresa 2"
+    }
+  },
+  {
+    "Key": "Entercityname",
+    "Value": "Entercityname",
+    "Translation": {
+      "EL": "Πόλη",
+      "EN": "Enter City Name",
+      "RO": "Orașul"
+    }
+  },
+  {
+    "Key": "Entercountry",
+    "Value": "Entercountry",
+    "Translation": {
+      "EL": "Χώρα",
+      "EN": "Enter Country",
+      "RO": "Țara"
+    }
+  },
+  {
+    "Key": "Enterstate",
+    "Value": "Enterstate",
+    "Translation": {
+      "EL": "Enter State",
+      "EN": "Περιφερειακή Ενότητα",
+      "RO": "Secțiunea regională"
+    }
+  },
+  {
+    "Key": "Enterpostalcode",
+    "Value": "Enterpostalcode",
+    "Translation": {
+      "EL": "Ταχυδρομικός κώδικας / ΤΚ",
+      "EN": "Enter Postal Code",
+      "RO": "Cod poștal"
+    }
+  }
+]

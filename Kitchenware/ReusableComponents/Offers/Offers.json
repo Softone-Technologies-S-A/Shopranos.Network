@@ -1,0 +1,164 @@
+﻿[
+  {
+    "Key": "Status",
+    "Value": "Status",
+    "Translation": {
+      "EL": "Κατάσταση",
+      "EN": "Status",
+      "RO": "Status"
+    }
+  },
+  {
+    "Key": "Draft",
+    "Value": "Draft",
+    "Translation": {
+      "EL": "Σε προσχέδιο",
+      "EN": "Draft",
+      "RO": "Draft"
+    }
+  },
+  {
+    "Key": "All",
+    "Value": "All",
+    "Translation": {
+      "EL": "Όλα",
+      "EN": "All",
+      "RO": "Tot"
+    }
+  },
+  {
+    "Key": "Rejected",
+    "Value": "Rejected",
+    "Translation": {
+      "EL": "Απορρίφθηκε",
+      "EN": "Rejected",
+      "RO": "Anulat"
+    }
+  },
+  {
+    "Key": "Accepted",
+    "Value": "Accepted",
+    "Translation": {
+      "EL": "Εγκρίθηκε",
+      "EN": "Accepted",
+      "RO": "Acceptat"
+    }
+  },
+  {
+    "Key": "Open",
+    "Value": "Open",
+    "Translation": {
+      "EL": "Ανοικτή",
+      "EN": "Open",
+      "RO": "Deschide"
+    }
+  },
+  {
+    "Key": "Sort",
+    "Value": "Sort",
+    "Translation": {
+      "EL": "Ταξινόμηση",
+      "EN": "Sort",
+      "RO": "Sortare"
+    }
+  },
+  {
+    "Key": "ExpirationDate",
+    "Value": "ExpirationDate",
+    "Translation": {
+      "EL": "Ημερομηνία Λήξης",
+      "EN": "Expiration Date",
+      "RO": "Dată de expirare"
+    }
+  },
+  {
+    "Key": "UpdateDate",
+    "Value": "UpdateDate",
+    "Translation": {
+      "EL": "Ημερομηνία Ενημέρωσης",
+      "EN": "Update Date",
+      "RO": "Dată actulizare"
+    }
+  },
+  {
+    "Key": "Title",
+    "Value": "Title",
+    "Translation": {
+      "EL": "Τίτλος",
+      "EN": "Title",
+      "RO": "Titlu"
+    }
+  },
+  {
+    "Key": "CustomerName",
+    "Value": "CustomerName",
+    "Translation": {
+      "EL": "Όνομα Πελάτη",
+      "EN": "Customer Name",
+      "RO": "Nume client"
+    }
+  },
+  {
+    "Key": "Actions",
+    "Value": "Actions",
+    "Translation": {
+      "EL": "Ενέργειες",
+      "EN": "Actions",
+      "RO": "Acţiuni"
+    }
+  },
+  {
+    "Key": "Success",
+    "Value": "Success",
+    "Translation": {
+      "EL": "Επιτυχία",
+      "EN": "Success",
+      "RO": "Succes"
+    }
+  },
+  {
+    "Key": "Loading",
+    "Value": "Loading",
+    "Translation": {
+      "EL": "Φόρτωση",
+      "EN": "Loading",
+      "RO": "Încărcare"
+    }
+  },
+  {
+    "Key": "NoResults",
+    "Value": "No results",
+    "Translation": {
+      "EL": "Δεν βρέθηκαν αποτελέσματα",
+      "EN": "No results",
+      "RO": "Niciun rezultat"
+    }
+  },
+  {
+    "Key": "Prev",
+    "Value": "Prev",
+    "Translation": {
+      "EL": "",
+      "EN": "Prev",
+      "RO": "Anterior"
+    }
+  },
+  {
+    "Key": "Next",
+    "Value": "Next",
+    "Translation": {
+      "EL": "",
+      "EN": "Next",
+      "RO": "Următorul"
+    }
+  },
+  {
+    "Key": "View",
+    "Value": "View",
+    "Translation": {
+      "EL": "Εμφάνιση",
+      "EN": "View",
+      "RO": "Vizualizare"
+    }
+  }
+]

@@ -1,0 +1,34 @@
+﻿<section :id="this.model.id" v-if="this.navigations !== null" :class="this.model?.cssClass" class="container pt-md-3 pb-2 mb-5 pb-lg-3">
+    <div v-if="this.model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'pb-4', 'mb-4', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+    </div>
+    <div class="row">
+        <div v-for="(category,index) in this.navigations" class="col-md-4 col-sm-6 mb-grid-gutter">
+            <a class="card border-0 shadow" :href="category.url">
+                <img class="card-img-top" :src="getImage(category)" style="max-height:280px; object-fit: cover" :alt="category?.navigationTitle">
+                <div class="category-title card-body py-4 text-center">
+                    <h3 class=" h5 mt-1">{{category.navigationTitle}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section :id="this.model.id" v-if="this.categories !== null && this.categories.length > 0" :class="this.model?.cssClass" class="container pt-md-3 pb-2 mb-5 pb-lg-3">
+    <div v-if="this.model.header !== null && this.model.header !=''"
+         :class="['d-flex', 'flex-wrap', 'pb-4', 'mb-4', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold mb-0 pt-3">{{ this.model.header }}</h2>
+    </div>
+    <div class="row">
+        <div v-for="(category,index) in this.categories" class="col-md-4 col-sm-6 mb-grid-gutter">
+            <a class="card border-0 shadow" :href="`/category/${category.alias}`">
+                <img v-if="category.mediaItem != null && category.mediaItem.link != null" class="card-img-top" :src="category.mediaItem.link" style="max-height:280px; object-fit: cover" :alt="category.alias" @error="this._handleImageError">
+                <img v-else :src="this._getNoImageUrl()" alt="no_image" class="card-img-top" style="max-height:280px; object-fit: cover"/>
+                <div class="category-title card-body py-4 text-center">
+                    <h3 class=" h5 mt-1">{{category.title}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

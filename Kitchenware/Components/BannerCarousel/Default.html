@@ -1,0 +1,45 @@
+﻿
+<section v-if="this.Banners !== null && this.Banners.length > 0" :class="this.model?.cssClass" class="container pt-md-3 pb-2 mt-2 mb-5 pb-lg-3" :id="this.model.id">
+    <div class="row">
+        <div v-if="model.header !== null && this.model.header !=''" :class="['d-flex', 'flex-wrap', 'pb-4', 'mb-4', getAlignmentClass(model.alignment)]">
+            <h2 class="h3 fw-bold mb-0 pt-3">{{ model.header }}</h2>
+        </div>
+        <div v-for="(banner, index) in Banners" :class="'mb-4 col-lg-'+(this.pattern[index])+(this.pattern.length<=2?' col-md-12':' col-md-6')">
+            <div class="w-100 h-100" style="min-height:220px;border-radius:5px" :style="banner.backgroundImage !== null ? 'background-image: url('+banner.backgroundImage.link+');background-size: cover;background-position: center' : ''">
+                <div v-if="(banner.image!=null && banner.image!='' ) && (this.pattern.length!=null)" class="d-flex justify-content-center align-items-center s1-banner-class overflow-hidden rounded-3 h-100 row mx-1 " :style="'background:'+banner.backgroundColor">
+                    <!--width:810px;-->
+                    <div class="px-md-4 py-4 px-xl-5 py-xl-4 col-sm-6 text-start">
+                        <h1 class="fw-bold fs-lg" :style="'color:'+banner.textColor">{{banner.header}}</h1>
+
+                        <h4 class="fs-6 lh-lg-lg" :style="'color:'+banner.textColor">{{banner.subHeader}}</h4>
+                        <div class="pe-1 lh-1 fs-md overflow-hidden " :style="'color:'+banner.textColor">{{banner.text}}</div>
+                        <div class="pt-3">
+                        </div>
+                        <div v-if="banner.buttonText!=null &&  banner.buttonText!=''">
+                            <a class="btn btn-primary btn-shadow rounded-0 fs-xs " :href="banner.buttonLink">{{banner.buttonText}}</a>
+                        </div>
+                    </div>
+                    <div class=" col-sm-6 pb-4 p-0 h-100 mb-auto" style="max-width:450px;">
+                        <img v-if="banner.image!=null" class="d-block ms-auto w-100" :src="banner.image.link" alt="" style="max-height: 190px;object-fit:cover;margin-right: -2px">
+                    </div>
+                </div>
+                <div v-else class="d-flex justify-content-center align-items-center s1-banner-class overflow-hidden rounded-3 h-100 row mx-1 " :style="'background:'+banner.backgroundColor">
+                    <!--width:810px;-->
+                    <div class="px-5  py-4 col-12 text-center">
+                        <h1 class="fw-bold fs-lg" :style="'color:'+banner.textColor">{{banner.header}}</h1>
+
+                        <h4 class="fs-sm lh-lg" :style="'color:'+banner.textColor">{{banner.subHeader}}</h4>
+                        <div class="pe-1 lh-1 fs-md" :style="'color:'+banner.textColor" style="max-height: 75px;  overflow: hidden;">{{banner.text}}</div>
+                        <div class="pt-3">
+                        </div>
+                        <div v-if="banner.buttonText!=null &&  banner.buttonText!=''">
+                            <a class="btn btn-primary btn-shadow rounded-0 fs-xs " :href="banner.buttonLink">{{banner.buttonText}}</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
