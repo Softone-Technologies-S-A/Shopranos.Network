@@ -1,0 +1,16 @@
+body {
+  font-family: $font__primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+
+  .container-lg {
+    max-width: $site__container-lg;
+  }
+
+  .container-xl {
+    max-width: $site__container-xl;
+  }
+
+}

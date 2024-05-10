@@ -1,0 +1,104 @@
+﻿<!-- TODO - model.isNewsletterEnabled must return true if admin panel has "newsletter" option on -->
+<!-- TODO - model.isExtendedLayout must return true if admin panel has "footer extend" option on -->
+<!-- TODO - model.isRounded must return true if admin panel has global setting rounded on -->
+<!-- TODO - model.isSquared must return true if admin panel has global setting squared on -->
+<!-- TODO - model.isMinimal must return true if admin panel has global setting minimal on -->
+
+<footer class="pt-md-3 pb-4 border-top border-theme px-0 px-md-4" :id="this.model.id">
+    <div :class="[model.isExtendedLayout ? 'container-lg' : 'container']">
+        <div class="row align-items-center justify-content-between pt-3 pt-lg-5 text-center text-md-start">
+            <div class="col-12 mt-3 mt-md-0 navbar-brand"
+                 :class="[
+					{'col-lg-4': (model.isNewsletterEnabled && !model.isExtendedLayout) || (!model.isNewsletterEnabled && model.isExtendedLayout)},
+					{'col-lg-3': model.isNewsletterEnabled && model.isExtendedLayout} ,
+					{'col-md-4': !model.isNewsletterEnabled},
+					{'col-md-6': model.isNewsletterEnabled},
+					{'col-lg-6': !model.isNewsletterEnabled && !model.isExtendedLayout},
+				]">
+                <img v-if="!imageError" :src="this._getLogoUrl()"
+                     :alt="this._company.name" @error="handleImageError" />
+                <div v-else>
+                    <span>{{this._company.name}}</span>
+                </div>
+            </div>
+            <div class="col-12 d-flex align-items-center mt-3 mt-md-0 gap-5"
+                 :class="[
+					{'col-lg-4 justify-content-center justify-content-md-end justify-content-lg-center': (model.isNewsletterEnabled && !model.isExtendedLayout) || model.isExtendedLayout},
+					{'justify-content-lg-end': !model.isNewsletterEnabled && !model.isExtendedLayout} ,
+					{'col-md-4 justify-content-md-center': !model.isNewsletterEnabled},
+					{'col-md-6': model.isNewsletterEnabled},
+					{'col-lg-6 justify-content-center': !model.isNewsletterEnabled && !model.isExtendedLayout},
+				]">
+                <a v-for="nav in AllColumns" :href="nav.url">
+                    {{nav.navigationTitle}}
+                </a>
+            </div>
+            <div v-if="model.isNewsletterEnabled" class="col-12 col-md-6 mt-3 mt-lg-0 newsletter-wrap"
+                 :class="[
+					{'col-lg-4': !model.isExtendedLayout},
+					{'col-lg-3': model.isExtendedLayout} ]">
+                <form action="" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+                    <div class="input-group flex-nowrap"
+                         :class="[
+							{'border-0 border-bottom' : model.isMinimal}
+						]">
+                        <input v-model="email" class="form-control px-3 py-2 px-lg-4 py-lg-3 z-2 rounded-0" type="email" name="EMAIL" placeholder="email" required=""
+                               :class="[
+								{'border-0' : model.isMinimal},
+								{'rounded-end rounded-pill' : model.isRounded},
+								{'border-theme' : model.isRounded || model.isSquared}
+							]" />
+                        <button @click.prevent="subscribeEmail" class="btn btn-primary ms-n4 px-3 px-lg-4 z-3 rounded-0" type="submit" name="subscribe"
+                                :class="[
+								{'shadow' : model.isRounded || model.isSquared},
+								{'rounded-pill' : model.isRounded},
+								{'rounded-end-4' : model.isMinimal},
+							]"
+                                :style="model.isMinimal ? 'border-bottom-right-radius: 0!important;' : ''">
+                            <span v-bind:class="{hidden:isLoading}"> ##Subscribe## </span>
+                            <span v-bind:class="{hidden:!isLoading}" class="spinner-border spinner-border-sm d-none"
+                                  role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p v-if="this.emailIsValid===false" class="text-danger">
+                        ##mailError##
+                    </p>
+                    <p v-if="this.showEmailValidMessage===true" class="text-success">
+                        ##emailValid##
+                    </p>
+                    <div class="subscription-status"></div>
+                </form>
+            </div>
+            <div class="col-12 text-center text-md-start text-lg-end mt-3 mt-lg-0"
+                 :class="[
+					{'mt-lg-4 mb-lg-3': !model.isExtendedLayout},
+					{'col-lg-4 ms-lg-auto': (!model.isExtendedLayout) || (!model.isNewsletterEnabled && model.isExtendedLayout)},
+					{'col-lg-2': model.isNewsletterEnabled && model.isExtendedLayout},
+					{'col-md-4 mt-md-0': !model.isNewsletterEnabled},
+					{'col-md-6': model.isNewsletterEnabled},
+					{'col-lg-6': !model.isNewsletterEnabled && !model.isExtendedLayout},
+				]">
+                <!-- TODO - Add social media logic here -->
+                <ul class="d-flex list-unstyled justify-content-center justify-content-md-end m-0">
+                    <li class="mx-2">
+                        <a href="" target="_blank" class="s-facebook"><span>Facebook Link</span></a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="" target="_blank" class="s-instagram"><span>Instagram Link</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-items-center text-center py-3 mt-3 copyright"
+             :class="[
+				{'pt-lg-5 ': model.isExtendedLayout}
+			]">
+            <div class="col-12">
+                <p class="m-0">
+                    © ##All rights reserved. Powered by##
+                    <a :href="this.shopranosUrl">Shopranos</a>. {{globaldata.version}}
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

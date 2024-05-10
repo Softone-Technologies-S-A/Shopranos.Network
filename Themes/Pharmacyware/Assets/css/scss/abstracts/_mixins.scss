@@ -1,0 +1,25 @@
+// Icons
+@mixin icon($asci: "") {
+  content: $asci;
+  font-family: "theme-icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Cross Media Sizes
+@mixin cross-media($value, $mob, $tabMin, $tabMax, $lap, $des) {
+  @include view(lap-min) {
+    #{$value}: min(max(#{$lap}px, #{$lap}/ 1440 * 100vw), #{$des}px);
+  }
+  @include view(tab) {
+    #{$value}: min(max(#{$tabMin}px, #{$tabMin}/ 744 * 100vw), #{$tabMax}px);
+  }
+  @include view(mob) {
+    #{$value}: min(max(#{$mob}px, #{$mob}/ 375 * 100vw), #{$tabMin}px);
+  }
+}

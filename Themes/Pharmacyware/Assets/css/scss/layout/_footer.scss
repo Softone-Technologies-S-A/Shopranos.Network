@@ -1,0 +1,21 @@
+footer {
+    .navbar-brand {
+        img {
+            @include cross-media(max-width, 235, 235, 235, 235, 235);
+            width: 100%;
+            object-fit: contain; 
+            object-position: left center;
+        }
+    }
+    .newsletter-wrap {
+        form {
+            @include cross-media(max-width, 370, 370, 370, 370, 370);
+            margin-left: auto;
+        }
+    }
+    .copyright {
+        p {
+            color: var(--border-color);
+        }
+    }
+}

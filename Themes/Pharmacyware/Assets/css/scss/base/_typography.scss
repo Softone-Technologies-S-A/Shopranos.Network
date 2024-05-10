@@ -1,0 +1,46 @@
+header {
+    .search-wrap {
+        input {
+            @include cross-media(font-size, 8, 10, 10, 12, 12);
+        }
+        .s-search {
+            &:before {
+                @include cross-media(font-size, 10, 14, 14, 20, 24);
+            }
+        }
+    }
+}
+footer {
+    .newsletter-wrap {
+        form {
+            input {
+                @include cross-media(font-size, 10, 12, 12, 14, 14);
+            }
+        }
+    }
+    .copyright {
+        p {
+            @include cross-media(font-size, 8, 10, 10, 12, 12);
+        }
+    }
+}
+
+body {
+    @include cross-media(font-size, 12, 12, 12, 14, 16);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+[class^=s-], [class*=" s-"] {
+    &:before {
+        @include cross-media(font-size, 19, 19, 19, 15, 15);
+    }
+}
+.container-lg,
+.container-xl {
+    [class^=s-], [class*=" s-"] {
+        &:before {
+            @include cross-media(font-size, 19, 19, 19, 20, 24);
+        }
+    }
+}

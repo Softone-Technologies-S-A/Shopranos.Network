@@ -1,0 +1,10 @@
+input,
+textarea {
+    &::-ms-input-placeholder { /* Edge 12-18 */
+        color: var(--border-color)!important;
+    }
+    
+    &::placeholder {
+        color: var(--border-color)!important;
+    }
+}

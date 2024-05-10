@@ -1,0 +1,67 @@
+[class^=s-], [class*=" s-"] {
+    display: flex;
+    position: relative;
+    visibility: hidden;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    @include cross-media(width, 19, 19, 19, 15, 15);
+    @include cross-media(height, 19, 19, 19, 15, 15);
+    &:before {
+        @include icon('');
+        visibility: visible;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 1;
+    }
+    span {
+        display: none;
+    }
+}
+.s {
+    &-facebook {
+        &:before {
+            content: '\e901';
+        }
+    }
+    &-instagram {
+        &:before {
+            content: '\e900';
+        }
+    }
+    &-cart {
+        &:before {
+            content: '\e904';
+        }
+    }
+    &-user {
+        &:before {
+            content: '\e905';
+        }
+    }
+    &-wishlist {
+        &:before {
+            transform: scale(.8);
+            content: '\e903';
+        }
+    }
+    &-search {
+        &:before {
+            content: '\e902';
+        }
+    }
+}
+
+.container-lg,
+.container-xl {
+    [class^=s-], [class*=" s-"] {
+        @include cross-media(width, 19, 19, 19, 20, 24);
+        @include cross-media(height, 19, 19, 19, 20, 24);
+    }
+}
