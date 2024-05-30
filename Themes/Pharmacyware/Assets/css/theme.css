@@ -187,6 +187,21 @@
     font-size: min(max(10px, 10 / 375 * 100vw), 14px);
   }
 }
+@media only screen and (min-width: 1440px) {
+  header .account-wrap button span {
+    font-size: min(max(14px, 14 / 1440 * 100vw), 14px);
+  }
+}
+@media only screen and (min-width: 744px) and (max-width: 1439px) {
+  header .account-wrap button span {
+    font-size: min(max(12px, 12 / 744 * 100vw), 12px);
+  }
+}
+@media only screen and (max-width: 743px) {
+  header .account-wrap button span {
+    font-size: min(max(10px, 10 / 375 * 100vw), 12px);
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   footer .newsletter-wrap form input {
@@ -326,10 +341,11 @@ a,
   color: inherit;
   text-decoration: none;
 }
-a:hover, a:focus, a:active,
+a:hover, a:focus, a:active, a.active,
 .nav-link:hover,
 .nav-link:focus,
-.nav-link:active {
+.nav-link:active,
+.nav-link.active {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 7px;
@@ -339,7 +355,7 @@ a:hover, a:focus, a:active,
 
 header .collapse-menu {
   height: 15px;
-  width: 18px;
+  width: 19px;
   cursor: pointer;
 }
 header .collapse-menu input {
@@ -387,6 +403,7 @@ header .collapse-menu .hamburger-lines .line.line3 {
   transition: transform 0.2s ease-in-out;
 }
 header .navbar-brand img {
+  max-height: 40px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: left center;
@@ -408,18 +425,33 @@ header .navbar-brand img {
   }
 }
 @media only screen and (min-width: 1440px) {
-  header .search-wrap {
+  header .search-wrap:not(.expand) {
     max-width: min(max(300px, 300 / 1440 * 100vw), 300px);
   }
 }
 @media only screen and (min-width: 744px) and (max-width: 1439px) {
-  header .search-wrap {
+  header .search-wrap:not(.expand) {
     max-width: min(max(230px, 230 / 744 * 100vw), 230px);
   }
 }
 @media only screen and (max-width: 743px) {
-  header .search-wrap {
+  header .search-wrap:not(.expand) {
     max-width: min(max(150px, 150 / 375 * 100vw), 230px);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header .search-wrap.expand {
+    max-width: min(max(390px, 390 / 1440 * 100vw), 390px);
+  }
+}
+@media only screen and (min-width: 744px) and (max-width: 1439px) {
+  header .search-wrap.expand {
+    max-width: min(max(270px, 270 / 744 * 100vw), 330px);
+  }
+}
+@media only screen and (max-width: 743px) {
+  header .search-wrap.expand {
+    max-width: min(max(95px, 95 / 375 * 100vw), 270px);
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -527,7 +559,28 @@ header .lang-wrap button {
 header .lang-wrap button:after {
   margin: 0;
 }
+header .account-wrap:hover .dropdown-menu {
+  display: block;
+  top: 100%;
+  right: 0;
+  left: auto;
+  margin-top: var(--bs-dropdown-spacer);
+  animation: slide-up 0.25s ease-in-out;
+}
+header .account-wrap button .dropdown-toggle {
+  line-height: 1.1;
+}
 
+@keyframes slide-up {
+  0% {
+    transform: translateY(0.5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 footer .navbar-brand img {
   width: 100%;
   -o-object-fit: contain;

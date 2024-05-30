@@ -4,7 +4,8 @@ a,
   text-decoration: none;
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.active {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 7px;

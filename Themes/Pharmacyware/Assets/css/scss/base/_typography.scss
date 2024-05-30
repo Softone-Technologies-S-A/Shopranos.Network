@@ -9,6 +9,13 @@ header {
             }
         }
     }
+    .account-wrap {
+        button {
+            span {
+                @include cross-media(font-size, 10, 12, 12, 14, 14);
+            }
+        }
+    }
 }
 footer {
     .newsletter-wrap {
